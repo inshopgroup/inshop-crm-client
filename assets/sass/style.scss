@@ -1,0 +1,19 @@
+$text-direction: ltr;
+
+// Susy
+$susy: (
+	columns: 12,
+	container: 1140px,
+	gutters: 0.447761194,
+	global-box-sizing: border-box,
+	flow: $text-direction,
+);
+
+$blog-grid-settings : (
+  gutter-position: after,
+  gutters: 1,
+
+);
+
+@import "direction-controller";
+@import "main";

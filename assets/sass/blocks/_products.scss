@@ -1,0 +1,166 @@
+/*===================================================================================*/
+/*  Products
+/*===================================================================================*/
+
+ul.products {
+	padding-#{$start}: 0;
+	margin-bottom: 1.286em;
+	list-style: none;
+	@include clearfix;
+
+	li.product {
+		position: relative;
+		min-height: 1px;
+		margin: 0.857em 0;
+		padding: 0;
+
+		&::after {
+			content: '';
+			border-#{$end}: 1px solid #eaeaea;
+			display: block;
+			position: absolute;
+			top: 50%;
+			#{$end}: 0;
+			height: 86%;
+			@include transform( translateY(-50%) );
+		}
+
+		&:last-child, &:hover, &.hover {
+			&::after {
+				content: none;
+			}
+		}
+	}
+}
+
+ul.products > li.product {
+	float: $start;
+
+	@include media-breakpoint-up(md) {
+		@include make-col-span(4);
+	}
+
+	&.first {
+		clear: both;
+	}
+
+	&.last {
+		&:after {
+			content: none;
+		}
+	}
+}
+
+.columns-6,
+.columns-5,
+.page-template-template-homepage-v2 .columns-4 {
+	ul.products{
+		> li.product {
+
+			@include make-product-small();
+
+			@include media-breakpoint-up(md) {
+				@include make-col-span(3);
+			}
+		}
+	}
+
+	.product {
+		@include make-action-buttons-float();
+	}
+}
+
+/*===================================================================================*/
+/*	PRODUCTS
+/*===================================================================================*/
+
+ul.products.columns-2 {
+    > li {
+		@include media-breakpoint-up(lg) {
+			@include make-col-span(6);
+		}
+
+		@include media-breakpoint-up(md) {
+			@include make-col-span(6);
+		}
+
+		@include media-breakpoint-up(sm) {
+			@include make-col-span(6);
+		}
+
+		@include media-breakpoint-up(xs) {
+			@include make-col-span(12);
+		}
+    }
+}
+
+ul.products.columns-3, ul.products {
+    > li {
+		@include media-breakpoint-up(lg) {
+			@include make-col-span(4);
+		}
+
+		@include media-breakpoint-up(md) {
+			@include make-col-span(4);
+		}
+
+		@include media-breakpoint-up(sm) {
+			@include make-col-span(4);
+		}
+
+		@include media-breakpoint-up(xs) {
+			@include make-col-span(12);
+		}
+    }
+}
+
+ul.products.columns-4 {
+    > li {
+		@include media-breakpoint-up(lg) {
+			@include make-col-span(3);
+		}
+
+		@include media-breakpoint-up(md) {
+			@include make-col-span(3);
+		}
+
+		@include media-breakpoint-up(sm) {
+			@include make-col-span(3);
+		}
+
+		@include media-breakpoint-up(xs) {
+			@include make-col-span(12);
+		}
+    }
+}
+
+ul.products.columns-5 {
+    > li {
+		@include make-product-small();
+
+		@include media-breakpoint-up(md) {
+			@include make-col-span(3);
+			width: 20%;
+		}
+    }
+}
+
+ul.products.columns-6 {
+    > li {
+		@include media-breakpoint-up(lg) {
+			@include make-col-span(2);
+		}
+
+		@include media-breakpoint-up(md) {
+			@include make-col-span(2);
+		}
+
+		@include media-breakpoint-up(sm) {
+			@include make-col-span(2);
+		}
+
+		@include media-breakpoint-up(xs) {
+			@include make-col-span(12);
+		}
+    }
+}

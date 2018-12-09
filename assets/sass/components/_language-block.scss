@@ -1,0 +1,36 @@
+/*===================================================================================*/
+/*  LANGUAGE-SELECT
+/*===================================================================================*/
+.language-select {
+  float: right;
+  margin: .92em 0;
+  .dropdown-toggle {
+    position: relative;
+    margin: 0 8px;
+    padding-left: 36px;
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    padding: 12px 8px;
+    li {
+      position: relative;
+      padding-left: 36px;
+      cursor: pointer;
+    }
+  }
+  .icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 24px;
+    height: auto;
+    //border: 1px solid rgba(0,0,0,.1);
+    box-sizing: content-box;
+    background-color: #fff;
+    @include transform(translateY(-50%));
+    img {
+      width: 100%;
+    }
+  }
+}

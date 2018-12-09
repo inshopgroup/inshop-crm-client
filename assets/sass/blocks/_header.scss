@@ -1,0 +1,178 @@
+/*===================================================================================*/
+/*  Header
+/*===================================================================================*/
+
+.site-header {
+	padding: 0.893em 0;
+
+	.dropdown-menu {
+		z-index: 1001;
+	}
+}
+
+.header-logo {
+	@include make-col();
+
+	@include media-breakpoint-up(md) {
+		@include make-col-span(3);
+	}
+
+	.header-logo-link {
+		display: block;
+	}
+}
+
+.primary-nav {
+	@include make-col();
+	padding-top: 0.92em;
+	padding-bottom: 0.92em;
+
+	@include media-breakpoint-up(md) {
+		@include make-col-span(6);
+	}
+}
+
+.header-support-info {
+	@include make-col();
+
+	@include media-breakpoint-up(md) {
+		@include make-col-span(3);
+	}
+
+	.support-icon{
+		padding-#{$end}: 20px;
+		padding-#{$start}: 15px;
+
+		.fa {
+			font-size: 3em;
+		}
+
+		.ec {
+			font-size: 3.571em;
+		}
+	}
+}
+
+.header-v1, .header-v3 {
+	padding-bottom: 0;
+	border-bottom: 1px solid #ddd;
+
+	.container > .row:first-child {
+		margin-bottom: 1.786em;
+	}
+
+	.navbar-search {
+		.input-group {
+			.form-control {
+				border-width: 2px;
+				border-style: solid;
+				border-#{$end}: 0;
+			}
+
+			.input-group-addon {
+				border-width: 2px;
+				border-style: solid;
+				border-#{$start}: 0;
+				border-#{$end}: 0;
+			}
+
+			.btn {
+				border-width: 2px;
+				border-style: solid;
+				border-#{$start}: 0;
+				color: $color-body;
+			}
+		}
+
+		& + .navbar-nav.pull-right {
+			padding-#{$end}: 0.9375rem;
+		}
+	}
+
+	.navbar-nav .nav-link {
+		line-height: 2.53em;
+		font-weight: bold;
+		font-size: 1.142em;
+		color: $color-body;
+	}
+
+	.navbar-nav + .navbar-nav,
+	.navbar-search + .navbar-nav {
+		margin-#{$start}: 2.714em;
+	}
+}
+
+.home .header-v1,
+.page-template-template-homepage-v1 .header-v1,
+.header-v3 {
+	border-bottom: 0;
+}
+
+.header-v3 + .navbar-primary {
+	padding: 0;
+
+	.navbar-nav > .menu-item > a {
+		padding: 1.429em 1.375em;
+	}
+}
+
+.full-color-background {
+	.header-v3,.top-bar {
+		background-color: #fed700;
+	}
+
+	.header-v3 {
+		padding-top: 1.4em;
+
+		.navbar-search .input-group .btn {
+			background-color: $color-body;
+			color: #fff;
+			border-color: $color-body;
+		}
+
+		.navbar-search .input-group .form-control,
+		.navbar-search .input-group .input-group-addon {
+			border-color: #fff;
+		}
+
+		.navbar-mini-cart .cart-items-count {
+			background-color: $color-body;
+			color: #fff;
+		}
+
+		.ellipse-bg {
+			fill: #64c3f1;
+		}
+	}
+
+	.navbar-primary {
+		border-top-width: 1px;
+		border-top-style: solid;
+
+		.navbar-nav {
+			margin-#{$start}: -20px;
+		}
+	}
+
+	.header-v3 + .navbar-primary .navbar-nav > .menu-item > a {
+		padding: 0.907em 1.375em;
+	}
+
+	.top-bar {
+		border-bottom: none;
+	}
+}
+
+.header-v3 {
+	padding-bottom: .64em;
+    padding-top: 2.4em;
+
+	// .header-logo .header-logo-link {
+	// 	display: table;
+	//
+	// 	svg {
+	// 		height: 3.857em;
+    // 		display: table-cell;
+	// 	}
+	// }
+}

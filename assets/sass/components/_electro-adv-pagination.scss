@@ -1,0 +1,49 @@
+/*===================================================================================*/
+/*  ELECTRO-ADVANCED-PAGINATION
+/*===================================================================================*/
+.form-adv-pagination {
+	display: inline-block;
+}
+
+.electro-advanced-pagination {
+	color: #7e7e7e;
+
+	input[type="number"] {
+		color: #7e7e7e;
+		width: 3.335em;
+		//width: auto;
+		text-align: center;
+		padding: 0.201em 0.75em;
+		border: 1px solid #e3e3e3;
+		-moz-appearance: textfield;
+	}
+
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		appearance: none;
+		margin: 0;
+	}
+
+	a.prev {
+		padding-#{$end}: 0.600em;
+	}
+
+	a.next {
+		padding-#{$start}: 0.600em;
+	}
+
+	a.prev, a.next {
+		color: #b0b0b0;
+		font-size: 1.429em;
+
+		@include hover-focus {
+			text-decoration: none;
+			color: #b0b0b0;
+		}
+	}
+
+	.form-control {
+		display: inline-block;
+	}
+}

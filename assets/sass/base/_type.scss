@@ -1,0 +1,87 @@
+/*===================================================================================*/
+/*  Typography
+/*===================================================================================*/
+
+body {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	font-size: 0.875em;
+	letter-spacing: -0.01em;
+}
+
+body,
+button,
+input,
+textarea {
+	color: $color-body;
+	font-family: $base-font;
+	line-height: 1.714em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+	line-height: 1.286em;
+}
+
+select {
+	color: initial;
+	font-family: $base-font;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.5em;
+}
+
+.dropdown-menu {
+	font-size: 1em;
+}
+
+// Wait, what..?
+.electro-cute * {
+	font-family: "Comic Sans MS", sans-serif;
+}
+
+table {
+	@include make-table();
+
+	tbody {
+		tr {
+			td {
+				a {
+					color: #3e3e3e;
+
+					&:hover,
+					&:focus {
+						color: #000;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+table.layout {
+	margin-bottom: 0;
+	
+	th, td {
+		padding: 0;
+		line-height: inherit;
+		border: none;
+		vertical-align: middle;
+	}
+}
+
+img {
+	height: auto; // Make sure images are scaled correctly.
+	max-width: 100%; // Adhere to container width.
+	display: block;
+}
+
+// Wait, what..?
+.electro-cute * {
+	font-family: "Comic Sans MS", sans-serif;
+}

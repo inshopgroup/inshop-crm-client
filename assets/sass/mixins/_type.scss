@@ -1,0 +1,17 @@
+@mixin make-title() {
+	line-height: 1.6em;
+	display: block;
+	position: relative;
+	padding-bottom: 0.400em;
+	border-bottom: 1px solid #dadada;
+	margin-bottom: 1.360em;
+
+	&::after {
+		content: ' ';
+		border-bottom: 2px solid transparent;
+		display: block;
+		width: 20%;
+		position: absolute;
+		bottom: -1px;
+	}
+}

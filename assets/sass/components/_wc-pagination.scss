@@ -1,0 +1,49 @@
+/*===================================================================================*/
+/*  WC-PAGINATION
+/*===================================================================================*/
+.woocommerce-pagination,
+.pagination {
+	ul.page-numbers {
+		padding-#{$start}: 0;
+		margin-bottom: 0;
+		list-style: none;
+		@include clearfix();
+
+		> li {
+			float: $start;
+			margin-#{$end}: 0.286em;
+
+			a {
+				color: #7e7e7e;
+				display: block;
+				padding: 0.643em 1.429em;
+				border: 1px solid #e3e3e3;
+				border-radius: 1.143em;
+
+				@include hover-focus {
+					text-decoration: none;
+				}
+
+				&.nuxt-link-exact-active {
+					color: #262626;
+					font-weight: bold;
+					border: none;
+					cursor: auto;
+				}
+
+				&.dots {
+					border: none;
+					padding: 0.642em;
+				}
+			}
+
+			a:hover {
+				background-color: #e3e3e3;
+			}
+
+			&:last-child {
+				margin-#{$end}: 0;
+			}
+		}
+	}
+}

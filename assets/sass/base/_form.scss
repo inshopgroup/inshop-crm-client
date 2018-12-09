@@ -1,0 +1,189 @@
+/*===================================================================================*/
+/*  Forms
+/*===================================================================================*/
+
+.form-control {
+	font-size: 1.071em;
+	line-height: 2em;
+	border-radius: 1.467em;
+	padding: 0.701em 2.134em;
+	border-width: 0;
+}
+
+label {
+	font-size: 1em;
+	line-height: 1.286em;
+	font-weight: bold;
+	margin-bottom: 0.857em;
+}
+
+.input-text {
+	font-size: 1em;
+	line-height: 1.286em;
+	border: 1px solid #ddd;
+	padding: 0.858em 1.858em;
+	border-radius: 1.286em;
+	width: 100%;
+
+	@include form-control-focus();
+}
+
+.select2-container .select2-choice {
+	font-size: 1em;
+	line-height: 1.286em;
+	border: 1px solid #ddd;
+	padding: 0.858em 1.858em;
+	border-radius: 1.286em;
+	width: 100%;
+}
+
+textarea.input-text {
+	min-height: 10em;
+	padding: 1.858em;
+}
+
+.btn,
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]  {
+	font-size: 0.875rem;
+	border-radius: 1.571em;
+	padding: 1.036em 2.134em;
+	border-width: 0;
+	display: inline-block;
+	@include button-variant( $color-body, #efecec, #efecec );
+
+	@include transition(all .2s ease-in-out);
+
+	&,
+	&:active,
+	&.active {
+		&:focus,
+		&.focus {
+			@include tab-focus();
+		}
+	}
+
+	@include hover-focus {
+		text-decoration: none;
+	}
+
+	&.focus,
+	&:focus,
+	&:active:focus {
+		text-decoration: none;
+		outline: none;
+	}
+
+	&:active,
+	&.active {
+		background-image: none;
+		outline: 0;
+		@include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+	}
+
+	&.disabled,
+	&:disabled {
+		cursor: $cursor-disabled;
+		opacity: .65;
+		@include box-shadow(none);
+	}
+}
+
+.btn-secondary {
+	background-color: $color-body;
+	color: #fff;
+}
+
+.form-inline-block {
+	display: inline-block;
+}
+
+.btn-longer {
+	padding: 0.6875rem 2.625rem;
+}
+
+.btn-primary,
+input[type="submit"] {
+	font-weight: bold;
+}
+
+.form-row {
+	@include make-col();
+	@include make-col-span(12);
+	
+	@include media-breakpoint-up(md) {
+		@include make-col-span(12);
+	}
+
+	margin-bottom: 1.714em;
+}
+
+#billing_address_2_field {
+	margin-top: -0.714em;
+}
+
+.form-row-first,
+.form-row-last {
+	@include media-breakpoint-up(md) {
+		@include make-col-span(6);
+	}
+}
+
+
+.form-row {
+	padding-#{$start}: 0;
+	padding-#{$end}: 0;
+
+	&.form-row-first {
+		padding-#{$end}: 15px;
+		clear: $start;
+	}
+
+	&.form-row-last {
+		padding-#{$start}: 15px;
+	}
+}
+
+.clear {
+	@include clearfix();
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea,
+.input-text {
+	padding: 0.857em 1.214em;
+	background-color: transparent;
+	color: #818181;
+	line-height: 1.286em;
+	outline: none;
+	border: 0;
+	-webkit-appearance: none;
+	border-radius: 1.571em;
+	box-sizing: border-box;
+	border-width: 1px ;
+	border-style: solid;
+	border-color: #dddddd;
+
+}
+
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-#{$start}: .857em;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 100%;
+}
+
+fieldset {
+	clear: both;
+
+	legend {
+		font-size: 1.5em;
+	}
+}

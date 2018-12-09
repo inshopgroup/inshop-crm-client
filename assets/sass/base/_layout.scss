@@ -1,0 +1,139 @@
+/*===================================================================================*/
+/* Layout
+/*===================================================================================*/
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1200px;
+	}
+}
+
+
+#content {
+	margin-bottom: 5em;
+
+	#primary {
+		@include make-col();
+		@include make-col-span(12);
+		padding-#{$end}: 0;
+		padding-#{$start}: 0;
+		
+		@include media-breakpoint-up(lg) {
+			padding-#{$start}: 0.9375rem;
+			@include make-col-span(9);
+			@include make-col-push(3);
+		}
+	}
+
+	#sidebar {
+		@include make-col();
+		@include make-col-span(12);
+		padding-#{$end}: 0;
+		padding-#{$start}: 0;
+
+		@include media-breakpoint-up(lg) {
+			padding-#{$end}: 0.9375rem;
+			@include make-col-span(3);
+			@include make-col-pull(9);
+		}
+	}
+}
+
+.page-template-template-homepage-v1,
+.page-template-template-homepage-v3, 
+.page-template-default,
+.full-width {
+	#content {
+		#primary {
+			padding-#{$start}: 0;
+			@include media-breakpoint-up(md) {
+				@include make-col-span(12);
+				@include make-col-push(0);
+			}
+
+		}
+	}
+}
+
+.right-sidebar {
+	#content {
+		#primary {
+			padding-#{$start}: 0;
+			padding-#{$end}: 0;
+
+			@include media-breakpoint-up(md) {
+				@include make-col-push(0);
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding-#{$end}: 15px;
+			}
+		}
+
+		#sidebar {
+			padding-#{$start}: 0;
+			padding-#{$end}: 0;
+
+			@include media-breakpoint-up(md) {
+				@include make-col-pull(0);
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding-#{$start}: 15px;
+			}
+		}
+	}
+}
+
+.page-template-template-page-centered-fullwidth {
+	#content {
+		#primary {
+			padding-#{$start}: 0;
+			@include media-breakpoint-up(md) {
+				@include make-col-span(10);
+				@include make-col-push(1);
+			}
+		}
+	}
+}
+
+.woocommerce-lost-password {
+	#content {
+		#primary {
+			@include media-breakpoint-up(md) {
+				@include make-col-span(8);
+				@include make-col-push(2);
+			}
+		}
+	}
+}
+
+.col2-set {
+	@include make-row();
+
+	.col-1,
+	.col-2 {
+		@include make-col();
+		@include make-col-span(12);
+
+		@include media-breakpoint-up(md) {
+			@include make-col-span(6);
+		}		
+	}
+}
+
+.page-template-template-homepage-v2 {
+	#primary section:last-child,
+	#sidebar aside:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.page-template-template-homepage-v3 {
+	#primary section:last-child {
+		margin-bottom: 0;
+	}
+	
+	#content + .brands-carousel {
+		margin-top: -6.143em;
+	}
+}

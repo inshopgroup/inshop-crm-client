@@ -1,0 +1,58 @@
+/*===================================================================================*/
+/*  SCREEN-DOWN-LG
+/*===================================================================================*/
+@include media-breakpoint-down(lg) {/*upto 1199*/
+
+}
+
+
+@include media-breakpoint-up(lg) {
+    @include media-breakpoint-down(lg) {
+        // .departments-menu > .nav-item {
+        //    width: 25%;
+        //}
+
+        .navbar-search {
+            width: 100%;
+			margin-top: 28px;
+        }
+
+        //.secondary-nav {
+        //	.menu-item + .menu-item {
+        //		margin-#{$start}: 1.429em;
+        //	}
+        //}
+
+
+        .primary-nav {
+        	.nav-inline {
+        		> .menu-item.dropdown + .menu-item {
+					margin-#{$start}: 1.429em;
+				}
+
+				> .menu-item + .menu-item {
+					margin-#{$start}: 1.786em;
+				}
+
+        	}
+        }
+
+        .products {
+        	.product.product-card{
+				.media-body {
+					.hover-area {
+						.action-buttons {
+							> div {
+								margin-#{$end}: 0;
+							}
+
+							> a{
+								margin-#{$start}: 0.714em;
+							}
+						}
+					}
+				}
+			}
+		}
+    }
+}

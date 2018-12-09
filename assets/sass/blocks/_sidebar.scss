@@ -1,0 +1,112 @@
+/*===================================================================================*/
+/*  Sidebar
+/*===================================================================================*/
+
+.sidebar {
+
+	.widget {
+		margin-bottom: 5.143em;
+	}
+
+	.widget-title {
+		font-size: 1.357em;
+		line-height: 0.947em;
+		margin-bottom: 1.842em;
+		padding-bottom: 1.053em;
+		position: relative;
+		border-bottom: 1px solid #dadada;
+
+		&:after {
+			content: ' ';
+			width: 3.684em;
+			border-bottom: 2px solid transparent;
+			display: block;
+			position: absolute;
+			bottom: -1px;
+		}
+	}
+
+	.widget-title + ul, ul.menu {
+		list-style: none;
+		padding-#{$start}: 0;
+		margin-bottom: 0;
+
+		li > a:only-child, .menu-item > a, .page_item > a, .cat-item  > a {
+			color: $color-body;
+			padding: 0.5em 0 0.5em 1.5em;
+			display: inline-block;
+			&.active,
+			&:hover {
+				color: $product-title-color;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.widget_electro_products_filter {
+	.widget {
+		margin-bottom: 2em;
+
+		.widget-title {
+			font-weight: bold;
+			font-size: 1em;
+			margin-bottom: .2em;
+			border: none;
+			padding: 0;
+			&::after {
+				content: none;
+			}
+			a {
+				color: #575560;
+				&.active,
+				&:hover {
+					color: $product-title-color;
+					text-decoration: none;
+				}
+			}
+		}
+
+		& + .widget {
+			padding-top: 30px;
+			margin-top: 20px;
+			border-top: 1px solid #ddd;
+		}
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	//.widget_layered_nav, .widget_product_categories {
+    //
+	//	li > a {
+	//		&::before {
+	//			@include fa-icon();
+	//			content: "\f096";
+	//			margin-#{$end}: 0.571em;
+	//			font-size: 1.143em;
+	//			line-height: 22px;
+	//			vertical-align: middle;
+	//			color: #dfdfdf;
+	//		}
+    //
+	//		@include hover-focus {
+	//			&::before {
+	//				content: "\f0c8";
+	//				font-size: 1.048em;
+	//				margin-#{$end}: 0.621em;
+	//			}
+	//		}
+	//	}
+    //
+	//	li.chosen > a,
+	//	li.current-cat > a {
+	//		&::before {
+	//			content: "\f0c8";
+	//			font-size: 1.048em;
+	//			margin-#{$end}: 0.621em;
+	//		}
+	//	}
+	//}
+}

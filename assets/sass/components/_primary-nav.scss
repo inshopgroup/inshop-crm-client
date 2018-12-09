@@ -1,0 +1,50 @@
+/*===================================================================================*/
+/*  PRIMARY-NAV
+/*===================================================================================*/
+.primary-nav {
+	.nav-inline {
+		> .menu-item {
+			display: inline-block;
+		}
+
+		> .menu-item + .menu-item {
+			margin-#{$start}: 2em;
+		}
+
+		> .menu-item.dropdown + .menu-item {
+			margin-#{$start}: 2.143em;
+		}
+
+		> .menu-item > a {
+			@include nav-link();
+			color: #334141;
+			font-size: 1.071em;
+			font-weight: bold;
+		}
+
+		.dropdown-toggle {
+			&::after {
+				content: '\f107';
+				font-family: 'FontAwesome';
+				color: #aeaeae;
+				border-top: none;
+				border-left: none;
+				border-right: none;
+				margin-#{$start}: 0.5em;
+				margin-#{$end}: 0;
+				width: auto;
+				height: auto;
+			}
+		}
+
+		>.menu-item.open {
+			.dropdown-menu {
+				transform: translateY(0%);
+			}
+		}
+	}
+}
+
+.header-logo + .primary-nav {
+	padding: .9em .9375rem;
+}

@@ -1,0 +1,36 @@
+@mixin multiline-ellipsis($height, $lineheight, $ellipsiswidth) {
+
+$ellipsiswidth: 3em !default;
+
+	overflow: hidden;
+	height: $height;
+	line-height: $lineheight;
+
+	&:before {
+		content:"";
+		float: left;
+		width: 5px; height: $height; }
+
+	& > *:first-child {
+		float: right;
+		width: 100%;
+		margin-left: -5px; }	
+
+	&:after {
+		content: "\02026";
+
+		float: right; position: relative;
+		top: -25px; left: 100%; 
+		width: $ellipsiswidth; margin-left: -$ellipsiswidth;
+		padding-right: 5px;
+		
+		text-align: right;
+		background: white;
+		background: -webkit-gradient(linear, left top, right top,
+				from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
+			background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);			
+			background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+			background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+			background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
+	}
+}

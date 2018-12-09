@@ -1,0 +1,89 @@
+/*===================================================================================*/
+/*  CONTACT-PAGE
+/*===================================================================================*/
+.contact-page-title{
+	font-size: 1.786em;
+	color: #333e48;
+	padding-bottom: 0.600em;
+	position: relative;
+	border-bottom: 1px solid #dadada;
+	margin-bottom: 1.200em;
+
+	&:after {
+		content: ' ';
+		width: 4.560em;
+		border-bottom: 2px solid transparent;
+		display: block;
+		position: absolute;
+		bottom: -1px;
+	}
+}
+
+.map {
+	iframe {
+		width: 100%;
+	}
+}
+
+.store-info {
+	h3 {
+		font-size: 1.000em;
+		font-weight: 700;
+		color: #333e48;
+		padding-top: 2.143em;
+		padding-bottom: 0.714em;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	iframe {
+		@include filter(grayscale(100%));
+
+		&:hover {
+			@include filter(grayscale(0%));
+		}
+	}
+}
+
+.contact-form {
+	&.vc_column_container {
+		.vc_column-inner  {
+			padding-right: 70px;
+		}
+	}
+
+	.form-group {
+		margin-bottom: 1.714em;
+	}
+}
+
+.store-info {
+	&.vc_column_container {
+		.vc_column-inner  {
+			padding-#{$start}: 0;
+			padding-#{$end}: 0;
+		}
+	}
+
+	&.store-info-v2 {
+		&.vc_column_container {
+			.vc_column-inner  {
+				padding-left: 15px;
+				padding-right: 0;
+
+				@include if-rtl {
+					.inner-left-xs {
+						padding-left: 2.143em;
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.wpb_gmaps_widget .wpb_wrapper {
+	padding: 0 !important;
+}
