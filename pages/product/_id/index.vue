@@ -5,10 +5,10 @@
                     <!--<span class="onsale">Sale!</span>-->
                     <div class="images electro-gallery">
                       <div class="thumbnails-single">
-                        <a href="~assets/images/product-2.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
-                          <!--<img src="~/assets/images/blank.gif" data-echo="~/assets/images/single-product/s1-1.jpg" class="wp-post-image" alt="">-->
-                          <img src="~assets/images/product-2.jpg" class="wp-post-image" alt="POLAR 115 EMC MONITOR">
-                        </a>
+                        <!--<a href="~assets/images/product-2.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">-->
+                          <!--&lt;!&ndash;<img src="~/assets/images/blank.gif" data-echo="~/assets/images/single-product/s1-1.jpg" class="wp-post-image" alt="">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<img src="~assets/images/product-2.jpg" class="wp-post-image" alt="POLAR 115 EMC MONITOR">&ndash;&gt;-->
+                        <!--</a>-->
                       </div><!-- .thumbnails-single -->
                     </div><!-- .electro-gallery -->
                   </div><!-- /.product-images-wrapper -->
@@ -25,7 +25,7 @@
 
                     <div class="brand">
                       <a href="product-category.html">
-                        <img src="~assets/images/brand.png" alt="POLAR"/>
+                        <!--<img src="~assets/images/brand.png" alt="POLAR"/>-->
                       </a>
                     </div><!-- .brand -->
 

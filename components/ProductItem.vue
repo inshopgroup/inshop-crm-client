@@ -9,7 +9,7 @@
                     <h3>{{translation(product).name}}</h3>
                     <div class="product-thumbnail">
                         <!--<img class="wp-post-image" data-echo="~/assets/images/products/1.jpg" src="~/assets/images/blank.gif" alt="">-->
-                        <img class="wp-post-image" src="~/assets/images/product-1.jpg" alt="POLAR 115 EMC MONITOR">
+                        <!--<img class="wp-post-image" src="~/assets/images/product-1.jpg" alt="POLAR 115 EMC MONITOR">-->
                     </div>
                     <div class="product-short-description">
                         <ul>

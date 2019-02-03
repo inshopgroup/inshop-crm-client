@@ -1,19 +1,19 @@
 <template>
     <div class="dropdown language-select">
         <div class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <template v-if="locale == 'en'"><span class="icon"><img src="~/assets/images/gb_flag.svg" alt="en"></span>English</template>
-            <template v-if="locale == 'ru'"><span class="icon"><img src="~/assets/images/rf_flag.svg" alt="ru"></span>Russian</template>
+            <template v-if="locale == 'en'"><span class="icon"></span>English</template>
+            <template v-if="locale == 'ru'"><span class="icon"></span>Russian</template>
             <span class="caret"></span>
         </div>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
             <li>
               <a :href="switchLocalePath('en')" @click.prevent="setLocale('en')">
-                <span class="icon"><img src="~/assets/images/gb_flag.svg" alt="en"></span>English
+                <span class="icon"></span>English
               </a>
             </li>
             <li>
               <a :href="switchLocalePath('ru')" @click.prevent="setLocale('ru')">
-                <span class="icon"><img src="~/assets/images/rf_flag.svg" alt="ru"></span>Russian
+                <span class="icon"></span>Russian
               </a>
             </li>
         </ul>

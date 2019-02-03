@@ -1,62 +1,55 @@
+const pkg = require('./package')
+
 module.exports = {
+  mode: 'universal',
+
   /*
   ** Headers of the page
   */
   head: {
-    title: 'Inshop eCommerce',
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic' }
-    ],
-    script: [
-      { src: '/js/jquery.min.js' },
-      { src: '/js/tether.min.js' },
-      { src: '/js/bootstrap.min.js' },
-      { src: '/js/bootstrap-hover-dropdown.min.js' },
-      { src: '/js/common.js' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
   /*
-  ** Customize the progress bar color
+  ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#fff' },
+
   /*
-  ** Build configuration
+  ** Global CSS
   */
-  build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
-      if (isDev && process.client) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  },
   css: [
-    '~assets/css/bootstrap.min.css',
-    '~assets/css/bootstrap-add.css',
-    '~assets/css/font-awesome.min.css',
-    '~assets/css/font-electro.min.css',
-    { src: '~assets/sass/style.scss', lang: 'scss' },
-    '~assets/css/colors/yellow.css',
+    '@fortawesome/fontawesome-svg-core/styles.css',
+    { src: '~assets/scss/main.scss', lang: 'scss' }
   ],
-  router: {
-    middleware: 'locale'
-  },
+
+  /*
+  ** Plugins to load before mounting the App
+  */
+  plugins: [
+    '~/plugins/axios',
+    '~/plugins/font-awesome',
+    { src: '~/plugins/vue-select', ssr: false },
+  ],
+
+  /*
+  ** Nuxt.js modules
+  */
   modules: [
-    'cookie-universal-nuxt',
+    // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    // Doc: https://bootstrap-vue.js.org/docs/
+    'bootstrap-vue/nuxt',
+    'cookie-universal-nuxt',
     ['nuxt-i18n', {
       defaultLocale: 'en',
       locales: [
@@ -76,6 +69,28 @@ module.exports = {
       lazy: true,
       langDir: 'lang/'
     }]
-  ]
-}
+  ],
 
+  /*
+  ** Axios module configuration
+  */
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  /*
+  ** Build configuration
+  */
+  build: {
+    /*
+    ** You can extend webpack config here
+    */
+    extend(config, ctx) {
+
+    }
+  },
+  router: {
+    linkActiveClass: 'active',
+    middleware: 'locale'
+  }
+}

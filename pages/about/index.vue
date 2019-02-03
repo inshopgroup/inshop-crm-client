@@ -18,29 +18,29 @@
                                 На сегодняшний день компания имеет собственное здание площадью 2500 м2, где и размещен
                                 её офис и производственное помещение. Компания имеет типографию, ремонтный цех, складские помещения. <br><br>
 
-                                <ul class="about__list-img">
-                                    <li class="about__item-img">
-                                        <img src="~assets/images/about/unnamed.jpg" alt="">
-                                    </li>
-                                    <li class="about__item-img">
-                                        <img src="~assets/images/about/unnamed-1.jpg" alt="">
-                                    </li>
-                                    <li class="about__item-img">
-                                        <img src="~assets/images/about/unnamed-2.jpg" alt="">
-                                    </li>
-                                    <li class="about__item-img">
-                                        <img src="~assets/images/about/128307.jpg" alt="">
-                                    </li>
-                                    <li class="about__item-img">
-                                        <img src="~assets/images/about/21734r.jpg" alt="">
-                                    </li>
-                                    <li class="about__item-img">
-                                        <img src="~assets/images/about/IMG_2115.jpg" alt="">
-                                    </li>
-                                    <li class="about__item-img">
-                                        <img src="~assets/images/about/DSCN9981.jpg" alt="">
-                                    </li>
-                                </ul>
+                                <!--<ul class="about__list-img">-->
+                                    <!--<li class="about__item-img">-->
+                                        <!--<img src="~assets/images/about/unnamed.jpg" alt="">-->
+                                    <!--</li>-->
+                                    <!--<li class="about__item-img">-->
+                                        <!--<img src="~assets/images/about/unnamed-1.jpg" alt="">-->
+                                    <!--</li>-->
+                                    <!--<li class="about__item-img">-->
+                                        <!--<img src="~assets/images/about/unnamed-2.jpg" alt="">-->
+                                    <!--</li>-->
+                                    <!--<li class="about__item-img">-->
+                                        <!--<img src="~assets/images/about/128307.jpg" alt="">-->
+                                    <!--</li>-->
+                                    <!--<li class="about__item-img">-->
+                                        <!--<img src="~assets/images/about/21734r.jpg" alt="">-->
+                                    <!--</li>-->
+                                    <!--<li class="about__item-img">-->
+                                        <!--<img src="~assets/images/about/IMG_2115.jpg" alt="">-->
+                                    <!--</li>-->
+                                    <!--<li class="about__item-img">-->
+                                        <!--<img src="~assets/images/about/DSCN9981.jpg" alt="">-->
+                                    <!--</li>-->
+                                <!--</ul>-->
                             </div>
                         </div><!-- .col -->
                     </div><!-- .row -->
