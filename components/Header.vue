@@ -1,51 +1,57 @@
 <template>
-  <div>
-    <header id="masthead" class="site-header header-v2">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-4 col-lg-4 col-md-6">
-            <div class="header-logo">
-              <router-link :to="localePath('index')" class="logo-link">
-                <h1 class="logo">
-                  Inshop eCommerce
-                </h1>
-                <span class="slogan">
-                New & Used <br>
-                Graphic Machinery Dealer
-              </span>
-              </router-link>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Simple Ecommerce</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="category.html">Categories <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <div class="input-group input-group-sm">
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-secondary btn-number">
+                <i class="fa fa-search"></i>
+              </button>
             </div>
           </div>
-          <div class="col-lg-4 d-none d-lg-block d-xl-none">
-            <SearchForm />
-          </div>
-          <div class="col-xl-4 offset-xl-4 col-lg-4 col-md-6">
-            <div class="header-banner"></div>
-          </div>
-        </div><!-- /.row -->
+          <a class="btn btn-success btn-sm ml-3" href="cart.html">
+            <i class="fa fa-shopping-cart"></i> Cart
+            <span class="badge badge-light">3</span>
+          </a>
+        </form>
       </div>
-    </header><!-- #masthead -->
-    <nav class="navbar navbar-primary navbar-full">
-      <div class="container">
-        <Menu />
-        <div class="search-form-wrap d-lg-none d-xl-block">
-          <SearchForm />
-        </div>
-        <LanguageSelect />
-      </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </template>
 
 <script>
   import Menu from '../components/Menu.vue'
-  import SearchForm from '../components/SearchForm.vue'
   import LanguageSelect from '../components/LanguageSelect.vue'
 
   export default {
     components: {
       Menu,
-      SearchForm,
       LanguageSelect
     }
   }

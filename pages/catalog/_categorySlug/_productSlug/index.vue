@@ -69,7 +69,7 @@
   import Breadcrumb from '~/components/Breadcrumb.vue'
 //  import WidgetProducts from '~/components/WidgetProducts.vue'
 //  import BrandsCarousel from '~/components/BrandsCarousel.vue'
-  import Footer from '~/components/Footer.vue'
+//   import Footer from '~/components/Footer.vue'
 
   export default {
     head: {
@@ -82,10 +82,10 @@
       Breadcrumb,
 //      WidgetProducts,
 //      BrandsCarousel,
-      Footer
+//       Footer
     },
     async asyncData (params) {
-      await params.store.dispatch('getProduct', params.params.id)
+      await params.store.dispatch('getProduct', params.params.slug)
     },
     computed: {
       product () {

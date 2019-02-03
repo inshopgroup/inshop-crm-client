@@ -14,9 +14,6 @@
           </main>
         </div>
 
-        <div id="sidebar" class="sidebar" role="complementary">
-          <WidgetProductFilters />
-        </div>
       </div>
     </div>
 
@@ -28,9 +25,8 @@
 <script>
   import Header from '~/components/Header.vue'
   import Breadcrumb from '~/components/Breadcrumb.vue'
-  import WidgetProductFilters from '~/components/WidgetProductFilters.vue'
   import Footer from '~/components/Footer.vue'
   export default {
-    components: {Header, Footer, WidgetProductFilters, Breadcrumb}
+    components: {Header, Footer, Breadcrumb}
   }
 </script>
