@@ -2,7 +2,7 @@
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Simple Ecommerce</a>
+      <a class="navbar-brand" href="index.html">Inshop Ecommerce</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,12 +31,12 @@
             <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
             <div class="input-group-append">
               <button type="button" class="btn btn-secondary btn-number">
-                <i class="fa fa-search"></i>
+                <font-awesome-icon icon="search"/>
               </button>
             </div>
           </div>
           <a class="btn btn-success btn-sm ml-3" href="cart.html">
-            <i class="fa fa-shopping-cart"></i> Cart
+            <font-awesome-icon icon="shopping-cart"/> Cart
             <span class="badge badge-light">3</span>
           </a>
         </form>

@@ -42,11 +42,10 @@
             <li><i class="fa fa-print mr-2"></i> + 33 12 14 15 16</li>
           </ul>
         </div>
-        <div class="col-12 copyright mt-3">
-          <p class="float-left">
-            <a href="#">Back to top</a>
+        <div class="col-12 copyright mt-5">
+          <p class="text-left">
+            <span class="text-muted">Powered by</span> <a href="#">Inshop Group</a>
           </p>
-          <p class="text-right text-muted">created with <i class="fa fa-heart"></i> by <a href="https://t-php.fr/43-theme-ecommerce-bootstrap-4.html"><i>t-php</i></a> | <span>v. 1.0</span></p>
         </div>
       </div>
     </div>
