@@ -10,7 +10,10 @@
             translationAny = translation
           }
 
-          if (translation.language.code === this.$i18n.locale) {
+          if (
+            (translation.language && translation.language.code === this.$i18n.locale) ||
+            (translation.lang && translation.lang === this.$i18n.locale)
+          ) {
             translationLocale = translation
           }
         })

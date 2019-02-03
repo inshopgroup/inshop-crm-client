@@ -4,7 +4,7 @@
       <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title">
-          <nuxt-link :to="localePath({name: 'catalog-categorySlug-productSlug', params: {categorySlug: categorySlug, productSlug: product.slug}})">
+          <nuxt-link :to="localePath({name: 'catalog-categorySlug-productSlug', params: {categorySlug: categorySlug, productSlug: translation(product).slug}})">
             {{translation(product).name}}
           </nuxt-link>
         </h4>

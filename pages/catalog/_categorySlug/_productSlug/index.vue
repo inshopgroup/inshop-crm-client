@@ -89,11 +89,11 @@
 //       Footer
     },
     async asyncData (params) {
-      await params.store.dispatch('getProduct', params.params.slug)
+      await params.store.dispatch('products/getProduct', params.params.productSlug)
     },
     computed: {
       product () {
-        return this.$store.getters['product']
+        return this.$store.getters['products/item']
       },
     }
   }

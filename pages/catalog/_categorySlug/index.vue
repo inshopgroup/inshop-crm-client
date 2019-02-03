@@ -7,7 +7,7 @@
       </div>
     </section>
 
-    <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="current" :link-gen="linkGen"></b-pagination-nav>
+    <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="currentPage" :link-gen="linkGen"></b-pagination-nav>
 
     <div class="container">
       <div class="row">
@@ -17,14 +17,14 @@
             <ul class="list-group category_block">
               <li class="list-group-item"  v-for="category in categories" :key="category.id">
                 <nuxt-link
-                    :to="localePath({name: 'catalog-categorySlug', params: {categorySlug: category.slug}})"
+                    :to="localePath({name: 'catalog-categorySlug', params: {categorySlug: translation(category).slug}})"
                     active-class="active"
                 >{{translation(category).name}}</nuxt-link>
 
                 <ul v-if="category.subCategories">
                   <li v-for="subCategory in category.subCategories">
                     <nuxt-link
-                        :to="localePath({name: 'catalog-categorySlug', params: {id: subCategory.slug}})"
+                        :to="localePath({name: 'catalog-categorySlug', params: {id: translation(category).slug}})"
                         active-class="active"
                     >{{translation(subCategory).name}}</nuxt-link>
                   </li>
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="current" :link-gen="linkGen"></b-pagination-nav>
+    <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="currentPage" :link-gen="linkGen"></b-pagination-nav>
   </div>
 </template>
 
@@ -88,17 +88,17 @@ export default {
   //   })
   // },
   async asyncData (params) {
-    let current = parseInt(params.query.page) || 1;
+    let currentPage = parseInt(params.query.page) || 1;
 
     await params.store.dispatch('products/getItems', {
       'category.slug': params.params.categorySlug,
-      'page': current,
+      'page': currentPage,
       'itemsPerPage': ~~process.env.NUXT_ENV_PER_PAGE
     })
 
     return {
       categorySlug: params.params.categorySlug,
-      current: current
+      currentPage: currentPage
     }
   },
   computed: {
