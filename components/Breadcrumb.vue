@@ -1,14 +1,13 @@
 <template>
-  <div class="container">
-    <div class="row">
+    <div class="row mb-2 mt-3">
       <div class="col">
-        <nav aria-label="breadcrumb">
+        <nav>
           <ol class="breadcrumb">
             <!--<li class="breadcrumb-item"><a href="index.html">Home</a></li>-->
             <!--<li class="breadcrumb-item"><a href="category.html">Category</a></li>-->
             <!--<li class="breadcrumb-item active" aria-current="page">Sub-category</li>-->
 
-            <li v-for="breadcrumb in breadcrumbs">
+            <li class="breadcrumb-item" v-for="breadcrumb in breadcrumbs">
               <template v-if="breadcrumb.link">
                 <a :href="breadcrumb.link">{{breadcrumb.name}}</a>
               </template>
@@ -21,7 +20,6 @@
         </nav>
       </div>
     </div>
-  </div>
   <!--<b-row>-->
     <!--<b-col cols="12">-->
       <!--<ol class="breadcrumb">-->

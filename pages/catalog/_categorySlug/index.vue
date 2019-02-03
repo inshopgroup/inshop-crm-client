@@ -1,5 +1,7 @@
 <template>
   <div>
+    <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
+
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">E-COMMERCE CATEGORY</h1>
@@ -63,6 +65,7 @@ import ProductItem from '~/components/ProductItem.vue'
 //import SelectPerPage from '~/components/SelectPerPage.vue'
 import Footer from '~/components/Footer.vue'
 import Translate from '~/mixins/Translate.vue'
+import Breadcrumb from "../../../components/Breadcrumb";
 
 export default {
   // head: {
@@ -73,6 +76,7 @@ export default {
   mixins: [Translate],
 
   components: {
+    Breadcrumb,
     Header,
     ProductItem,
 //    Breadcrumb,
