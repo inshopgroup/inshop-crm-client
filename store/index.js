@@ -7,6 +7,8 @@ import cookie from 'cookie'
 export const state = () => ({
   isLoading: 0,
   loadingAllow: true,
+  locales: ['en', 'ru'],
+  locale: 'en',
 })
 
 export const mutations = {
@@ -24,7 +26,12 @@ export const mutations = {
   },
   LOADING_ALLOW(state, value) {
     state.loadingAllow = value
-  }
+  },
+  SET_LOCALE(state, locale) {
+    if (state.locales.includes(locale)) {
+      state.locale = locale
+    }
+  },
 }
 
 export const getters = {
@@ -74,7 +81,7 @@ export const actions = {
       }
     }
 
-    await dispatch('getCategories')
+    await dispatch('categories/getItems')
   }
 }
 

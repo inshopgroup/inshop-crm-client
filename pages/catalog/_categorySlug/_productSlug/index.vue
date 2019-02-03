@@ -67,16 +67,20 @@
 <script>
   import Header from '~/components/Header.vue'
   import Breadcrumb from '~/components/Breadcrumb.vue'
-//  import WidgetProducts from '~/components/WidgetProducts.vue'
+  import Translate from '~/mixins/Translate.vue'
+
+  //  import WidgetProducts from '~/components/WidgetProducts.vue'
 //  import BrandsCarousel from '~/components/BrandsCarousel.vue'
 //   import Footer from '~/components/Footer.vue'
 
   export default {
-    head: {
-      bodyAttrs: {
-        class: 'single-product'
-      }
-    },
+    // head: {
+    //   bodyAttrs: {
+    //     class: 'single-product'
+    //   }
+    // },
+    mixins: [Translate],
+
     components: {
       Header,
       Breadcrumb,

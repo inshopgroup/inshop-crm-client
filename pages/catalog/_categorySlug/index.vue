@@ -15,11 +15,21 @@
           <div class="card bg-light mb-3">
             <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
             <ul class="list-group category_block">
-              <li class="list-group-item"><a href="category.html">Cras justo odio</a></li>
-              <li class="list-group-item"><a href="category.html">Dapibus ac facilisis in</a></li>
-              <li class="list-group-item"><a href="category.html">Morbi leo risus</a></li>
-              <li class="list-group-item"><a href="category.html">Porta ac consectetur ac</a></li>
-              <li class="list-group-item"><a href="category.html">Vestibulum at eros</a></li>
+              <li class="list-group-item"  v-for="category in categories" :key="category.id">
+                <nuxt-link
+                    :to="localePath({name: 'catalog-categorySlug', params: {categorySlug: category.slug}})"
+                    active-class="active"
+                >{{translation(category).name}}</nuxt-link>
+
+                <ul v-if="category.subCategories">
+                  <li v-for="subCategory in category.subCategories">
+                    <nuxt-link
+                        :to="localePath({name: 'catalog-categorySlug', params: {id: subCategory.slug}})"
+                        active-class="active"
+                    >{{translation(subCategory).name}}</nuxt-link>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
           <div class="card bg-light mb-3">
@@ -34,22 +44,13 @@
         </div>
         <div class="col">
           <div class="row">
-
-            <template v-for="product in items">
+            <template v-for="product in products">
               <product-item :product="product" :category-slug="categorySlug"></product-item>
             </template>
-
           </div>
         </div>
       </div>
     </div>
-
-    <!--<div class="tab-content">-->
-      <!--<div role="tabpanel" class="tab-pane active" id="grid-extended" aria-expanded="true">-->
-        <!--<ul class="products columns-3">-->
-        <!--</ul>-->
-      <!--</div>-->
-    <!--</div>-->
 
     <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="current" :link-gen="linkGen"></b-pagination-nav>
   </div>
@@ -61,13 +62,16 @@ import Header from '~/components/Header.vue'
 import ProductItem from '~/components/ProductItem.vue'
 //import SelectPerPage from '~/components/SelectPerPage.vue'
 import Footer from '~/components/Footer.vue'
+import Translate from '~/mixins/Translate.vue'
 
 export default {
-  head: {
-    bodyAttrs: {
-      class: 'left-sidebar home-page'
-    }
-  },
+  // head: {
+  //   bodyAttrs: {
+  //     class: 'left-sidebar home-page'
+  //   }
+  // },
+  mixins: [Translate],
+
   components: {
     Header,
     ProductItem,
@@ -98,15 +102,6 @@ export default {
     }
   },
   computed: {
-    // products () {
-    //   return this.$store.getters['products']
-    // },
-    // productsTotal () {
-    //   return this.$store.getters['productsTotal']
-    // },
-    // perPage () {
-    //   return ~~process.env.NUXT_ENV_PER_PAGE
-    // },
     breadcrumbs () {
       return [
         {
@@ -118,8 +113,11 @@ export default {
         }
       ]
     },
-    items () {
+    products () {
       return this.$store.getters['products/items']
+    },
+    categories () {
+      return this.$store.getters['categories/items']
     },
     total () {
       return this.$store.getters['products/total']
