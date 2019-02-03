@@ -11,18 +11,14 @@
               <div class="footer-address">
                 <strong class="footer-address-title">{{ $t('footer.address_title') }}:</strong>
                 <address>
-                  AAA PRINT Sp. z o.o<br/>
-                  NIP 8971806951<br/>
-                  ul.Górczewska 53,<br/>
-                  Warszawa 01-401,<br/>
-                  Polska
+                  Inshop ecommerce
                 </address>
               </div><!-- /.footer-address -->
             </div><!-- /.columns -->
             <div class="columns">
               <div class="footer-social-icons">
                 <ul class="social-icons list-unstyled">
-                  <li><a class="fa fa-facebook" target="_blank" href="https://www.facebook.com/groups/173188259701642/"></a></li>
+                  <li><a class="fa fa-facebook" target="_blank" href="#"></a></li>
                   <!--<li><a class="fa fa-twitter" href="/"></a></li>-->
                 </ul>
               </div>

@@ -61,9 +61,6 @@
                     </div><!-- /itemprop -->
                   </div><!-- .summary -->
                 </div><!-- /.single-product-wrapper -->
-                <div v-if="videoUrl" class="product__video">
-                  <iframe :src="videoUrl" frameborder="0" allowfullscreen></iframe>
-                </div>
               </div>
 </template>
 
@@ -93,13 +90,6 @@
     computed: {
       product () {
         return this.$store.getters['product']
-      },
-      videoUrl () {
-          let product = this.product
-
-          if (product.video) {
-              return product.video.replace('watch?v=','embed/')
-          }
       },
     }
   }

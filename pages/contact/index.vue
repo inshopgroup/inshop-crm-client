@@ -65,30 +65,8 @@
                                         <div class="wpb_wrapper">
                                             <h2 class="contact-page-title">Наш адресс</h2>
                                             <p>
-                                                AAA PRINT Sp. z o.o<br>
-                                                NIP 8971806951<br>
-                                                ul.Górczewska 53, Warszawa<br>
-                                                01-401, Polska <br><br>
-                                                Inshop eCommerce - Printing equipment <br><br>
+                                                Inshop eCommerce <br><br>
 
-                                                <strong>Роман</strong> - менеджер Украина <br>
-                                                Конт. тел.: +380674411954, +380975000566 <br>
-                                                Эл. почта: <a href="mailto:Inshop eCommerce@i.ua">Inshop eCommerce@i.ua</a> <br><br>
-
-                                                <strong>Катерина Орлова</strong> - менеджер по продажам <br>
-                                                Конт. тел.: +48732867542 <br>
-                                                Эл. почта: <a href="mailto:aaaprint2@gmail.com">aaaprint2@gmail.com</a> <br>
-                                                Skype: <a href="skype:Inshop eCommerce1?call">Inshop eCommerce1</a> <br><br>
-
-                                                <strong>Наталия</strong> - менеджер <br>
-                                                Конт. тел.: +48732875809, +48223050700 <br>
-                                                Эл. почта: <a href="mailto:Inshop eCommerce@yandex.com">Inshop eCommerce@yandex.com</a> <br>
-                                                Skype: <a href="skype:Inshop eCommerce?call">Inshop eCommerce</a> <br><br>
-
-                                                <strong>Геннадий</strong> - менеджер <br>
-                                                Конт. тел.: +48881381805 <br>
-                                                Эл. почта: <a href="mailto:giena.gnat@gmail.com">giena.gnat@gmail.com</a> <br>
-                                                Skype: <a href="skype:gnat57?call">gnat57</a>
                                             </p>
                                         </div>
                                     </div>

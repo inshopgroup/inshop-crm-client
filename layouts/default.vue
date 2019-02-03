@@ -6,7 +6,7 @@
     <div id="content" class="site-content" tabindex="-1">
       <div class="container">
 
-        <Breadcrumb/>
+        <!--<Breadcrumb/>-->
 
         <div id="primary" class="content-area">
           <main id="main" class="site-main">
