@@ -26,6 +26,8 @@
           </li>
         </ul>
 
+        <language-select></language-select>
+
         <form class="form-inline my-2 my-lg-0">
           <div class="input-group input-group-sm">
             <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
