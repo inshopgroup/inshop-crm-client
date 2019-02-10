@@ -107,15 +107,12 @@ export default {
   },
   computed: {
     breadcrumbs () {
-      return [
-        {
-          name: 'Home',
-          link: '/'
-        },
-        {
-          name: 'Products',
-        }
-      ]
+      return [{
+        name: 'Home',
+        link: '/'
+      }, {
+        name: 'Products',
+      }]
     },
     products () {
       return this.$store.getters['products/items']
