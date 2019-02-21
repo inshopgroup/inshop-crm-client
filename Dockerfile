@@ -1,10 +1,10 @@
-FROM inshopgroup/docker-inshop-crm-client-nginx-dev:latest
+FROM node:9
 
 WORKDIR /var/www
 ADD . /var/www
 
 RUN cp .env.dist .env
-RUN yarn install
-RUN yarn run build
+RUN npm install
+RUN npm run build
 
 RUN chown -R www-data:www-data /var/www
