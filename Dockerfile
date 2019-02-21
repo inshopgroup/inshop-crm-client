@@ -9,5 +9,4 @@ RUN cp .env.dist .env
 RUN yarn install
 RUN yarn run build
 
-RUN chown -R www-data:www-data /var/www
-RUN rm -rf /var/www/node_modules
+RUN chown -R node:node /var/www
