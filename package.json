@@ -1,7 +1,7 @@
 {
   "name": "inshop-ecommerce",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Inshop CRM / ERP ecommerce",
   "author": "Maksym Mukovoz <info@inshop.com.ua>",
   "private": true,
   "scripts": {
