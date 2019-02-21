@@ -4,6 +4,8 @@ WORKDIR /var/www
 ADD . /var/www
 
 RUN npm install -g yarn
+RUN yarn -v
+RUN ls -la
 
 RUN cp .env.dist .env
 RUN yarn install
