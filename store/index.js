@@ -1,4 +1,4 @@
-export const strict = false
+export const strict = true
 
 import pluralize from 'pluralize'
 import cookie from 'cookie'
