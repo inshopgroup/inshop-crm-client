@@ -3,7 +3,9 @@ import Vue from 'vue'
 export const state = () => ({
   item: null,
   items: {},
+  itemsTotal: 0,
   filters: {},
+  aggregations: {},
 })
 
 export const mutations = {
@@ -12,6 +14,12 @@ export const mutations = {
   },
   SET_ITEMS(state, items) {
     state.items = items
+  },
+  SET_ITEMS_TOTAL(state, itemsTotal) {
+    state.itemsTotal = itemsTotal
+  },
+  SET_AGGREGATIONS(state, aggregations) {
+    state.aggregations = aggregations
   },
   SET_FILTERS(state, filters) {
     Object.keys(filters).map((key, index) => {
@@ -22,9 +30,9 @@ export const mutations = {
 
 export const getters = {
   item: state => state.item,
-  items: state => state.items['hydra:member'],
-  itemsTotal: state => state.items['hydra:totalItems'],
-  aggregations: state => state.items['hydra:aggregations'],
+  items: state => state.items,
+  itemsTotal: state => state.itemsTotal,
+  aggregations: state => state.aggregations,
   filters: state => state.filters,
   query: (state, getters) => {
     let values = {};
@@ -49,7 +57,9 @@ export const actions = {
 
     return this.$axios.get(url, {params: params})
       .then(response => {
-        commit('SET_ITEMS', response.data)
+        commit('SET_ITEMS', response.data['hydra:member'])
+        commit('SET_ITEMS_TOTAL', response.data['hydra:totalItems'])
+        commit('SET_AGGREGATIONS', response.data['hydra:aggregations'])
       })
   },
   getItem({commit}, id) {

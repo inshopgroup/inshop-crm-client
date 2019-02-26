@@ -1,8 +1,7 @@
 <template>
-
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Inshop Ecommerce</a>
+      <a class="navbar-brand" href="/">Inshop Ecommerce</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,19 +9,13 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
         <ul class="navbar-nav m-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/catalog">Catalog <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="product.html">Product</a>
+            <a class="nav-link" href="/cart">Cart</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cart.html">Cart</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="/contacts">Contact</a>
           </li>
         </ul>
 
@@ -37,7 +30,7 @@
               </button>
             </div>
           </div>
-          <a class="btn btn-success btn-sm ml-3" href="cart.html">
+          <a class="btn btn-success btn-sm ml-3" href="/cart">
             <font-awesome-icon icon="shopping-cart"/> Cart
             <span class="badge badge-light">3</span>
           </a>

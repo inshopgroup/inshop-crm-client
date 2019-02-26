@@ -52,20 +52,42 @@ module.exports = {
     'cookie-universal-nuxt',
     ['nuxt-i18n', {
       defaultLocale: 'en',
-      locales: [
-        {
-          code: 'en',
-          iso: 'en_US',
-          name: 'English',
-          file: 'en.js'
-        },
-        {
-          code: 'ru',
-          iso: 'ru_RU',
-          name: 'Russian',
-          file: 'ru.js'
-        }
-      ],
+      locales: [{
+        code: 'en',
+        iso: 'en_US',
+        name: 'English',
+        file: 'en.js'
+      }, {
+        code: 'ru',
+        iso: 'ru_RU',
+        name: 'Russian',
+        file: 'ru.js'
+      }, {
+        code: 'de',
+        iso: 'de',
+        name: 'German',
+        file: 'de.js'
+      }, {
+        code: 'it',
+        iso: 'it',
+        name: 'Italian',
+        file: 'it.js'
+      }, {
+        code: 'es',
+        iso: 'es',
+        name: 'Spanish',
+        file: 'es.js'
+      }, {
+        code: 'fr',
+        iso: 'fr',
+        name: 'French',
+        file: 'fr.js'
+      }, {
+        code: 'pl',
+        iso: 'pl',
+        name: 'Polish',
+        file: 'pl.js'
+      }],
       lazy: true,
       langDir: 'lang/'
     }]
