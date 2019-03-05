@@ -53,7 +53,7 @@
 
       await params.store.dispatch('categories/getItem', params.params.categorySlug)
       await params.store.dispatch('products/getItems', {
-        'category.slug': params.params.categorySlug,
+        'categorySlug': params.params.categorySlug,
         'page': currentPage,
         'itemsPerPage': ~~process.env.NUXT_ENV_PER_PAGE
       })
