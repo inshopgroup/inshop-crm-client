@@ -5,7 +5,10 @@
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">E-COMMERCE CATEGORY</h1>
-        <p class="lead text-muted mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte...</p>
+        <p class="lead text-muted mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
+          mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années
+          1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+          polices de texte...</p>
       </div>
     </section>
 
@@ -26,7 +29,8 @@
       </div>
     </div>
 
-    <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="currentPage" :link-gen="linkGen"></b-pagination-nav>
+    <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="currentPage"
+                      :link-gen="linkGen"></b-pagination-nav>
   </div>
 </template>
 
