@@ -3,7 +3,7 @@
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
 
     <h1>{{ item.title }}</h1>
-    <div>{{ item.content }}</div>
+    <div v-html="item.content"></div>
   </b-container>
 </template>
 

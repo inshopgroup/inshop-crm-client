@@ -12,7 +12,7 @@
             <section class="jumbotron text-center">
               <div class="container">
                 <h1 class="jumbotron-heading">E-COMMERCE HOMEPAGE</h1>
-                <p class="lead text-muted mb-0">{{ text.content }}</p>
+                <p class="lead text-muted mb-0" v-html="text.content"></p>
               </div>
             </section>
 
