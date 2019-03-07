@@ -12,10 +12,10 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cart">Cart</a>
+            <a class="nav-link" href="/page/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contacts">Contact</a>
+            <a class="nav-link" href="/page/terms-of-use">Terms of use</a>
           </li>
         </ul>
 
