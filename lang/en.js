@@ -1,4 +1,5 @@
 export default {
+  homepage_title: "Homepage ecommerce",
   menu: {
     price: 'Prices',
     about: 'About company',
