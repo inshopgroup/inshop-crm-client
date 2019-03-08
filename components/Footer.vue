@@ -44,7 +44,10 @@
         </div>
         <div class="col-12 copyright mt-5">
           <p class="text-left">
-            <span class="text-muted">Powered by</span> <a href="#">Inshop Group</a>
+            <span class="text-muted">Powered by</span> <a href="https://inshopgroup.com/">Inshop Group</a>
+          </p>
+          <p class="right">
+            {{moment().format('YYYY')}}, <a href="https://inshopcrm.com" target="_blank">Inshop ecommerce, v1.3.1</a>
           </p>
         </div>
       </div>
