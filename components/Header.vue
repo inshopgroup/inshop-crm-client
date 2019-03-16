@@ -11,12 +11,22 @@
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/page/about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/page/terms-of-use">Terms of use</a>
-          </li>
+          <template v-if="isAuthenticated">
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/profile">{{ username }}</nuxt-link>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" @click.prevent="signout">Sign out</a>
+            </li>
+          </template>
+          <template v-else>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/signin">Sign in</nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/signup">Sign up</nuxt-link>
+            </li>
+          </template>
         </ul>
 
         <language-select></language-select>
@@ -43,11 +53,27 @@
 <script>
   import Menu from '../components/Menu.vue'
   import LanguageSelect from '../components/LanguageSelect.vue'
+  import Auth from '../mixins/Auth'
 
   export default {
     components: {
       Menu,
       LanguageSelect
+    },
+    mixins: [Auth],
+    computed: {
+      username () {
+        if (this.isAuthenticated) {
+          return this.jwtDecoded.name
+        }
+      }
+    },
+    methods: {
+      signout() {
+        this.$store.dispatch('auth/logout').then(() => {
+          this.$router.push('/')
+        })
+      },
     }
   }
 </script>

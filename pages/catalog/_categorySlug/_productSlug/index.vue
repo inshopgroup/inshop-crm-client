@@ -59,8 +59,8 @@
       Breadcrumb,
     },
     async asyncData (params) {
-      await params.store.dispatch('categories/getItem', params.params.categorySlug)
-      await params.store.dispatch('products/getItem', params.params.productSlug)
+      await params.store.dispatch('category/getItem', params.params.categorySlug)
+      await params.store.dispatch('product/getItem', params.params.productSlug)
     },
     computed: {
       breadcrumbs () {
@@ -75,10 +75,10 @@
         }]
       },
       category() {
-        return this.$store.getters['categories/item']
+        return this.$store.getters['category/item']
       },
       product () {
-        return this.$store.getters['products/item']
+        return this.$store.getters['product/item']
       },
     }
   }

@@ -47,6 +47,8 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    '@nuxtjs/toast',
+    '@nuxtjs/pwa',
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     'cookie-universal-nuxt',
@@ -92,6 +94,10 @@ module.exports = {
       langDir: 'lang/'
     }]
   ],
+  toast: {
+    position: 'top-right',
+    duration: 3000,
+  },
 
   /*
   ** Axios module configuration

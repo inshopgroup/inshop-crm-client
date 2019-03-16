@@ -35,7 +35,7 @@ export const actions = {
     throw data
   },
   get ({commit}, id) {
-    let url = process.env.NUXT_ENV_API_URL + '/profile/users'
+    let url = process.env.NUXT_ENV_API_URL + '/frontend/profile/me'
 
     return this.$axios.get(url)
       .then(response => {
@@ -45,7 +45,7 @@ export const actions = {
   update ({ state, commit, dispatch }) {
     commit('SET_ERRORS', {})
 
-    let url = process.env.NUXT_ENV_API_URL + '/profile/users/' + state.item.id
+    let url = process.env.NUXT_ENV_API_URL + '/frontend/profile/me'
 
     return this.$axios.put(url, state.item)
       .then(response => response.data)
@@ -53,10 +53,10 @@ export const actions = {
         dispatch('processErrors', e.response.data)
       })
   },
-  add ({ state, commit, dispatch }) {
+  signup ({ state, commit, dispatch }) {
     commit('SET_ERRORS', {})
 
-    let url = process.env.NUXT_ENV_API_URL + '/frontend/profile/users'
+    let url = process.env.NUXT_ENV_API_URL + '/frontend/signup'
 
     return this.$axios.post(url, state.item)
       .then(response => response.data)

@@ -13,11 +13,11 @@
               <b-row>
                 <b-col cols="12">
                   <form-input
-                      :type="'email'"
-                      :label="'Email'"
+                      type="email"
+                      label="Email"
                       :item="credentials"
                       :errors="errors"
-                      :property="'username'"
+                      property="username"
                       @fieldUpdated="updateValue"
                   ></form-input>
                 </b-col>
@@ -25,11 +25,11 @@
               <b-row>
                 <b-col cols="12">
                   <form-input
-                      :type="'password'"
-                      :label="'Password'"
+                      type="password"
+                      label="Password"
                       :item="credentials"
                       :errors="errors"
-                      :property="'password'"
+                      property="password"
                       @fieldUpdated="updateValue"
                   ></form-input>
                 </b-col>
@@ -83,18 +83,7 @@
       signIn() {
         this.$store.dispatch('auth/login', this.credentials)
           .then(() => {
-            switch (this.$store.getters['auth/type'] ) {
-              case 'RECRUITER':
-                this.$router.push('/profile/recruiter/about')
-                break
-
-              case 'CANDIDATE':
-                this.$router.push('/profile/candidate/about')
-                break
-
-              default:
-                this.$router.push('/')
-            }
+            this.$router.push('/')
           })
           .catch(() => {})
       },

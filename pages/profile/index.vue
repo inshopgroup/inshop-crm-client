@@ -117,15 +117,15 @@
   import FormFile from "../../components/form/FormFile";
 
   export default {
-    middleware: 'authenticatedRecruiter',
+    middleware: 'authenticated',
     components: {
       FormFile,
       Breadcrumb,
       FormTextarea,
       FormInput
     },
-    async asyncData(params) {
-      await params.store.dispatch('user/get')
+    mounted() {
+      this.$store.dispatch('user/get')
     },
     computed: {
       breadcrumbs () {

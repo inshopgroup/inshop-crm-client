@@ -67,12 +67,12 @@ export const actions = {
     if (req.headers.cookie) {
       let cookies = cookie.parse(req.headers.cookie)
 
-      if (typeof cookie.token !== 'undefined') {
-        commit('auth/AUTH_UPDATE_TOKEN', cookie.token)
+      if (cookies.token) {
+        commit('auth/AUTH_UPDATE_TOKEN', cookies.token)
       }
 
-      if (typeof cookie.refreshToken !== 'undefined') {
-        commit('auth/AUTH_UPDATE_REFRESH_TOKEN', cookie.refreshToken)
+      if (cookies.refreshToken) {
+        commit('auth/AUTH_UPDATE_REFRESH_TOKEN', cookies.refreshToken)
       }
 
       if (cookies.locale) {
@@ -80,6 +80,6 @@ export const actions = {
       }
     }
 
-    await dispatch('categories/getItems')
+    await dispatch('category/getItems')
   }
 }

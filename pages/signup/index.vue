@@ -97,7 +97,7 @@
           return
         }
 
-        this.$store.dispatch('user/add')
+        this.$store.dispatch('user/signup')
           .then(() => {
             this.$router.push('/signup/complete')
           })

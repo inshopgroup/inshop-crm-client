@@ -27,7 +27,7 @@
     name: 'CategoryBlock',
     computed: {
       categories() {
-        return this.$store.getters['categories/items']
+        return this.$store.getters['category/items']
       }
     }
   }

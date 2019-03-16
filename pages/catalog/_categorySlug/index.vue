@@ -55,8 +55,8 @@
     async asyncData(params) {
       let currentPage = parseInt(params.query.page) || 1;
 
-      await params.store.dispatch('categories/getItem', params.params.categorySlug)
-      await params.store.dispatch('products/getItems', {
+      await params.store.dispatch('category/getItem', params.params.categorySlug)
+      await params.store.dispatch('product/getItems', {
         'categorySlug': params.params.categorySlug,
         'page': currentPage,
         'itemsPerPage': ~~process.env.NUXT_ENV_PER_PAGE
@@ -77,16 +77,16 @@
         }]
       },
       category() {
-        return this.$store.getters['categories/item']
+        return this.$store.getters['category/item']
       },
       products() {
-        return this.$store.getters['products/items']
+        return this.$store.getters['product/items']
       },
       total() {
-        return this.$store.getters['products/itemsTotal']
+        return this.$store.getters['product/itemsTotal']
       },
       aggregations() {
-        return this.$store.getters['products/aggregations']
+        return this.$store.getters['product/aggregations']
       },
       perPage() {
         return ~~process.env.NUXT_ENV_PER_PAGE

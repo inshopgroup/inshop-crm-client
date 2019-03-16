@@ -50,7 +50,7 @@ export const actions = {
   login ({ commit }, data) {
     commit('AUTH_ERROR_CHANGE', null)
 
-    let link = process.env.NUXT_ENV_API_URL + '/login'
+    let link = process.env.NUXT_ENV_API_URL + '/frontend/login'
 
     return this.$axios.post(link, data).
       then(response => {
