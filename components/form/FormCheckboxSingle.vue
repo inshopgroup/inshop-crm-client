@@ -28,7 +28,7 @@
     props: {
       item: {
         type: Object,
-        default: () => {}
+        default: () => ({})
       },
       property: {
         type: String,

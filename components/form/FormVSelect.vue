@@ -75,11 +75,11 @@
       },
       item: {
         type: Object,
-        default: () => {}
+        default: () => ({})
       },
       errors: {
         type: Object,
-        default: () => {}
+        default: () => ({})
       },
       property: {
         type: String,

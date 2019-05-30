@@ -37,7 +37,7 @@
       },
       errors: {
         type: Object,
-        default: () => {}
+        default: () => ({})
       },
     },
     methods: {

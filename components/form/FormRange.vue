@@ -54,7 +54,7 @@
     props: {
       item: {
         type: Object,
-        default: () => {}
+        default: () => ({})
       },
       propertyFrom: {
         type: String,
