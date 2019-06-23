@@ -44,7 +44,7 @@
         </div>
         <div class="col-12 copyright mt-5">
           <p class="text-left">
-            <span class="text-muted">Inshop ecommerce, v1.4.0, Powered by</span> <a href="https://inshopgroup.com/">Inshop Group</a>
+            <span class="text-muted">Inshop ecommerce, v1.5.0, Powered by</span> <a href="https://inshopgroup.com/">Inshop Group</a>
           </p>
         </div>
       </div>
