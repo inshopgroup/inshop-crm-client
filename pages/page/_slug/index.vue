@@ -1,10 +1,11 @@
 <template>
-  <b-container>
+  <div>
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
 
     <h1>{{ item.title }}</h1>
+
     <div v-html="item.content"></div>
-  </b-container>
+  </div>
 </template>
 
 <script>

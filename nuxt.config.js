@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'universal',
@@ -27,6 +28,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '~/node_modules/bootstrap/dist/css/bootstrap.css',
     '@fortawesome/fontawesome-svg-core/styles.css',
     { src: '~assets/scss/main.scss', lang: 'scss' }
   ],
@@ -37,6 +39,8 @@ module.exports = {
   plugins: [
     '~/plugins/axios',
     '~/plugins/font-awesome',
+    { src: '~/plugins/inshop-form-components', ssr: false },
+    { src: '~/plugins/bootstrap', ssr: false },
     { src: '~/plugins/vue-select', ssr: false },
   ],
 
@@ -49,8 +53,6 @@ module.exports = {
     '@nuxtjs/dotenv',
     '@nuxtjs/toast',
     '@nuxtjs/pwa',
-    // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
     'cookie-universal-nuxt',
     ['nuxt-i18n', {
       defaultLocale: 'en',
@@ -110,6 +112,13 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['jquery', 'bootstrap'],
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+      })
+    ],
+
     /*
     ** You can extend webpack config here
     */

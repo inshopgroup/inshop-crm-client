@@ -12,8 +12,6 @@
       </div>
     </section>
 
-    <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="currentPage" :link-gen="linkGen"></b-pagination-nav>
-
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-3">
@@ -29,8 +27,11 @@
       </div>
     </div>
 
-    <b-pagination-nav align="right" :number-of-pages="pagesTotal" v-model="currentPage"
-                      :link-gen="linkGen"></b-pagination-nav>
+    <pagination
+        :total="total"
+        v-model="currentPage"
+        :link-gen="linkGen"
+    ></pagination>
   </div>
 </template>
 
@@ -41,10 +42,12 @@
   import Translate from '~/mixins/Translate.vue'
   import Breadcrumb from "../../../components/Breadcrumb";
   import CategoryBlock from "../../../components/CategoryBlock";
+  import Pagination from "../../../components/Pagination";
 
   export default {
     mixins: [Translate],
     components: {
+      Pagination,
       CategoryBlock,
       Breadcrumb,
       Header,
@@ -59,7 +62,7 @@
       await params.store.dispatch('product/getItems', {
         'categorySlug': params.params.categorySlug,
         'page': currentPage,
-        'itemsPerPage': ~~process.env.NUXT_ENV_PER_PAGE
+        'perPage': ~~process.env.NUXT_ENV_PER_PAGE,
       })
 
       return {
@@ -87,12 +90,6 @@
       },
       aggregations() {
         return this.$store.getters['product/aggregations']
-      },
-      perPage() {
-        return ~~process.env.NUXT_ENV_PER_PAGE
-      },
-      pagesTotal() {
-        return Math.ceil(this.total / this.perPage)
       },
     },
     methods: {

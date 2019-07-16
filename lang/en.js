@@ -5,11 +5,6 @@ export default {
     about: 'About company',
     contacts: 'Contacts'
   },
-  newsletter: {
-    text: 'Subscribe to newsletter',
-    button: 'Subscribe',
-    placeholder: 'Input your email'
-  },
   search: {
     placeholder: 'Keyword ...'
   },

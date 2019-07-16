@@ -1,88 +1,60 @@
 <template>
-  <b-row class="signup">
-    <b-col xl="6" offset-xl="3" lg="8" offset-lg="2" md="10" offset-md="1">
-      <b-row>
-        <b-col cols="12">
-          <div class="page-header">
-            <h1>Registration</h1>
-          </div>
-        </b-col>
-        <b-col sm="6" class="col-left">
-          <div class="col-left__wrap">
-            <form method="post" @submit.prevent="signUp">
-              <b-row>
-                <b-col cols="12">
-                  <form-input
-                      :item="item"
-                      :property="'username'"
-                      :label="'email'"
-                      :type="'email'"
-                      :required="true"
-                      :errors="errors"
-                      @fieldUpdated="updateValue"
-                  ></form-input>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="12">
-                  <form-input
-                      :item="item"
-                      :property="'name'"
-                      :label="'Name'"
-                      :required="true"
-                      :errors="errors"
-                      @fieldUpdated="updateValue"
-                  ></form-input>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="12">
-                  <form-input
-                      :item="item"
-                      :property="'plainPassword'"
-                      :label="'Password'"
-                      :required="true"
-                      :errors="errors"
-                      :type="'password'"
-                      @fieldUpdated="updatePassword"
-                  ></form-input>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="12">
-                  <form-input
-                      :item="item"
-                      :property="'repeatPassword'"
-                      :label="'Repeat password'"
-                      :required="true"
-                      :errors="errors"
-                      :type="'password'"
-                      @fieldUpdated="updatePassword"
-                  ></form-input>
-                </b-col>
-              </b-row>
+  <div class="content-center">
+    <form method="post" @submit.prevent="signUp">
+      <h1>Registration</h1>
 
-              <b-button type="submit" variant="primary" size="lg">Continue</b-button>
-              <div class="signup__bottom d-block">
-                Already have profile? <nuxt-link to="/signin">Sign in</nuxt-link>
-              </div>
-            </form>
+      <form-input
+          :item="item"
+          :property="'username'"
+          :label="'email'"
+          :type="'email'"
+          :required="true"
+          :errors="errors"
+          @formUpdated="updateValue"
+      ></form-input>
 
-          </div>
-        </b-col>
-      </b-row>
-    </b-col>
-  </b-row>
+      <form-input
+          :item="item"
+          :property="'name'"
+          :label="'Name'"
+          :required="true"
+          :errors="errors"
+          @formUpdated="updateValue"
+      ></form-input>
+
+      <form-input
+          :item="item"
+          :property="'plainPassword'"
+          :label="'Password'"
+          :required="true"
+          :errors="errors"
+          :type="'password'"
+          @formUpdated="updatePassword"
+      ></form-input>
+
+      <form-input
+          :item="item"
+          :property="'repeatPassword'"
+          :label="'Repeat password'"
+          :required="true"
+          :errors="errors"
+          :type="'password'"
+          @formUpdated="updatePassword"
+      ></form-input>
+
+      <button type="submit" class="btn btn-primary btn-lg">Continue</button>
+
+      <p>
+        Already have profile?
+        <nuxt-link to="/signin">Sign in</nuxt-link>
+      </p>
+    </form>
+  </div>
 </template>
 
 <script>
-  import FormInput from '../../components/form/FormInput'
-
   export default {
     middleware: 'authenticatedSignin',
-    components: {
-      FormInput,
-    },
     computed: {
       item() {
         return this.$store.getters['user/item']

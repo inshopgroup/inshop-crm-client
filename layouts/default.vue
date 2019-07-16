@@ -1,8 +1,8 @@
 <template>
-  <div id="page" class="hfeed site">
+  <div>
     <Header/>
 
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <nuxt/>
     </div>
 

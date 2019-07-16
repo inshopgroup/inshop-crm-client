@@ -4,11 +4,6 @@ export default {
     about: 'О компании',
     contacts: 'Контакты'
   },
-  newsletter: {
-    text: 'Подписаться на рассылку',
-    button: 'Подписаться',
-    placeholder: 'Введите Ваш email'
-  },
   search: {
     placeholder: 'Ключевое слово ...'
   },

@@ -42,11 +42,11 @@
             <li><i class="fa fa-print mr-2"></i> + 33 12 14 15 16</li>
           </ul>
         </div>
-        <div class="col-12 copyright mt-5">
-          <p class="text-left">
-            <span class="text-muted">Inshop ecommerce, v1.5.0, Powered by</span> <a href="https://inshopgroup.com/">Inshop Group</a>
-          </p>
-        </div>
+      </div>
+      <div class="row copyright mt-5">
+        <p>
+          <span class="text-muted">Inshop ecommerce, v1.5.0, Powered by</span> <a href="https://inshopgroup.com/">Inshop Group</a>
+        </p>
       </div>
     </div>
   </footer>

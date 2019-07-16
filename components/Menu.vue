@@ -17,9 +17,6 @@
           <li class="menu-item">
             <nuxt-link :to="localePath('contact')">{{$t('menu.contacts')}}</nuxt-link>
           </li>
-          <!--<li class="menu-item add-advertisement">-->
-            <!--<a title="Разместить объявление" href="/">Разместить объявление</a>-->
-          <!--</li>-->
         </ul>
       </nav>
     </div>
