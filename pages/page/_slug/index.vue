@@ -2,30 +2,32 @@
   <div>
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
 
-    <h1>{{ item.title }}</h1>
+    <h1>{{ translation(item).title }}</h1>
 
-    <div v-html="item.content"></div>
+    <div v-html="translation(item).content"></div>
   </div>
 </template>
 
 <script>
   import Breadcrumb from '../../../components/Breadcrumb'
+  import Translate from "../../../mixins/Translate";
 
   export default {
+    mixins: [Translate],
     components: {
       Breadcrumb,
     },
     head() {
       return {
-        title: this.item.seoTitle,
+        title: this.translation(this.item).seoTitle,
         meta: [{
           hid: 'description',
           name: 'description',
-          content: this.item.seoDescription
+          content: this.translation(this.item).seoDescription
         }, {
           hid: 'keywords',
           name: 'keywords',
-          content: this.item.seoKeywords
+          content: this.translation(this.item).seoKeywords
         }]
       }
     },
@@ -42,7 +44,7 @@
           name: this.$t('home'),
           link: '/'
         }, {
-          name: this.item.title
+          name: this.translation(this.item).title
         }]
       },
       item() {

@@ -12,7 +12,7 @@
             <section class="jumbotron text-center">
               <div class="container">
                 <h1 class="jumbotron-heading">E-COMMERCE HOMEPAGE</h1>
-                <p class="lead text-muted mb-0" v-html="text.content"></p>
+                <p class="lead text-muted mb-0" v-html="translation(text).content"></p>
               </div>
             </section>
 
@@ -39,8 +39,10 @@
 <script>
   import CategoryBlock from "../components/CategoryBlock";
   import Breadcrumb from "../components/Breadcrumb";
+  import Translate from "../mixins/Translate";
 
   export default {
+    mixins: [Translate],
     components: {Breadcrumb, CategoryBlock},
     head() {
       return {
