@@ -69,7 +69,7 @@
           link: '/'
         }, {
           name: this.translation(this.category).name,
-          link: '/catalog/' + this.translation(this.category).slug
+          link: '/catalog/' + this.category.slug
         }, {
           name: this.translation(this.product).name,
         }]

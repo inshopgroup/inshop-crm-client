@@ -5,7 +5,7 @@
     <div class="card-body d-flex flex-column justify-content-between">
       <div>
         <h4 class="card-title">
-          <nuxt-link :to="localePath({name: 'catalog-categorySlug-productSlug', params: {categorySlug: categorySlug, productSlug: translation(product).slug}})">
+          <nuxt-link :to="localePath({name: 'catalog-categorySlug-productSlug', params: {categorySlug: categorySlug, productSlug: product.slug}})">
             {{ translation(product).name }}
           </nuxt-link>
         </h4>
