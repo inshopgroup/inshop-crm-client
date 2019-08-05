@@ -26,6 +26,7 @@
           :class="['position-absolute', 'bg-light', {'d-none': hover !== category.id}, {'d-flex': hover === category.id}]"
           @mouseover="mouseover(category.id)"
           @mouseleave="mouseleave"
+          @click="mouseleave"
       >
         <div class="col ml-2 mr-2">
           <div class="row">
@@ -70,7 +71,7 @@
       mouseleave() {
         this.timeout = setTimeout(() => {
           this.hover = null
-        }, 100)
+        }, 50)
       }
     }
   }
