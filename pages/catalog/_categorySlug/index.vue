@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-3">
-          <category-block></category-block>
+
         </div>
         <div class="col">
           <div class="row">
@@ -41,14 +41,12 @@
   import Footer from '~/components/Footer.vue'
   import Translate from '~/mixins/Translate.vue'
   import Breadcrumb from "../../../components/Breadcrumb";
-  import CategoryBlock from "../../../components/CategoryBlock";
   import Pagination from "../../../components/Pagination";
 
   export default {
     mixins: [Translate],
     components: {
       Pagination,
-      CategoryBlock,
       Breadcrumb,
       Header,
       ProductItem,
