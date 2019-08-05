@@ -8,6 +8,7 @@
             class="p-3 text-center"
             @mouseover="mouseover(category.id)"
             @mouseleave="mouseleave"
+            @click="mouseleave"
         >
           <nuxt-link
               :to="localePath({name: 'catalog-categorySlug', params: {categorySlug: category.slug}})"
