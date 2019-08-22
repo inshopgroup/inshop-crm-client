@@ -113,12 +113,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['jquery', 'bootstrap', 'vuetify'],
-    plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-      })
-    ],
+    vendor: ['bootstrap', 'vuetify'],
 
     /*
     ** You can extend webpack config here

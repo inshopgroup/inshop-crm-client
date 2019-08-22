@@ -2,9 +2,9 @@
   <div>
     <Header/>
 
-    <div class="container mt-5 mb-5">
-        <nuxt/>
-    </div>
+    <v-container>
+      <nuxt/>
+    </v-container>
 
     <Footer />
   </div>
