@@ -1,28 +1,46 @@
 <template>
-  <div>
-    <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
+  <v-container>
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">E-COMMERCE HOMEPAGE</h1>
-        <p class="lead text-muted mb-0" v-html="translation(text).content"></p>
-      </div>
-    </section>
+    <v-row>
+      <v-col cols="12">
+        <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
+      </v-col>
+    </v-row>
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Banner 1</h1>
-        <p class="lead text-muted mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte...</p>
-      </div>
-    </section>
+    <v-row>
+      <v-col cols="12">
+        <v-card color="#ECEFF1" min-height="230" class="text-center">
+          <h1>Banner 1</h1>
+          <v-card-text>
+            <p v-html="translation(text).content"></p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Banner 2</h1>
-        <p class="lead text-muted mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte...</p>
-      </div>
-    </section>
-  </div>
+    <v-row>
+      <v-col cols="12">
+        <v-card color="#ECEFF1" min-height="230" class="text-center">
+          <h1>Banner 2</h1>
+          <v-card-text>
+            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte...</p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col cols="12">
+        <v-card color="#ECEFF1" min-height="230" class="text-center">
+          <h1>Banner 3</h1>
+          <v-card-text>
+            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte...</p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
+  </v-container>
 </template>
 
 <script>
