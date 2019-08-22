@@ -32,9 +32,11 @@
     "nuxt-i18n": "^5.12.7",
     "pluralize": "^8.0.0",
     "popper.js": "^1.15.0",
-    "vue-select": "^3.1.0"
+    "vue-select": "^3.1.0",
+    "vuetify": "^2.0.10"
   },
   "devDependencies": {
+    "@mdi/font": "^4.1.95",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.0.1",
     "eslint-friendly-formatter": "^4.0.1",

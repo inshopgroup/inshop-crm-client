@@ -39,6 +39,7 @@ module.exports = {
   plugins: [
     '~/plugins/axios',
     '~/plugins/font-awesome',
+    '~/plugins/vuetify.js',
     { src: '~/plugins/inshop-form-components', ssr: false },
     { src: '~/plugins/bootstrap', ssr: false },
     { src: '~/plugins/vue-select', ssr: false },
@@ -112,7 +113,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['jquery', 'bootstrap'],
+    vendor: ['jquery', 'bootstrap', 'vuetify'],
     plugins: [
       new webpack.ProvidePlugin({
         $: 'jquery',
