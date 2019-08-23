@@ -1,7 +1,7 @@
 <template>
   <v-footer color="secondary" dark class="caption">
     <v-container>
-      <v-row no-gutters justify="center">
+      <v-row no-gutters justify="space-between">
         <v-col xl="3" lg="4" md="3">
           <h5>About</h5>
           <v-divider class="mt-0 mb-2" color="white" width="25%"></v-divider>
