@@ -53,6 +53,7 @@ module.exports = {
     '@nuxtjs/dotenv',
     '@nuxtjs/toast',
     '@nuxtjs/pwa',
+    '@nuxtjs/vuetify',
     'cookie-universal-nuxt',
     ['nuxt-i18n', {
       defaultLocale: 'en',
