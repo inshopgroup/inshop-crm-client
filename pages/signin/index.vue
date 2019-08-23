@@ -1,37 +1,44 @@
 <template>
-  <div class="content-center">
-    <form method="post" @submit.prevent="signIn">
-      <h1 class="display-3">Sign In</h1>
+  <v-container>
+    <v-row justify="center" style="justify-content: center;">
+      <v-col cols="4" class="text-center">
+        <form method="post" @submit.prevent="signIn">
+          <h1 class="display-3 mb-5">Sign In</h1>
 
-      <form-input
-          type="email"
-          label="Email"
-          :item="credentials"
-          :errors="errors"
-          property="username"
-          @formUpdated="updateValue"
-      ></form-input>
+          <v-text-field
+            type="email"
+            label="Email"
+            :item="credentials"
+            :errors="errors"
+            property="username"
+            color="#0c5c6f"
+            @formUpdated="updateValue"
+          ></v-text-field>
 
-      <form-input
-          type="password"
-          label="Password"
-          :item="credentials"
-          :errors="errors"
-          property="password"
-          @formUpdated="updateValue"
-      ></form-input>
+          <v-text-field
+            type="password"
+            label="Password"
+            :item="credentials"
+            :errors="errors"
+            property="password"
+            color="#0c5c6f"
+            @formUpdated="updateValue"
+          ></v-text-field>
 
-      <v-btn type="submit" color="#0c5c6f" dark>Sign In</v-btn>
-
-      <p>
-        <nuxt-link to="/remind">Forgot password?</nuxt-link>
-      </p>
-      <p>
-        Don't have profile yet?
-        <nuxt-link to="/signup">Sign up</nuxt-link>
-      </p>
-    </form>
-  </div>
+          <div class="text-center mt-1">
+            <v-btn class="mx-auto" type="submit" color="#0c5c6f" dark>Sign In</v-btn>
+          </div>
+          <div class="text-center mt-1">
+            <v-btn text to="/remind" color="#0c5c6f">Forgot password?</v-btn>
+          </div>
+          <div class="text-center mt-3">
+            Don't have profile yet?
+            <v-btn text to="/signup" color="#0c5c6f">Sign up</v-btn>
+          </div>
+        </form>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
