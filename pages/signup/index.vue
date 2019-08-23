@@ -1,55 +1,65 @@
 <template>
-  <div class="content-center">
-    <form method="post" @submit.prevent="signUp">
-      <h1>Registration</h1>
+  <v-container>
+    <v-row justify="center" style="justify-content: center;">
+      <v-col cols="4" class="text-center">
+        <div class="content-center">
+          <form method="post" @submit.prevent="signUp">
+            <h1 class="display-3 mb-5">Registration</h1>
 
-      <form-input
-          :item="item"
-          :property="'username'"
-          :label="'email'"
-          :type="'email'"
-          :required="true"
-          :errors="errors"
-          @formUpdated="updateValue"
-      ></form-input>
+            <v-text-field
+              :item="item"
+              :property="'username'"
+              :label="'email'"
+              :type="'email'"
+              :required="true"
+              :errors="errors"
+              color="#0c5c6f"
+              @formUpdated="updateValue"
+            ></v-text-field>
 
-      <form-input
-          :item="item"
-          :property="'name'"
-          :label="'Name'"
-          :required="true"
-          :errors="errors"
-          @formUpdated="updateValue"
-      ></form-input>
+            <v-text-field
+              :item="item"
+              :property="'name'"
+              :label="'Name'"
+              :required="true"
+              :errors="errors"
+              color="#0c5c6f"
+              @formUpdated="updateValue"
+            ></v-text-field>
 
-      <form-input
-          :item="item"
-          :property="'plainPassword'"
-          :label="'Password'"
-          :required="true"
-          :errors="errors"
-          :type="'password'"
-          @formUpdated="updatePassword"
-      ></form-input>
+            <v-text-field
+              :item="item"
+              :property="'plainPassword'"
+              :label="'Password'"
+              :required="true"
+              :errors="errors"
+              :type="'password'"
+              color="#0c5c6f"
+              @formUpdated="updatePassword"
+            ></v-text-field>
 
-      <form-input
-          :item="item"
-          :property="'repeatPassword'"
-          :label="'Repeat password'"
-          :required="true"
-          :errors="errors"
-          :type="'password'"
-          @formUpdated="updatePassword"
-      ></form-input>
+            <v-text-field
+                :item="item"
+                :property="'repeatPassword'"
+                :label="'Repeat password'"
+                :required="true"
+                :errors="errors"
+                :type="'password'"
+                color="#0c5c6f"
+                @formUpdated="updatePassword"
+            ></v-text-field>
 
-      <button type="submit" class="btn btn-primary btn-lg">Continue</button>
+            <v-btn type="submit" color="#0c5c6f" dark class="mx-auto mt-1">Continue</v-btn>
 
-      <p>
-        Already have profile?
-        <nuxt-link to="/signin">Sign in</nuxt-link>
-      </p>
-    </form>
-  </div>
+            <div class="mt-3">
+              Already have profile?
+              <v-btn text to="/signin" color="#0c5c6f">Sign in</v-btn>
+            </div>
+          </form>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
