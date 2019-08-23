@@ -2,9 +2,7 @@
   <div>
     <Header/>
 
-    <v-container>
-      <nuxt/>
-    </v-container>
+    <nuxt/>   
 
     <Footer />
   </div>
