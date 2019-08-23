@@ -1,7 +1,7 @@
 <template>
   <div class="content-center">
     <form method="post" @submit.prevent="signIn">
-      <h1>Sign In</h1>
+      <h1 class="display-3">Sign In</h1>
 
       <form-input
           type="email"
@@ -21,7 +21,7 @@
           @formUpdated="updateValue"
       ></form-input>
 
-      <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+      <v-btn type="submit" color="#0c5c6f" dark>Sign In</v-btn>
 
       <p>
         <nuxt-link to="/remind">Forgot password?</nuxt-link>
