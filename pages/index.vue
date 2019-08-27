@@ -9,7 +9,7 @@
 
     <v-row>
       <v-col cols="12">
-        <v-card color="#ECEFF1" min-height="230" class="text-center">
+        <v-card color="#ECEFF1" min-height="230" class="d-flex flex-column flex-wrap justify-center align-center text-center">
           <h1>Banner 1</h1>
           <v-card-text>
             <p v-html="translation(text).content"></p>

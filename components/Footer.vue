@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="secondary" dark class="caption">
+  <v-footer absolute color="secondary" dark class="caption">
     <v-container>
       <v-row no-gutters justify="space-between">
         <v-col xl="3" lg="4" md="3">
