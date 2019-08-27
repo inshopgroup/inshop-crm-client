@@ -1,6 +1,6 @@
 <template>
-  <v-footer absolute color="secondary" dark class="caption">
-    <v-container>
+  <v-footer color="secondary" dark class="caption">
+    <v-container fill-height>
       <v-row no-gutters justify="space-between">
         <v-col xl="3" lg="4" md="3">
           <h5>About</h5>

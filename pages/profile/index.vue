@@ -1,53 +1,61 @@
 <template>
-  <div>
-    <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
+  <v-container>
+    <v-row>
+      <v-col cols="12">
+        <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
+      </v-col>
+    </v-row>
 
-    <h1>Personal info</h1>
+    <v-row justify="center" style="justify-content: center;">
+      <v-col cols="4" class="text-center">
+        <h1 class="display-5 mb-5">Personal info</h1>
 
-    <form method="post" @submit.prevent="saveForm" v-if="item">
-      <form-input
-          :item="item"
-          :property="'username'"
-          :label="'email'"
-          :type="'email'"
-          :required="false"
-          :errors="errors"
-          :disabled="true"
-          @formUpdated="updateValue"
-      ></form-input>
+        <form method="post" @submit.prevent="saveForm" v-if="item">
+          <v-text-field
+            :item="item"
+            :property="'username'"
+            :label="'email'"
+            :type="'email'"
+            :required="false"
+            :errors="errors"
+            :disabled="true"
+            @formUpdated="updateValue"
+          ></v-text-field>
 
-      <form-input
-          :item="item"
-          :property="'name'"
-          :label="'Name'"
-          :required="true"
-          :errors="errors"
-          @formUpdated="updateValue"
-      ></form-input>
+          <v-text-field
+            :item="item"
+            :property="'name'"
+            :label="'Name'"
+            :required="true"
+            :errors="errors"
+            @formUpdated="updateValue"
+          ></v-text-field>
 
-      <form-input
-          :item="item"
-          :property="'plainPassword'"
-          :label="'Password'"
-          :required="false"
-          :errors="errors"
-          :type="'password'"
-          @formUpdated="updatePassword"
-      ></form-input>
+          <v-text-field
+            :item="item"
+            :property="'plainPassword'"
+            :label="'Password'"
+            :required="false"
+            :errors="errors"
+            :type="'password'"
+            @formUpdated="updatePassword"
+          ></v-text-field>
 
-      <form-input
-          :item="item"
-          :property="'repeatPassword'"
-          :label="'Repeat password'"
-          :required="false"
-          :errors="errors"
-          :type="'password'"
-          @formUpdated="updatePassword"
-      ></form-input>
+          <v-text-field
+            :item="item"
+            :property="'repeatPassword'"
+            :label="'Repeat password'"
+            :required="false"
+            :errors="errors"
+            :type="'password'"
+            @formUpdated="updatePassword"
+          ></v-text-field>
 
-      <button type="submit" size="lg" class="btn btn-success btn-lg">Update</button>
-    </form>
-  </div>
+          <v-btn type="submit" color="#0c5c6f" dark class="mx-auto mt-1">Update</v-btn>
+        </form>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
