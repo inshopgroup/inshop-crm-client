@@ -1,8 +1,16 @@
 <template>
   <div class="dropdown mr-2">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      {{ locale }}
-    </button>
+    <v-btn 
+      class="dropdown-toggle" 
+      color="primary" 
+      dark 
+      id="language" 
+      data-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false"
+    >
+      <v-icon small left>mdi-map-search-outline</v-icon>{{ locale }}
+    </v-btn>
     <div class="dropdown-menu" aria-labelledby="language">
       <a class="dropdown-item" :href="switchLocalePath('en')" @click.prevent="setLocale('en')">en</a>
       <a class="dropdown-item" :href="switchLocalePath('de')" @click.prevent="setLocale('de')">de</a>
