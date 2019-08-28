@@ -113,7 +113,7 @@
             </li>
             <li class="mb-2">
               <v-icon small left>mdi-email-edit</v-icon>
-              <a href="mailto:magaky71@gmail.com">email@example.com</a>
+              <a href="mailto:magaky71@gmail.com" class="white--text">email@example.com</a>
             </li>
             <li class="mb-2">
               <v-icon small left>mdi-phone</v-icon>+ 33 12 14 15 16
@@ -124,9 +124,9 @@
           </ul>
         </v-col>
       </v-row>
-      <v-row class="mt-5">
+      <v-row class="mt-1">
         <v-col cols="12">
-          <p>
+          <p class="mb-0">
             <span>Inshop ecommerce, v1.5.0, Powered by</span> 
             <a href="https://inshopgroup.com/" target="_blank">Inshop Group</a>
           </p>
@@ -139,3 +139,4 @@
 <script>
   export default {}
 </script>
+

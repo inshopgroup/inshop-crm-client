@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown mr-2">
     <v-btn 
-      class="dropdown-toggle" 
+      class="dropdown-toggle text-capitalize" 
       color="primary" 
       dark 
       id="language" 

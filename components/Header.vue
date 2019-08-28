@@ -6,11 +6,12 @@
     :src="bg"
   >
     <v-container>
-      <v-row justify="space-between">
-        <v-col cols="auto">
+      <v-row justify="space-between" align="center">
+        <v-col cols="3">
 
-          <v-toolbar-title>
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-toolbar-title class="d-flex">
+            <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon> -->
+            <v-icon>mdi-home</v-icon>
             <a href="/" class="text-white hidden-sm-and-down mx-2">Inshop Ecommerce</a>
           </v-toolbar-title>
 
@@ -21,23 +22,25 @@
             <span class="navbar-toggler-icon"></span>
           </button> -->
 
-        <v-col cols="auto" class="d-flex align-center">
+        <v-col cols="5" class="d-flex align-center">
+          <category-nav></category-nav>
+        </v-col>
+          
+        <v-col cols="4" class="d-flex align-center">
           <template v-if="isAuthenticated">
             <nuxt-link class="nav-link" to="/profile">{{ username }}</nuxt-link>
             <a href="#" class="nav-link" @click.prevent="signout">Sign out</a>
           </template>
           <template v-else>
-            <v-btn text class="nav-link" to="/signin">Sign in</v-btn>
-            <v-btn text class="nav-link" to="/signup">Sign up</v-btn>
+            <v-btn text class="mr-2 text-capitalize" to="/signin">Sign in</v-btn>
+            <v-btn text class="mr-2 text-capitalize" to="/signup">Sign up</v-btn>
           </template>
-        </v-col>
-          
-        <v-col cols="auto" class="d-flex align-center">
+
           <language-select></language-select>
 
-          <v-btn color="success" to="/cart">
-            <font-awesome-icon class="mr-1" icon="shopping-cart"/> Cart
-            <span class="badge badge-light ml-1">3</span>
+          <v-btn color="success" class="text-capitalize" to="/cart">
+            <font-awesome-icon class="mr-2" icon="shopping-cart"/> Cart
+            <span class="badge badge-light ml-2">3</span>
           </v-btn>
         </v-col>
 
