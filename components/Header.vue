@@ -1,37 +1,7 @@
 <template>
   <div>
-    <v-navigation-drawer 
-      v-model="drawer" 
-      fixed 
-      app 
-      dark 
-      hide-overlay 
-      temporary
-      :src="bg"
-    >
-      <v-list 
-        dense
-      >
-        <template v-for="category in categories">
-          <v-list-item-group
-            v-model="group"
-            active-class="deep-purple--text text--accent-4"
-           :key="category.id"
-          >
-          <v-list-item>
-            <v-list-item-title>
-              {{translation(category).name}}
-            </v-list-item-title>
-          </v-list-item>
-
-        </v-list-item-group>
-        </template>
-        
-      </v-list>
-    </v-navigation-drawer>
 
     <v-app-bar 
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
       app
       color="#003145" 
       dark
@@ -68,7 +38,7 @@
             
             <language-select></language-select>
 
-            <v-btn color="success" href="/cart">
+            <v-btn color="success" to="/cart">
               <font-awesome-icon icon="shopping-cart"/> Cart
               <span class="badge badge-light">3</span>
             </v-btn>
@@ -102,7 +72,6 @@
   import LanguageSelect from '../components/LanguageSelect.vue'
   import Auth from '../mixins/Auth'
   import CategoryNav from "./CategoryNav";
-  import Translate from '~/mixins/Translate.vue'
 
   export default {
     data() {
@@ -116,13 +85,13 @@
       Menu,
       LanguageSelect
     },
-    mixins: [Auth, Translate],
+    mixins: [Auth],
     computed: {
       username () {
         if (this.isAuthenticated) {
           return this.jwtDecoded.name
         }
-      }
+      },
     },
     methods: {
       signout() {
@@ -133,9 +102,3 @@
     }
   }
 </script>
-
-<style>
-  /* header {
-    z-index: 10!important;
-  } */
-</style>
