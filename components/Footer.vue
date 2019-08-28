@@ -5,9 +5,8 @@
         <v-col xl="3" lg="4" md="3">
           <h5>About</h5>
           <v-divider class="mt-0 mb-2" color="white" width="25%"></v-divider>
-          <p class="mb-0">
-            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-          </p>
+          <p class="mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la
+          composition et la mise en page avant impression.</p>
         </v-col>
 
         <v-col xl="2" lg="2" md="2" class="mx-auto">
@@ -15,16 +14,40 @@
           <v-divider class="mt-0 mb-2" color="white" width="25%"></v-divider>
           <ul class="list-unstyled pl-0">
             <li>
-              <v-btn class="caption pl-0 pr-0 text-capitalize justify-start" small text to="/page/about">About</v-btn>
+              <v-btn 
+                class="caption pl-0 pr-0 text-capitalize justify-start" 
+                block 
+                small 
+                text 
+                to="/page/about"
+              >About</v-btn>
             </li>
             <li>
-              <v-btn class="caption pl-0 pr-0 text-capitalize justify-start" small text to="/page/about">About</v-btn>
+              <v-btn 
+                class="caption pl-0 pr-0 text-capitalize justify-start" 
+                block 
+                small 
+                text 
+                to="/page/about"
+              >About</v-btn>
             </li>
             <li>
-              <v-btn class="caption pl-0 pr-0 text-capitalize justify-start" small text to="/page/about">About</v-btn>
+              <v-btn 
+                class="caption pl-0 pr-0 text-capitalize justify-start" 
+                block 
+                small 
+                text 
+                to="/page/about"
+              >About</v-btn>
             </li>
             <li>
-              <v-btn class="caption pl-0 pr-0 text-capitalize justify-start" small text to="/page/about">About</v-btn>
+              <v-btn 
+                class="caption pl-0 pr-0 text-capitalize justify-start" 
+                block 
+                small 
+                text 
+                to="/page/about"
+              >About</v-btn>
             </li>
           </ul>
         </v-col>
@@ -34,16 +57,40 @@
           <v-divider class="mt-0 mb-2" color="white" width="25%"></v-divider>
           <ul class="list-unstyled pl-0">
             <li>
-              <v-btn class="caption pl-0 pr-0 text-capitalize" small text to="/page/terms-of-use">Terms of use</v-btn>
+              <v-btn 
+                class="caption pl-0 pr-0 text-capitalize justify-start" 
+                block 
+                small 
+                text 
+                to="/page/terms-of-use"
+              >Terms of use</v-btn>
             </li>
             <li>
-              <v-btn class="caption pl-0 pr-0 text-capitalize" small text to="/page/terms-of-use">Terms of use</v-btn>
+              <v-btn 
+                class="caption pl-0 pr-0 text-capitalize justify-start" 
+                block 
+                small 
+                text 
+                to="/page/terms-of-use"
+              >Terms of use</v-btn>
             </li>
             <li>
-              <v-btn class="caption pl-0 pr-0 text-capitalize" small text to="/page/terms-of-use">Terms of use</v-btn>
+              <v-btn 
+                class="caption pl-0 pr-0 text-capitalize justify-start" 
+                block 
+                small 
+                text 
+                to="/page/terms-of-use"
+              >Terms of use</v-btn>
             </li>
             <li>
-              <v-btn class="caption pl-0 pr-0 text-capitalize" small text to="/page/terms-of-use">Terms of use</v-btn>
+              <v-btn 
+                class="caption pl-0 pr-0 text-capitalize justify-start" 
+                block 
+                small 
+                text 
+                to="/page/terms-of-use"
+              >Terms of use</v-btn>
             </li>
           </ul>
         </v-col>
