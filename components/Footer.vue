@@ -20,7 +20,9 @@
                 small 
                 text 
                 to="/page/about"
-              >About</v-btn>
+              >
+                <v-icon small left>mdi-link</v-icon>About
+              </v-btn>
             </li>
             <li>
               <v-btn 
@@ -29,7 +31,8 @@
                 small 
                 text 
                 to="/page/about"
-              >About</v-btn>
+              >
+                <v-icon small left>mdi-link</v-icon>About</v-btn>
             </li>
             <li>
               <v-btn 
@@ -38,7 +41,8 @@
                 small 
                 text 
                 to="/page/about"
-              >About</v-btn>
+              >
+                <v-icon small left>mdi-link</v-icon>About</v-btn>
             </li>
             <li>
               <v-btn 
@@ -47,7 +51,8 @@
                 small 
                 text 
                 to="/page/about"
-              >About</v-btn>
+              >
+                <v-icon small left>mdi-link</v-icon>About</v-btn>
             </li>
           </ul>
         </v-col>
@@ -63,7 +68,8 @@
                 small 
                 text 
                 to="/page/terms-of-use"
-              >Terms of use</v-btn>
+              >
+                <v-icon small left>mdi-link</v-icon>Terms of use</v-btn>
             </li>
             <li>
               <v-btn 
@@ -72,7 +78,8 @@
                 small 
                 text 
                 to="/page/terms-of-use"
-              >Terms of use</v-btn>
+              >
+                <v-icon small left>mdi-link</v-icon>Terms of use</v-btn>
             </li>
             <li>
               <v-btn 
@@ -81,7 +88,8 @@
                 small 
                 text 
                 to="/page/terms-of-use"
-              >Terms of use</v-btn>
+              >
+                <v-icon small left>mdi-link</v-icon>Terms of use</v-btn>
             </li>
             <li>
               <v-btn 
@@ -90,7 +98,8 @@
                 small 
                 text 
                 to="/page/terms-of-use"
-              >Terms of use</v-btn>
+              >
+                <v-icon small left>mdi-link</v-icon>Terms of use</v-btn>
             </li>
           </ul>
         </v-col>
@@ -99,10 +108,19 @@
           <h5>Contact</h5>
           <v-divider class="mt-0 mb-2" color="white" width="25%"></v-divider>
           <ul class="list-unstyled pl-0">
-            <li><i class="fa fa-home mr-2"></i> My company</li>
-            <li><i class="fa fa-envelope mr-2"></i> email@example.com</li>
-            <li><i class="fa fa-phone mr-2"></i> + 33 12 14 15 16</li>
-            <li><i class="fa fa-print mr-2"></i> + 33 12 14 15 16</li>
+            <li class="mb-2">
+              <v-icon small left>mdi-home</v-icon>My company
+            </li>
+            <li class="mb-2">
+              <v-icon small left>mdi-email-edit</v-icon>
+              <a href="mailto:magaky71@gmail.com">email@example.com</a>
+            </li>
+            <li class="mb-2">
+              <v-icon small left>mdi-phone</v-icon>+ 33 12 14 15 16
+            </li>
+            <li>
+              <v-icon small left>mdi-phone</v-icon>+ 33 12 14 15 16
+            </li>
           </ul>
         </v-col>
       </v-row>
