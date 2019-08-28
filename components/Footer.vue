@@ -1,5 +1,5 @@
 <template>
-  <v-footer height="auto" color="#003145" dark class="caption pt-5">
+  <v-footer app height="auto" color="#003145" dark class="caption pt-5">
     <v-container>
       <v-row no-gutters justify="space-between">
         <v-col xl="3" lg="4" md="3">

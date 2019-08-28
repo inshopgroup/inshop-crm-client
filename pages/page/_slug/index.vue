@@ -1,11 +1,20 @@
 <template>
-  <div>
+  <v-container>
+
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
+  
+    <v-row>
+      <v-col cols="12">
+        <h1>{{ translation(item).title }}</h1>
+      </v-col>
+    </v-row>
 
-    <h1>{{ translation(item).title }}</h1>
-
-    <div v-html="translation(item).content"></div>
-  </div>
+    <v-row>
+      <v-col cols="12">
+        <div v-html="translation(item).content"></div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
