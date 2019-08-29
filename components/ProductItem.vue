@@ -26,7 +26,7 @@
     <v-img
       class="white--text"
       height="170px"
-      :src="bg"
+      :src="cardBg"
     >
       <v-card-title class="align-end fill-height">
         <nuxt-link class="white--text" :to="localePath({name: 'catalog-categorySlug-productSlug', params: {categorySlug: categorySlug, productSlug: product.slug}})">
@@ -44,12 +44,13 @@
 
 <script>
   import Translate from '../mixins/Translate'
+  import cardBg from '@/assets/category-card.jpg'
 
   export default {
     mixins: [Translate],
     data() {
       return {
-        bg: require('../assets/category-card.jpg')
+        cardBg
       }
     },
     props: {

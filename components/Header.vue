@@ -67,13 +67,14 @@
   import Menu from '../components/Menu.vue'
   import LanguageSelect from '../components/LanguageSelect.vue'
   import Auth from '../mixins/Auth'
-  import CategoryNav from "./CategoryNav";
+  import CategoryNav from "./CategoryNav"
+  import bg from '@/assets/bg.png'
 
   export default {
     data() {
       return {
-        bg: require('../assets/bg.png'),
-        drawer: null,
+        bg,
+        drawer: null
       }
     },
     components: {
