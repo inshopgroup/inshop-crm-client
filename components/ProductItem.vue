@@ -25,7 +25,7 @@
   <v-card class="mx-auto" max-width="340">
     <v-img
       class="white--text"
-      height="200px"
+      height="170px"
       :src="bg"
     >
       <v-card-title class="align-end fill-height">
@@ -35,15 +35,9 @@
       </v-card-title>
     </v-img>
     <v-card-text>
-      <p class="card-text">
-        {{product.ean}}
-      </p>
-      <p class="card-text">
-        {{translation(product).description}}
-      </p>
-      <p class="card-text">
-        {{product.price}} $
-      </p>
+      <span>{{ product.ean }}</span><br>
+      <span class="text--primary">{{ translation(product).description }}</span><br>
+      <span>{{ product.price }} $</span>
     </v-card-text>
   </v-card>
 </template>
