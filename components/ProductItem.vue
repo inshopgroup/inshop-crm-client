@@ -24,9 +24,9 @@
   </div> -->
   <v-card class="mx-auto" max-width="340">
     <v-img
-      class="white--text"
       height="170px"
       :src="cardBg"
+      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
     >
       <v-card-title class="align-end fill-height">
         <nuxt-link class="white--text" :to="localePath({name: 'catalog-categorySlug-productSlug', params: {categorySlug: categorySlug, productSlug: product.slug}})">
@@ -35,10 +35,22 @@
       </v-card-title>
     </v-img>
     <v-card-text>
-      <span>{{ product.ean }}</span><br>
-      <span class="text--primary">{{ translation(product).description }}</span><br>
-      <span>{{ product.price }} $</span>
+      <p>{{ product.ean }}</p>
+      <p class="text--primary">{{ translation(product).description }}</p>
+      <p class="mb-0">{{ product.price }} $</p>
     </v-card-text>
+    <v-card-actions>
+      <div class="flex-grow-1"></div>
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-bookmark</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-share-variant</v-icon>
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
@@ -50,6 +62,7 @@
     mixins: [Translate],
     data() {
       return {
+        isActive: true,
         cardBg
       }
     },

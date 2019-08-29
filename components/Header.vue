@@ -1,6 +1,6 @@
 <template>
   <v-app-bar 
-    app
+    max-height="65px"
     color="#003145" 
     dark
     :src="bg"
@@ -32,8 +32,14 @@
             <a href="#" class="nav-link" @click.prevent="signout">Sign out</a>
           </template>
           <template v-else>
-            <v-btn text class="mr-2 text-capitalize" to="/signin">Sign in</v-btn>
-            <v-btn text class="mr-2 text-capitalize" to="/signup">Sign up</v-btn>
+            <v-btn text class="mr-2 text-capitalize" to="/signin">
+              <v-icon left>mdi-account</v-icon>
+              Sign in
+            </v-btn>
+            <v-btn text class="mr-2 text-capitalize" to="/signup">
+              <v-icon left>mdi-account-off</v-icon>
+              Sign up
+            </v-btn>
           </template>
 
           <language-select></language-select>

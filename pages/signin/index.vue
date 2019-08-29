@@ -29,11 +29,11 @@
             <v-btn class="mx-auto" type="submit" color="#0c5c6f" dark>Sign In</v-btn>
           </div>
           <div class="text-center mt-1">
-            <v-btn text to="/remind" color="#0c5c6f">Forgot password?</v-btn>
+            <v-btn text to="/remind" class="text-capitalize p-2" color="primary">Forgot password?</v-btn>
           </div>
-          <div class="text-center mt-3">
+          <div class="d-flex align-baseline justify-center text-center mt-3">
             Don't have profile yet?
-            <v-btn text to="/signup" color="#0c5c6f">Sign up</v-btn>
+            <v-btn text height="27" to="/signup" class="text-capitalize p-2" color="primary">Sign up</v-btn>
           </div>
         </form>
       </v-col>
