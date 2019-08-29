@@ -1,5 +1,5 @@
 <template>
-  <div class="product-item card m-2">
+  <!-- <div class="product-item card m-2">
     <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" :alt="translation(product).name">
 
     <div class="card-body d-flex flex-column justify-content-between">
@@ -21,7 +21,31 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <v-card class="mx-auto" max-width="340">
+    <v-img
+      class="white--text"
+      height="200px"
+      :src="bg"
+    >
+      <v-card-title class="align-end fill-height">
+        <nuxt-link class="white--text" :to="localePath({name: 'catalog-categorySlug-productSlug', params: {categorySlug: categorySlug, productSlug: product.slug}})">
+          {{ translation(product).name }}
+        </nuxt-link>
+      </v-card-title>
+    </v-img>
+    <v-card-text>
+      <p class="card-text">
+        {{product.ean}}
+      </p>
+      <p class="card-text">
+        {{translation(product).description}}
+      </p>
+      <p class="card-text">
+        {{product.price}} $
+      </p>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
@@ -29,6 +53,11 @@
 
   export default {
     mixins: [Translate],
+    data() {
+      return {
+        bg: require('../assets/category-card.jpg')
+      }
+    },
     props: {
       product: {
         type: Object,
