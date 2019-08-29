@@ -1,5 +1,6 @@
 <template>
   <v-app-bar 
+    app
     max-height="65px"
     color="#003145" 
     dark
@@ -37,7 +38,7 @@
               Sign in
             </v-btn>
             <v-btn text class="mr-2 text-capitalize" to="/signup">
-              <v-icon left>mdi-account-off</v-icon>
+              <v-icon left>mdi-account-plus</v-icon>
               Sign up
             </v-btn>
           </template>
