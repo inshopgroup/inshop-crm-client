@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="localePath({name: 'catalog-categorySlug-productSlug', params: {categorySlug: categorySlug, productSlug: product.slug}})">
-    <v-card max-width="316" height="100%">
+    <v-card max-width="316" height="100%" class="pb-10">
       
       <v-img
         height="170px"
@@ -14,14 +14,14 @@
       </v-card-title>
 
       <v-card-text>
-        <p>{{ translation(product.category).name }}</p>
-        <p>{{ product.ean }}</p>
-        <p class="text--primary">{{ translation(product).description | subString }}</p>
-        <p class="mb-0">{{ product.price }} $</p>
+        <p class="mb-2">{{ translation(product.category).name }}</p>
+        <p class="mb-2">{{ product.ean }}</p>
+        <p class="text--primary mb-2">{{ translation(product).description | subString }}</p>
+        <p class="mb-2">{{ product.price }} $</p>
       </v-card-text>
 
-      <v-card-actions class="justify-center">
-        <v-btn to="#" color="primary">Add to cart</v-btn>
+      <v-card-actions style="position: absolute; bottom: 0; width: 100%;">
+        <v-btn block to="#" color="primary">Add to cart</v-btn>
       </v-card-actions>
 
     </v-card>
