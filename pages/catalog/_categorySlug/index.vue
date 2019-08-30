@@ -21,7 +21,7 @@
       </v-col>
     </v-row>
 
-    <v-row justify="space-between mt-10">
+    <v-row>
       <template v-for="product in products">
         <v-col cols="3">
           <product-item 
