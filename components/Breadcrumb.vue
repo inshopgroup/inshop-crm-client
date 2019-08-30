@@ -1,22 +1,18 @@
 <template>
-
   <v-row>
     <v-col cols="12">
-      <v-breadcrumbs>
-        <div v-for="breadcrumb in breadcrumbs">
-          <template v-if="breadcrumb.link">
-            <a :href="breadcrumb.link">{{breadcrumb.name}}</a>
-          </template>
-
-          <template v-else>
-            {{breadcrumb.name}}
-          </template>
-        </div>
+      <v-breadcrumbs :items="breadcrumbs">
+        <template v-slot:item="props">
+          <v-breadcrumbs-item
+            :href="props.item.link"
+            :class="[props.item.disabled && 'disabled']"
+          >
+            {{ props.item.name }}
+          </v-breadcrumbs-item>
+        </template>
       </v-breadcrumbs>
     </v-col>
   </v-row>
-
-
 </template>
 
 <script>

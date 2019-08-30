@@ -3,11 +3,7 @@
     <Header/>
 
     <v-content>
-      <v-container>
-        <v-row justify="center">
-          <nuxt/>   
-        </v-row>
-      </v-container>
+      <nuxt/>   
     </v-content>
     
     <Footer />

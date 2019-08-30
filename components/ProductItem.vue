@@ -21,7 +21,10 @@
       </v-card-text>
 
       <v-card-actions style="position: absolute; bottom: 0; width: 100%;">
-        <v-btn block to="#" color="primary">Add to cart</v-btn>
+        <v-btn block to="#" color="primary">
+          <v-icon left>mdi-cart-arrow-down</v-icon>
+          Add to cart
+        </v-btn>
       </v-card-actions>
 
     </v-card>

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
+    <breadcrumb :breadcrumbs="breadcrumbs" />
 
     <v-row>
       <v-col cols="12">
@@ -27,7 +27,7 @@
           <product-item 
             :product="product" 
             :category-slug="categorySlug"
-          ></product-item>
+          />
         </v-col>
       </template>
     </v-row>
@@ -36,7 +36,7 @@
       :total="total"
       v-model="currentPage"
       :link-gen="linkGen"
-    ></pagination>
+    />
   </v-container>
 </template>
 

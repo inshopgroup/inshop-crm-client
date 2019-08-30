@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-row justify="center" style="justify-content: center;">
+  <v-container fill-height>
+    <v-row justify="center">
       <v-col cols="4" class="text-center">
         <form method="post" @submit.prevent="remindPassword">
           <h1 class="display-5 mb-5">Remind password</h1>
@@ -24,7 +24,7 @@
         </form>
       </v-col>
     </v-row>
-  </v-container>  
+  </v-container>
 </template>
 
 <script>
