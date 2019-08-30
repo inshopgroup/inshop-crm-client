@@ -23,7 +23,7 @@
 
     <v-row justify="space-between mt-10">
       <template v-for="product in products">
-        <v-col cols="auto">
+        <v-col cols="3">
           <product-item 
             :product="product" 
             :category-slug="categorySlug"
