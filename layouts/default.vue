@@ -3,7 +3,7 @@
     <Header/>
 
     <v-content>
-      <v-container fill-height>
+      <v-container>
         <v-row justify="center">
           <nuxt/>   
         </v-row>

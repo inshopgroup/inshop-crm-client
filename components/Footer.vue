@@ -13,46 +13,21 @@
           <h5>Informations</h5>
           <v-divider class="mt-0 mb-2" color="white" width="25%"></v-divider>
           <ul class="list-unstyled pl-0">
-            <li>
-              <v-btn 
-                class="caption pl-0 pr-0 text-capitalize justify-start" 
-                block 
-                small 
-                text 
-                to="/page/about"
-              >
-                <v-icon small left>mdi-link</v-icon>About
-              </v-btn>
+            <li class="mb-2">
+              <v-icon small left>mdi-link</v-icon>
+              <a class="white--text" href="/page/about">About</a>
             </li>
-            <li>
-              <v-btn 
-                class="caption pl-0 pr-0 text-capitalize justify-start" 
-                block 
-                small 
-                text 
-                to="/page/about"
-              >
-                <v-icon small left>mdi-link</v-icon>About</v-btn>
+            <li class="mb-2">
+              <v-icon small left>mdi-link</v-icon>
+              <a class="white--text" href="/page/about">About</a>
             </li>
-            <li>
-              <v-btn 
-                class="caption pl-0 pr-0 text-capitalize justify-start" 
-                block 
-                small 
-                text 
-                to="/page/about"
-              >
-                <v-icon small left>mdi-link</v-icon>About</v-btn>
+            <li class="mb-2">
+              <v-icon small left>mdi-link</v-icon>
+              <a class="white--text" href="/page/about">About</a>
             </li>
-            <li>
-              <v-btn 
-                class="caption pl-0 pr-0 text-capitalize justify-start" 
-                block 
-                small 
-                text 
-                to="/page/about"
-              >
-                <v-icon small left>mdi-link</v-icon>About</v-btn>
+            <li class="mb-2">
+              <v-icon small left>mdi-link</v-icon>
+              <a class="white--text" href="/page/about">About</a>
             </li>
           </ul>
         </v-col>
@@ -61,45 +36,21 @@
           <h5>Others links</h5>
           <v-divider class="mt-0 mb-2" color="white" width="25%"></v-divider>
           <ul class="list-unstyled pl-0">
-            <li>
-              <v-btn 
-                class="caption pl-0 pr-0 text-capitalize justify-start" 
-                block 
-                small 
-                text 
-                to="/page/terms-of-use"
-              >
-                <v-icon small left>mdi-link</v-icon>Terms of use</v-btn>
+            <li class="mb-2">
+              <v-icon small left>mdi-link</v-icon>
+              <a class="white--text" href="/page/terms-of-use">Terms of use</a>
             </li>
-            <li>
-              <v-btn 
-                class="caption pl-0 pr-0 text-capitalize justify-start" 
-                block 
-                small 
-                text 
-                to="/page/terms-of-use"
-              >
-                <v-icon small left>mdi-link</v-icon>Terms of use</v-btn>
+            <li class="mb-2">
+              <v-icon small left>mdi-link</v-icon>
+              <a class="white--text" href="/page/terms-of-use">Terms of use</a>
             </li>
-            <li>
-              <v-btn 
-                class="caption pl-0 pr-0 text-capitalize justify-start" 
-                block 
-                small 
-                text 
-                to="/page/terms-of-use"
-              >
-                <v-icon small left>mdi-link</v-icon>Terms of use</v-btn>
+            <li class="mb-2">
+              <v-icon small left>mdi-link</v-icon>
+              <a class="white--text" href="/page/terms-of-use">Terms of use</a>
             </li>
-            <li>
-              <v-btn 
-                class="caption pl-0 pr-0 text-capitalize justify-start" 
-                block 
-                small 
-                text 
-                to="/page/terms-of-use"
-              >
-                <v-icon small left>mdi-link</v-icon>Terms of use</v-btn>
+            <li class="mb-2">
+              <v-icon small left>mdi-link</v-icon>
+              <a class="white--text" href="/page/terms-of-use">Terms of use</a>
             </li>
           </ul>
         </v-col>
@@ -116,10 +67,12 @@
               <a href="mailto:magaky71@gmail.com" class="white--text">email@example.com</a>
             </li>
             <li class="mb-2">
-              <v-icon small left>mdi-phone</v-icon>+ 33 12 14 15 16
+              <v-icon small left>mdi-phone</v-icon>
+              + 33 12 14 15 16
             </li>
             <li>
-              <v-icon small left>mdi-phone</v-icon>+ 33 12 14 15 16
+              <v-icon small left>mdi-phone</v-icon>
+              + 33 12 14 15 16
             </li>
           </ul>
         </v-col>
@@ -128,7 +81,7 @@
         <v-col cols="12">
           <p class="mb-0">
             <span>Inshop ecommerce, v1.5.0, Powered by</span> 
-            <a href="https://inshopgroup.com/" target="_blank">Inshop Group</a>
+            <a class="success--text" href="https://inshopgroup.com/" target="_blank">Inshop Group</a>
           </p>
         </v-col>
       </v-row>
