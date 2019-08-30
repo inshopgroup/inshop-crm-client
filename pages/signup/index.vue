@@ -13,7 +13,7 @@
             :errors="errors"
             color="#0c5c6f"
             @formUpdated="updateValue"
-          ></v-text-field>
+          />
           <v-text-field
             :item="item"
             :property="'name'"
@@ -22,7 +22,7 @@
             :errors="errors"
             color="#0c5c6f"
             @formUpdated="updateValue"
-          ></v-text-field>
+          />
           <v-text-field
             :item="item"
             :property="'plainPassword'"
@@ -32,7 +32,7 @@
             :type="'password'"
             color="#0c5c6f"
             @formUpdated="updatePassword"
-          ></v-text-field>
+          />
           <v-text-field
               :item="item"
               :property="'repeatPassword'"
@@ -42,7 +42,7 @@
               :type="'password'"
               color="#0c5c6f"
               @formUpdated="updatePassword"
-          ></v-text-field>
+          />
           <v-btn type="submit" color="#0c5c6f" dark class="mx-auto mt-1">Continue</v-btn>
           <div class="d-flex align-baseline justify-center mt-3">
             Already have profile?

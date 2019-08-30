@@ -13,7 +13,7 @@
             :property="'username'"
             color="#0c5c6f"
             @formUpdated="updateValue"
-          ></v-text-field>
+          />
 
           <v-btn type="submit" class="mx-auto" color="#0c5c6f" dark>{{ $t('continue') }}</v-btn>
 

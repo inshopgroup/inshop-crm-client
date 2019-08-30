@@ -1,50 +1,63 @@
 <template>
-  <div>
+  <v-container>
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
 
-    <div class="card-body store-body">
-      <div class="product-info">
-        <div class="product-gallery">
-          <div class="product-gallery-thumbnails">
-            <ol class="thumbnails-list list-unstyled">
-              <li><img src="https://via.placeholder.com/350x350/ffcf5b" alt=""></li>
-              <li><img src="https://via.placeholder.com/350x350/f16a22" alt=""></li>
-              <li><img src="https://via.placeholder.com/350x350/d3ffce" alt=""></li>
-              <li><img src="https://via.placeholder.com/350x350/7937fc" alt=""></li>
-              <li><img src="https://via.placeholder.com/350x350/930000" alt=""></li>
-            </ol>
+    <v-row>
+      <v-col cols="8">
+
+        <div class="product-info">
+
+          <div class="product-gallery">
+            <div class="product-gallery-thumbnails">
+              <ol class="thumbnails-list list-unstyled">
+                <li><img src="https://via.placeholder.com/350x350/ffcf5b" alt=""></li>
+                <li><img src="https://via.placeholder.com/350x350/f16a22" alt=""></li>
+                <li><img src="https://via.placeholder.com/350x350/d3ffce" alt=""></li>
+                <li><img src="https://via.placeholder.com/350x350/7937fc" alt=""></li>
+                <li><img src="https://via.placeholder.com/350x350/930000" alt=""></li>
+              </ol>
+            </div>
+            <div class="product-gallery-featured">
+              <img src="https://via.placeholder.com/350x350/ffcf5b" alt="">
+            </div>
           </div>
-          <div class="product-gallery-featured">
-            <img src="https://via.placeholder.com/350x350/ffcf5b" alt="">
-          </div>
-        </div>
-        <div class="product-seller-recommended">
-          <div class="product-description mb-5 mt-5">
+
+          <div class="mb-5 mt-5">
             <h2 class="mb-5">Features</h2>
-            <dl class="row mb-5">
-              <dt class="col-sm-3">Brand</dt>
-              <dd class="col-sm-9">Nickony</dd>
-              <dt class="col-sm-3">Color</dt>
-              <dd class="col-sm-9">Red</dd>
-              <dt class="col-sm-3">Size</dt>
-              <dd class="col-sm-9">XXL</dd>
-              <dt class="col-sm-3">Fabric</dt>
-              <dd class="col-sm-9">Cottom</dd>
-            </dl>
+            <v-row class="mb-5">
+              <v-col cols="3" class="font-weight-bold">Brand:</v-col>
+              <v-col cols="9">Nickony</v-col>
+              <v-col cols="3" class="font-weight-bold">Color:</v-col>
+              <v-col cols="9">Red</v-col>
+              <v-col cols="3" class="font-weight-bold">Size:</v-col>
+              <v-col cols="9">XXL</v-col>
+              <v-col cols="3" class="font-weight-bold">Fabric:</v-col>
+              <v-col cols="9">Cottom</v-col>
+            </v-row>
             <h2 class="mb-5">Description</h2>
-            <p>{{translation(product).description}}</p>
+            <p>{{ translation(product).description }}</p>
           </div>
         </div>
-      </div>
-      <div class="product-payment-details">
-        <h4 class="product-title mb-2">{{translation(product).name}}</h4>
-        <h2 class="product-price display-4">$ 25.00</h2>
-        <label for="quant">Quantity</label>
-        <input type="number" name="quantity" min="1" id="quant" class="form-control mb-5 input-lg" placeholder="Choose the quantity">
-        <button class="btn btn-success btn-lg btn-block">Buy Now</button>
-      </div>
-    </div>
-  </div>
+      </v-col>
+
+      <v-col cols="4">
+        <h4 class="display-3 mb-4 primary--text">{{ translation(product).name }}</h4>
+        <h2 class="display-2 mb-4">$ 25.00</h2>
+        <!-- <label for="quant">Quantity</label> -->
+        <v-text-field 
+          type="number" 
+          name="quantity" 
+          min="1" 
+          id="quant" 
+          class="mb-5" 
+          label="Choose the quantity"
+        />
+        <v-btn block color="success">Buy Now</v-btn>
+      </v-col>
+
+
+    </v-row>
+  </v-container>
 </template>
 
 <script>

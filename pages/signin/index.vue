@@ -12,7 +12,7 @@
             property="username"
             color="#0c5c6f"
             @formUpdated="updateValue"
-          ></v-text-field>
+          />
           <v-text-field
             type="password"
             label="Password"
@@ -21,7 +21,7 @@
             property="password"
             color="#0c5c6f"
             @formUpdated="updateValue"
-          ></v-text-field>
+          />
           <div class="text-center mt-1">
             <v-btn class="mx-auto" type="submit" color="#0c5c6f" dark>Sign In</v-btn>
           </div>
