@@ -5,11 +5,23 @@
     <v-row justify="space-between">
       <v-col cols="4" offset="1">
         <template v-if="imageSelected">
-          <img :src="imageSelected.contentUrl" class="mb-2" style="width: 100%; cursor: zoom-in;" alt="">
+          <img :src="imageSelected.contentUrl" @click="overlay = !overlay" class="mb-2" style="width: 100%; cursor: zoom-in;" alt="">
+
+          <v-overlay :value="overlay">
+            <v-btn
+              icon
+              @click="overlay = false"
+              class="d-flex"
+              style="position: absolute; top: -35px; right: 0;"
+            >
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+            <img width="500px" :src="imageSelected.contentUrl" alt="">
+          </v-overlay>
 
           <v-row>
             <v-col cols="2" v-for="image in images" :key="image.id">
-              <img @click="selectImage(image.id)" :src="image.contentUrl" style="width: 100%;" alt="">
+              <img @click="selectImage(image.id)" :src="image.contentUrl" style="width: 100%; cursor: pointer;" alt="">
             </v-col>
           </v-row>
         </template>
@@ -96,6 +108,7 @@
           },
         ],
         imageSelected: null,
+        overlay: false,
       }
     },
     mounted() {
