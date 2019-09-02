@@ -4,22 +4,15 @@
 
     <v-row justify="space-between">
       <v-col cols="4" offset="1">
+        <template v-if="imageSelected">
+          <img :src="imageSelected.contentUrl" class="mb-2" style="width: 100%; cursor: zoom-in;" alt="">
 
-        <div class="product-info">
-
-          <template v-if="imageSelected">
-            <img :src="imageSelected.contentUrl" class="mb-2" style="width: 100%; cursor: zoom-in;" alt="">
-
-            <v-row>
-              <v-col cols="2" v-for="image in images" :key="image.id">
-                <img @click="selectImage(image.id)" :src="image.contentUrl" alt="" style="width: 100%;">
-              </v-col>
-            </v-row>
-          </template>
-
-          <!-- <v-divider></v-divider> -->
-        
-        </div>
+          <v-row>
+            <v-col cols="2" v-for="image in images" :key="image.id">
+              <img @click="selectImage(image.id)" :src="image.contentUrl" style="width: 100%;" alt="">
+            </v-col>
+          </v-row>
+        </template>
       </v-col>
 
       <v-col cols="6" offset="1">
@@ -29,8 +22,10 @@
           <v-icon left>mdi-cart-arrow-down</v-icon>
           Add to cart
         </v-btn>
+
+        <v-divider></v-divider>
         
-        <v-row class="mb-5">
+        <v-row>
           <v-col cols="12">
             <h2 class="mb-1">Features</h2>
           </v-col>
@@ -44,12 +39,13 @@
           <v-col cols="9">Cottom</v-col>
         </v-row>
       </v-col>
-
     </v-row>
+
+    <v-divider></v-divider>
 
     <v-row>
       <v-col cols="12">
-        <h2 class="mb-3">Description</h2>
+        <h2>Description</h2>
         <p>{{ translation(product).description }}</p>
       </v-col>
     </v-row>
