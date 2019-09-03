@@ -3,7 +3,7 @@
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
 
     <v-row justify="space-between">
-      <v-col cols="4" offset="1">
+      <v-col cols="4">
         <template v-if="imageSelected">
           <img :src="imageSelected.contentUrl" @click="overlay = !overlay" class="mb-2" style="width: 100%; cursor: zoom-in;" alt="">
 
@@ -27,7 +27,7 @@
         </template>
       </v-col>
 
-      <v-col cols="6" offset="1">
+      <v-col cols="7" offset="1">
         <h4 class="display-3 mb-5">{{ translation(product).name }}</h4>
         <h2 class="display-2 mb-5">$ 25.00</h2>
         <v-btn color="primary">
