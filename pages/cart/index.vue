@@ -17,7 +17,7 @@
         :key="product.id"
       >
         <v-row no-gutters justify="space-between" align="center">
-          <v-col cols="2" class="">
+          <v-col cols="2">
             <a href="/">
               <v-img
                 width="100%"

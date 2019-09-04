@@ -34,14 +34,14 @@
             @formUpdated="updatePassword"
           />
           <v-text-field
-              :item="item"
-              :property="'repeatPassword'"
-              :label="'Repeat password'"
-              :required="true"
-              :errors="errors"
-              :type="'password'"
-              color="#0c5c6f"
-              @formUpdated="updatePassword"
+            :item="item"
+            :property="'repeatPassword'"
+            :label="'Repeat password'"
+            :required="true"
+            :errors="errors"
+            :type="'password'"
+            color="#0c5c6f"
+            @formUpdated="updatePassword"
           />
           <v-btn type="submit" color="#0c5c6f" dark class="mx-auto mt-1">Continue</v-btn>
           <div class="d-flex align-baseline justify-center mt-3">
