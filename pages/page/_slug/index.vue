@@ -19,7 +19,7 @@
 
 <script>
   import Breadcrumb from '../../../components/Breadcrumb'
-  import Translate from "../../../mixins/Translate";
+  import Translate from "../../../mixins/Translate"
 
   export default {
     mixins: [Translate],

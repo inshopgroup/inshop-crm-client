@@ -5,7 +5,8 @@ const items = [
     name: 'Wisozk, Blick and Stehr',
     ean: 123451,
     price: 200,
-    total: 200
+    total: 200,
+    quantity: 1,
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ const items = [
     name: 'Wisozk and Stehr',
     ean: 789123,
     price: 400,
-    total: 400
+    total: 400,
+    quantity: 1,
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ const items = [
     name: 'Blick and Stehr',
     ean: 111111,
     price: 5000,
-    total: 5000
+    total: 5000,
+    quantity: 1,
   }
 ]
 
