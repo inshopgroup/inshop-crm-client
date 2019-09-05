@@ -9,9 +9,9 @@
       </v-col>
     </v-row>
 
-    <v-row justify="space-between">
-      <v-col cols="5">
-        <form method="post" @submit.prevent="" ref="form">
+    <form method="post" @submit.prevent="">
+      <v-row justify="space-between">
+        <v-col cols="5">
           <v-text-field
             auto-grow
             outlined
@@ -78,85 +78,75 @@
             label="Street"
             @formUpdated="updateValue"
           />
-  
-          <v-row justify="space-between">
-            <v-col cols="6">
-              <v-btn  outlined block color="error" @click="$refs.form.reset()">
-                <v-icon left>mdi-trash-can-outline</v-icon>
-                Reset Form
-              </v-btn>
-            </v-col>
+        </v-col>
 
-            <v-col cols="6">
-              <v-btn block color="primary">
-                <v-icon left>mdi-progress-upload</v-icon>
-                Submit
-              </v-btn>
-             </v-col>
-          </v-row>
+        <v-col cols="5" offset="2">
+          <v-card 
+            width="100%"
+            raised
+            color="grey lighten-3"
+          >
+            <v-card 
+              width="100%"
+              color="transparent"
+              outlined
+            >
+              <v-row justify="space-between">
+                <v-col cols="3">
+                  <v-img
+                    class="mx-3"
+                    src="https://via.placeholder.com/350x350/ffcf5b"
+                  ></v-img>
+                </v-col>
+                <v-col cols="9">
+                  <v-card-title class="py-2">
+                    <p class="text-primary mb-0">Wisozk, Blick and Stehr</p>
+                  </v-card-title>
+                  <v-card-text>
+                    <div class="d-flex justify-space-between">
+                      <p class="pb-0">1 qty.</p>
+                      <p class="pb-0">$200</p>
+                    </div>
+                  </v-card-text>
+                </v-col>
+              </v-row>
+            </v-card>
 
-        </form>
-      </v-col>
-
-      <v-col cols="5" offset="2">
-        <v-card 
-          width="100%"
-          raised
-          color="grey lighten-3"
-        >
-          <v-row justify="space-between">
-            <v-col cols="3">
-              <v-img
-                class="mx-3"
-                src="https://via.placeholder.com/350x350/ffcf5b"
-              ></v-img>
-            </v-col>
-            <v-col cols="9">
-              <v-card-title class="py-2">
-                <p class="text-primary mb-0">Wisozk, Blick and Stehr</p>
-              </v-card-title>
-              <v-card-text>
-                <div class="d-flex justify-space-between">
-                  <p class="pb-0">1 qty.</p>
-                  <p class="pb-0">$200</p>
-                </div>
-              </v-card-text>
-            </v-col>
-          </v-row>
-
-          <v-divider width="96%" class="mx-auto my-0"></v-divider>
-          
-          <v-row justify="space-between">
-            <v-col cols="6">
-              <v-card-text class="py-0">
-                <p class="mb-0">Total</p>
-              </v-card-text>
-            </v-col>
-             <v-col cols="6" class="text-right">
+            <v-divider width="96%" class="mx-auto my-0"></v-divider>
+            
+            <v-row justify="space-between">
+              <v-col cols="6">
                 <v-card-text class="py-0">
-                  <p class="mb-0"><b>$200</b></p>
+                  <p class="mb-0">Total</p>
                 </v-card-text>
-             </v-col>
-          </v-row>
+              </v-col>
+              <v-col cols="6" class="text-right">
+                  <v-card-text class="py-0">
+                    <p class="mb-0"><b>$200</b></p>
+                  </v-card-text>
+              </v-col>
+            </v-row>
 
-          <v-row justify="center">
-            <v-col cols="auto" class="pt-0">
-              <v-card-actions class="p-0">
-                <v-btn
-                  outlined
-                  color="success"
-                  to="/cart"
-                >
-                  <v-icon left>mdi-pencil-outline</v-icon>
-                  Edit order
-                </v-btn>
-              </v-card-actions>
-            </v-col>
-          </v-row>
+          </v-card>
+        </v-col>
+      </v-row>
 
-        </v-card>
-      </v-col>
-    </v-row>
+      <v-row justify="space-between">
+        <v-col cols="auto">
+          <v-btn text color="#0c5c6f" dark to="/cart">
+            <v-icon left>mdi-keyboard-backspace</v-icon>
+            Back
+          </v-btn>
+        </v-col>
+
+        <v-col cols="auto">
+          <v-btn color="#0c5c6f" dark>
+            <v-icon left>mdi-progress-upload</v-icon>
+            Submit
+          </v-btn>
+          </v-col>
+      </v-row>
+    </form>
 
   </v-container>
 </template>

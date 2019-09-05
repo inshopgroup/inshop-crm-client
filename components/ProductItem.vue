@@ -27,7 +27,7 @@
           <p class="mb-2">{{ product.price }} $</p>
         </v-card-text>
         <v-card-actions style="position: absolute; bottom: 0; width: 100%;">
-          <v-btn @click="addToCart()" block color="primary">
+          <v-btn block color="#0c5c6f" dark>
             <v-icon left>mdi-cart-arrow-down</v-icon>
             Add to cart
           </v-btn>
@@ -64,11 +64,6 @@
         required: true
       },
     },
-    methods: {
-      addToCart() {
-       
-      }
-    }
   }
 </script>
 

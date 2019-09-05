@@ -74,7 +74,7 @@
 
       <v-row justify="space-between" align="center">
         <v-col cols="auto">
-          <v-btn outlined color="primary">
+          <v-btn color="#0c5c6f" dark>
             <v-icon to="" left>mdi-cart-arrow-down</v-icon>
             Continue to shoping
           </v-btn>
@@ -83,7 +83,7 @@
         <v-spacer></v-spacer>
 
         <v-col cols="auto">
-          <v-btn outlined color="success" class="mb-3">
+          <v-btn color="success" class="mb-3">
             <v-icon left>mdi-cash-multiple</v-icon>
             Checkout
           </v-btn>

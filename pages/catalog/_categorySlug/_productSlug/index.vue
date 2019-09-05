@@ -30,7 +30,7 @@
       <v-col cols="7" offset="1">
         <h4 class="display-3 mb-5">{{ translation(product).name }}</h4>
         <h2 class="display-2 mb-5">$ 25.00</h2>
-        <v-btn color="primary">
+        <v-btn color="#0c5c6f" dark>
           <v-icon left>mdi-cart-arrow-down</v-icon>
           Add to cart
         </v-btn>
