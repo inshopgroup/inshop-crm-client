@@ -47,7 +47,7 @@
                 <v-icon small color="primary">mdi-plus</v-icon>
               </v-btn>
               <div>{{ product.quantity }}</div>
-              <v-btn icon small :disabled="product.quantity === 0">
+              <v-btn icon small>
                 <v-icon small color="red">mdi-minus</v-icon>
               </v-btn>
             </div>
@@ -83,7 +83,7 @@
         <v-spacer></v-spacer>
 
         <v-col cols="auto">
-          <v-btn color="success" class="mb-3">
+          <v-btn color="success" class="mb-3" to="/checkout">
             <v-icon left>mdi-cash-multiple</v-icon>
             Checkout
           </v-btn>

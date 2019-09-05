@@ -21,9 +21,9 @@
       </v-col>
     </v-row>
 
-    <v-row>
+    <v-row justify="center" justify-xl="start" justify-lg="start" justify-md="start" justify-sm="start">
       <template v-for="product in products">
-        <v-col cols="3">
+        <v-col cols="auto" xl="3" lg="3" md="4" sm="6"> 
           <product-item 
             :product="product" 
             :category-slug="categorySlug"
@@ -45,8 +45,8 @@
   import ProductItem from '~/components/ProductItem.vue'
   import Footer from '~/components/Footer.vue'
   import Translate from '~/mixins/Translate.vue'
-  import Breadcrumb from "../../../components/Breadcrumb";
-  import Pagination from "../../../components/Pagination";
+  import Breadcrumb from "../../../components/Breadcrumb"
+  import Pagination from "../../../components/Pagination"
 
   export default {
     mixins: [Translate],

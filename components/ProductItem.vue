@@ -7,7 +7,7 @@
     >
       <v-card 
         :elevation="hover ? 14 : 2" 
-        max-width="316" 
+        max-width="100%" 
         height="100%" 
         class="pb-10"
       >

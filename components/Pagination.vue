@@ -1,7 +1,9 @@
 <template>
-  <nav v-if="pages.length > 1">
+  <!-- <nav >
     <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Previous</a>
+      </li>
 
       <li class="page-item" v-for="page in pages">
         <a class="page-link" :href="linkGen(page)">{{ page }}</a>
@@ -9,11 +11,21 @@
 
       <li class="page-item"><a class="page-link" href="#">Next</a></li>
     </ul>
-  </nav>
+  </nav> -->
+  <v-row>
+    <v-col cols="12" justify="center">
+      <v-pagination
+        v-if="pages.length > 1"
+        v-model="pages"
+        :length="pages.length"
+        class="my-3"
+      ></v-pagination>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
-  const PAGER_OFFSET = 5;
+  const PAGER_OFFSET = 5
 
   export default {
     name: 'Pagination',

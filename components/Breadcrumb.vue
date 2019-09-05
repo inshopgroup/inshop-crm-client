@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col cols="12">
-      <v-breadcrumbs :items="breadcrumbs" class="pl-0">
+      <v-breadcrumbs :items="breadcrumbs" class="p-0">
         <template v-slot:item="props">
           <v-breadcrumbs-item
             :href="props.item.link"

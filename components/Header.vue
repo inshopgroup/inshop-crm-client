@@ -9,19 +9,11 @@
     <v-container>
       <v-row justify="space-between" align="center">
         <v-col cols="3">
-
           <v-toolbar-title class="d-flex">
-            <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon> -->
             <v-icon>mdi-home</v-icon>
             <a href="/" class="text-white hidden-sm-and-down mx-2">Inshop Ecommerce</a>
           </v-toolbar-title>
-
         </v-col>
-
-          <!-- <a href="/">Inshop Ecommerce</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button> -->
 
         <v-col cols="5" class="d-flex align-center">
           <category-nav></category-nav>
@@ -50,23 +42,8 @@
             <span class="badge badge-light ml-2">3</span>
           </v-btn>
         </v-col>
-
-          <!-- <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-            
-            <language-select></language-select>
-
-              <a class="btn btn-success btn-sm ml-3" href="/cart">
-                <font-awesome-icon icon="shopping-cart"/> Cart
-                <span class="badge badge-light">3</span>
-              </a>
-          </div> -->
-            
       </v-row>
-      
-      <!-- <category-nav></category-nav> -->
-
     </v-container>
-
   </v-app-bar>
 </template>
 

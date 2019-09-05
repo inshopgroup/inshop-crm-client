@@ -1,14 +1,11 @@
 <template>
   <v-container>
-
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
-
     <v-row>
       <v-col cols="12">
         <h1>Checkout</h1>
       </v-col>
     </v-row>
-
     <form method="post" @submit.prevent="">
       <v-row justify="space-between">
         <v-col cols="5">
@@ -17,45 +14,52 @@
             outlined
             color="success"
             :item="item"
+            :required="true"
+            :errors="errors"
             property="name"
             label="Name"
-            :required="true"
-            :errors="errors"
-            @formUpdated="updateValue"
+            @input="updateValue($event, 'name')"
           />
           <v-text-field
             auto-grow
             outlined
             color="success"
             :item="item"
-            :property="'username'"
-            :label="'Email'"
-            :type="'email'"
             :required="true"
             :errors="errors"
-            @formUpdated="updateValue"
+            property="username"
+            label="Email"
+            type="email"
+            @input="updateValue($event, 'username')"
           />
           <v-text-field
             auto-grow
             outlined
             color="success"
             :item="item"
-            :label="'Phone'"
-            :type="'tel'"
             :required="true"
             :errors="errors"
-            @formUpdated="updateValue"
+            label="Phone"
+            property="phone"
+            type="tel"
+            @input="updateValue($event, 'phone')"
           />
           <v-combobox
-            :items="countries"
             outlined
             color="success"
+            :items="countries"
+            :errors="errors"
+            property="country"
+            option-store="country"
             label="Country"
           />
           <v-combobox
-            :items="cities"
             outlined
             color="success"
+            :items="cities"
+            :errors="errors"
+            property="city"
+            option-store="city"
             label="City"
           />
           <v-text-field
@@ -66,7 +70,7 @@
             :errors="errors"
             property="postCode"
             label="Post code"
-            @formUpdated="updateValue"
+            @input="updateValue($event, 'postCode')"
           />
           <v-text-field
             auto-grow
@@ -76,7 +80,7 @@
             :errors="errors"
             property="street"
             label="Street"
-            @formUpdated="updateValue"
+            @input="updateValue($event, 'street')"
           />
         </v-col>
 
@@ -111,9 +115,7 @@
                 </v-col>
               </v-row>
             </v-card>
-
             <v-divider width="96%" class="mx-auto my-0"></v-divider>
-            
             <v-row justify="space-between">
               <v-col cols="6">
                 <v-card-text class="py-0">
@@ -126,11 +128,9 @@
                   </v-card-text>
               </v-col>
             </v-row>
-
           </v-card>
         </v-col>
       </v-row>
-
       <v-row justify="space-between">
         <v-col cols="auto">
           <v-btn text color="#0c5c6f" dark to="/cart">
@@ -138,7 +138,6 @@
             Back
           </v-btn>
         </v-col>
-
         <v-col cols="auto">
           <v-btn color="#0c5c6f" dark>
             <v-icon left>mdi-progress-upload</v-icon>
@@ -147,7 +146,6 @@
           </v-col>
       </v-row>
     </form>
-
   </v-container>
 </template>
 
@@ -184,7 +182,7 @@
       },
     },
     methods: {
-      updateValue(property, value) {
+      updateValue(value, property) {
         this.$store.commit('user/UPDATE_ITEM', {[property]: value})
       },
     },
