@@ -47,7 +47,7 @@
             @formUpdated="updateValue"
           />
           <v-combobox
-            :items="countrys"
+            :items="countries"
             outlined
             color="success"
             label="Country"
@@ -88,7 +88,7 @@
             </v-col>
 
             <v-col cols="6">
-              <v-btn outlined block color="primary">
+              <v-btn block color="primary">
                 <v-icon left>mdi-progress-upload</v-icon>
                 Submit
               </v-btn>
@@ -167,7 +167,7 @@
   export default {
     data() {
       return {
-        countrys: ['Ukrain', 'Poland', 'Usa'],
+        countries: ['Ukrain', 'Poland', 'Usa'],
         cities: ['Poltava', 'Warsaw', 'Berlin']
       }
     },

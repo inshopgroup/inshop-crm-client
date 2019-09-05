@@ -5,43 +5,51 @@
         <form method="post" @submit.prevent="signUp">
           <h1 class="display-3 mb-5">Registration</h1>
           <v-text-field
+            auto-grow
+            outlined
+            color="success"
             :item="item"
-            :property="'username'"
-            :label="'email'"
-            :type="'email'"
             :required="true"
             :errors="errors"
-            color="#0c5c6f"
-            @formUpdated="updateValue"
+            property="username"
+            label="Email"
+            type="email"
+            @input="updateValue($event, 'username')"
           />
           <v-text-field
+            auto-grow
+            outlined
+            color="success"
             :item="item"
-            :property="'name'"
-            :label="'Name'"
             :required="true"
             :errors="errors"
-            color="#0c5c6f"
-            @formUpdated="updateValue"
+            property="name"
+            label="Name"
+            @input="updateValue($event, 'name')"
           />
           <v-text-field
+            auto-grow
+            outlined
+            color="success"
             :item="item"
-            :property="'plainPassword'"
-            :label="'Password'"
             :required="true"
             :errors="errors"
-            :type="'password'"
-            color="#0c5c6f"
-            @formUpdated="updatePassword"
+            property="plainPassword"
+            label="Password"
+            type="password"
+            @input="updateValue($event, 'plainPassword')"
           />
           <v-text-field
+            auto-grow
+            outlined
+            color="success"
             :item="item"
-            :property="'repeatPassword'"
-            :label="'Repeat password'"
             :required="true"
             :errors="errors"
-            :type="'password'"
-            color="#0c5c6f"
-            @formUpdated="updatePassword"
+            property="repeatPassword"
+            label="Repeat password"
+            type="password"
+            @input="updateValue($event, 'repeatPassword')"
           />
           <v-btn type="submit" color="#0c5c6f" dark class="mx-auto mt-1">Continue</v-btn>
           <div class="d-flex align-baseline justify-center mt-3">
@@ -79,7 +87,7 @@
             this.$toast.error('Some error! Please, check form')
           })
       },
-      updateValue(property, value) {
+      updateValue(value, property) {
         this.$store.commit('user/UPDATE_ITEM', {[property]: value})
       },
       updatePassword(property, value) {

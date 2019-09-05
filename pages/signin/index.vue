@@ -5,22 +5,26 @@
         <form method="post" @submit.prevent="signIn">
           <h1 class="display-3 mb-5">Sign In</h1>
           <v-text-field
+            auto-grow
+            outlined
+            color="success"
             type="email"
             label="Email"
             :item="credentials"
             :errors="errors"
             property="username"
-            color="#0c5c6f"
-            @formUpdated="updateValue"
+            @input="updateValue($event, 'username')"
           />
           <v-text-field
+            auto-grow
+            outlined
+            color="success"
             type="password"
             label="Password"
             :item="credentials"
             :errors="errors"
             property="password"
-            color="#0c5c6f"
-            @formUpdated="updateValue"
+            @input="updateValue($event, 'password')"
           />
           <div class="text-center mt-1">
             <v-btn class="mx-auto" type="submit" color="#0c5c6f" dark>Sign In</v-btn>
@@ -65,7 +69,7 @@
           })
           .catch(() => {})
       },
-      updateValue(property, value) {
+      updateValue(value, property) {
         this.credentials[property] = value
       }
     }
