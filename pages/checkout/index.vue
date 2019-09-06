@@ -65,6 +65,7 @@
           <v-text-field
             auto-grow
             outlined
+            counter
             color="success"
             :item="item"
             :errors="errors"
@@ -123,9 +124,9 @@
                 </v-card-text>
               </v-col>
               <v-col cols="6" class="text-right">
-                  <v-card-text class="py-0">
-                    <p class="mb-0"><b>$200</b></p>
-                  </v-card-text>
+                <v-card-text class="py-0">
+                  <p class="mb-0"><b>$200</b></p>
+                </v-card-text>
               </v-col>
             </v-row>
           </v-card>
@@ -139,7 +140,7 @@
           </v-btn>
         </v-col>
         <v-col cols="auto">
-          <v-btn color="#0c5c6f" dark>
+          <v-btn color="#0c5c6f" dark to="/success">
             <v-icon left>mdi-progress-upload</v-icon>
             Submit
           </v-btn>

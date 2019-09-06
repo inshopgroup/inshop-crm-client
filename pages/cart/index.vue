@@ -44,11 +44,11 @@
           <v-col cols="1">
             <div class="d-flex align-center">
               <v-btn icon small>
-                <v-icon small color="primary">mdi-plus</v-icon>
+                <v-icon small color="red">mdi-minus</v-icon>
               </v-btn>
               <div>{{ product.quantity }}</div>
               <v-btn icon small>
-                <v-icon small color="red">mdi-minus</v-icon>
+                <v-icon small color="primary">mdi-plus</v-icon>
               </v-btn>
             </div>
           </v-col>
@@ -74,8 +74,8 @@
 
       <v-row justify="space-between" align="center">
         <v-col cols="auto">
-          <v-btn color="#0c5c6f" dark>
-            <v-icon to="" left>mdi-cart-arrow-down</v-icon>
+          <v-btn color="#0c5c6f" dark to="/">
+            <v-icon left>mdi-cart-arrow-down</v-icon>
             Continue to shoping
           </v-btn>
         </v-col>

@@ -38,7 +38,8 @@
           <language-select></language-select>
 
           <v-btn color="success" class="text-capitalize" to="/cart">
-            <font-awesome-icon class="mr-2" icon="shopping-cart"/> Cart
+            <v-icon left>mdi-cart</v-icon>
+            Cart
             <span class="badge badge-light ml-2">3</span>
           </v-btn>
         </v-col>

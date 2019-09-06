@@ -30,6 +30,7 @@
           <v-text-field
             auto-grow
             outlined
+            counter
             color="success"
             :item="item"
             :required="true"
@@ -42,6 +43,7 @@
           <v-text-field
             auto-grow
             outlined
+            counter
             color="success"
             :item="item"
             :required="true"

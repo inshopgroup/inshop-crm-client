@@ -18,6 +18,7 @@
           <v-text-field
             auto-grow
             outlined
+            counter
             color="success"
             type="password"
             label="Password"
