@@ -12,12 +12,12 @@
     <template v-if="products.length">
       <v-card 
         width="100%"
-        class="mb-3"
+        class="mb-5"
         v-for="product in products"
         :key="product.id"
       >
         <v-row no-gutters justify="space-between" align="center">
-          <v-col cols="2">
+          <v-col cols="12" xl="2" lg="2" md="2" sm="2">
             <a href="/">
               <v-img
                 width="100%"
@@ -27,21 +27,21 @@
               ></v-img>
             </a>
           </v-col>
-          <v-col cols="3">
+          <v-col cols="3" xl="3" lg="3" md="3" sm="3">
             <h6 class="grey--text">Name</h6>
             <a href="/" class="text--primary">
               <p>{{ product.name }}</p>
             </a>
           </v-col>
-          <v-col cols="1">
+          <v-col cols="2" xl="2" lg="1" md="1" sm="1">
             <h6 class="grey--text">Ean</h6>
             <p>{{ product.ean }}</p>
           </v-col>
-          <v-col cols="1">
+          <v-col cols="2" xl="1" lg="1" md="1" sm="1">
             <h6 class="grey--text">Price</h6>
             <p>${{ product.price }}</p>
           </v-col>
-          <v-col cols="1">
+          <v-col cols="3" xl="2" lg="1" md="1" sm="1">
             <div class="d-flex align-center">
               <v-btn icon small>
                 <v-icon small color="red">mdi-minus</v-icon>
@@ -52,29 +52,27 @@
               </v-btn>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col cols="2" xl="2" lg="2" md="2" sm="2">
             <h6 class="grey--text">Total</h6>
             <p>${{ product.total }}</p>
           </v-col>
-          <v-col cols="1">
-            <v-btn icon color="error" @click="remove(product.id)">
-              <v-icon large>mdi-close-circle-outline</v-icon>
-            </v-btn>
-          </v-col>
+          <v-btn style="position: absolute; top: -15px; right: -15px;" icon color="error" @click="remove(product.id)">
+            <v-icon large>mdi-close-circle</v-icon>
+          </v-btn>
         </v-row>
       </v-card>
  
       <v-divider class="mt-9"></v-divider>
 
-      <v-row justify="end">
-        <v-col cols="auto">
+      <v-row>
+        <v-col cols="12" class="text-right">
           <p><b>Total: 0 $</b></p>
         </v-col>
       </v-row>
 
       <v-row justify="space-between" align="center">
-        <v-col cols="auto">
-          <v-btn color="#0c5c6f" dark to="/">
+        <v-col cols="12" xl="3" lg="3" md="3" sm="6">
+          <v-btn block color="#0c5c6f" dark to="/">
             <v-icon left>mdi-cart-arrow-down</v-icon>
             Continue to shoping
           </v-btn>
@@ -82,8 +80,8 @@
 
         <v-spacer></v-spacer>
 
-        <v-col cols="auto">
-          <v-btn color="success" class="mb-3" to="/checkout">
+        <v-col cols="12" xl="3" lg="3" md="3" sm="6" class="text-right">
+          <v-btn block color="success" to="/checkout">
             <v-icon left>mdi-cash-multiple</v-icon>
             Checkout
           </v-btn>
