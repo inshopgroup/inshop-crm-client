@@ -4,7 +4,7 @@
       <div
         v-for="category in categories"
         :key="category.id"
-        class="p-3"
+        class="p-3 mr-3"
         @mouseover="mouseover(category.id)"
         @mouseleave="mouseleave"
         @click="mouseleave"

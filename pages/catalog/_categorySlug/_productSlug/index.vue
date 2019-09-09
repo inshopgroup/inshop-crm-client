@@ -20,7 +20,7 @@
           </v-overlay>
 
           <v-row>
-            <v-col cols="2" v-for="image in images" :key="image.id">
+            <v-col cols="3" v-for="image in images" :key="image.id">
               <img @click="selectImage(image.id)" :src="image.contentUrl" style="width: 100%; cursor: pointer;" alt="">
             </v-col>
           </v-row>
@@ -35,8 +35,6 @@
           Add to cart
         </v-btn>
 
-        <v-divider></v-divider>
-        
         <v-row>
           <v-col cols="12">
             <h2 class="mb-1">Features</h2>

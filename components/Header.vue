@@ -18,7 +18,7 @@
         <v-col cols="5" class="d-flex align-center">
           <category-nav></category-nav>
         </v-col>
-          
+
         <v-col cols="4" class="d-flex align-center">
           <template v-if="isAuthenticated">
             <nuxt-link class="white--text mx-1" to="/profile">{{ username }}</nuxt-link>
