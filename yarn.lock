@@ -1226,13 +1226,6 @@
     lodash.template "^4.5.0"
     workbox-cdn "^4.3.1"
 
-"@nuxtjs/toast@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/toast/-/toast-3.2.1.tgz#b104c9139d609cf0966287aba38fa430e89d2c09"
-  integrity sha512-unMXSoTrrg6ql4slP41Zasui5UebK6wjSXPyCng4KfSMRnjyuDBODKyundQaMHl9whZYzIi4MZPbKNX376yeIw==
-  dependencies:
-    vue-toasted "^1.1.27"
-
 "@nuxtjs/vuetify@^1.8.0":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/vuetify/-/vuetify-1.8.0.tgz#41330fdbcc4f49cd5a5655d517020cb8d73983f1"
@@ -6075,11 +6068,6 @@ pluralize@^8.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
-popper.js@^1.15.0:
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
-  integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
-
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -8463,11 +8451,6 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
-
-vue-toasted@^1.1.27:
-  version "1.1.27"
-  resolved "https://registry.yarnpkg.com/vue-toasted/-/vue-toasted-1.1.27.tgz#ce0a74b875f90c2e4a9e163cce6d5fc37d78a07c"
-  integrity sha512-GVbwInwnqkVxQ4GU/XYeQt1e0dAXL8sF5Hr1H/coCBbYUan5xP0G2mEz/HRDf1lt73rFQAN/bJcLTOKkqiM6tg==
 
 vue@^2.5.0, vue@^2.5.22, vue@^2.6.10:
   version "2.6.10"
