@@ -1,36 +1,22 @@
 # INSHOP CRM / ERP / ECOMMERCE
 
-Inshop CRM / ERP is powerful framework which allows to build systems for business with different workflows.
-It has on board multi language support, clients management, projects & tasks, documents, simple accounting, inventory management, 
+Inshop ecommerce is powerful framework.
+It has on board multi language support, clients management, simple accounting, inventory management, 
 orders & invoice management, possibilities to integrate with third party software, REST API, and many other features.
 
-https://inshopcrm.com/
+https://ecommerce.inshopcrm.com/
 
-![alt text](https://inshopcrm.com/static/vuetify/signin.png "Inshop CRM login page")
+![alt text](https://inshopcrm.com/static/ecommerce/signin.png "Inshop CRM login page")
 
-![alt text](https://inshopcrm.com/static/vuetify/dashboard.png "Inshop CRM login dashboard with charts")
+![alt text](https://inshopcrm.com/static/ecommerce/catalog.png "Inshop CRM login dashboard with charts")
 
-![alt text](https://inshopcrm.com/static/vuetify/calendar.png "Inshop CRM login dashboard with charts")
-
-## Live demo
-Feel free to check out our demo CRM instance
-
-Username: demo
-
-Password: demo
-
-https://demo.inshopcrm.com/signin
+![alt text](https://inshopcrm.com/static/ecommerce/product.png "Inshop CRM login dashboard with charts")
 
 
 ## Main Features
 
  * Multi language support
  * Clients management
- * Projects
- * Tasks
- * Calendar with events & reminders
- * Google calendar integration
- * Documents & templates
  * Multi currency support
  * Products & categories management
  * Prices and availability management
