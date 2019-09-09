@@ -1,40 +1,37 @@
 <template>
-  <div class="dropdown mr-2">
-    <v-btn 
-      class="dropdown-toggle text-capitalize" 
-      color="primary" 
-      dark 
-      id="language" 
-      data-toggle="dropdown" 
-      aria-haspopup="true" 
-      aria-expanded="false"
-    >
-      <v-icon small left>mdi-map-search-outline</v-icon>{{ locale }}
-    </v-btn>
-    <div class="dropdown-menu" aria-labelledby="language">
-      <a class="dropdown-item" :href="switchLocalePath('en')" @click.prevent="setLocale('en')">en</a>
-      <a class="dropdown-item" :href="switchLocalePath('de')" @click.prevent="setLocale('de')">de</a>
-      <a class="dropdown-item" :href="switchLocalePath('pl')" @click.prevent="setLocale('pl')">pl</a>
-      <a class="dropdown-item" :href="switchLocalePath('ru')" @click.prevent="setLocale('ru')">ru</a>
-      <a class="dropdown-item" :href="switchLocalePath('es')" @click.prevent="setLocale('es')">es</a>
-      <a class="dropdown-item" :href="switchLocalePath('fr')" @click.prevent="setLocale('fr')">fr</a>
-      <a class="dropdown-item" :href="switchLocalePath('it')" @click.prevent="setLocale('it')">it</a>
-    </div>
-  </div>
+  <v-menu offset-y class="mx-1">
+    <template v-slot:activator="{ on }">
+      <v-btn
+          color="primary"
+          dark
+          v-on="on"
+      >
+        {{ locale }}
+      </v-btn>
+    </template>
+    <v-list>
+      <v-list-item v-for="language in languages" :key="language" @click="setLocale(language)">
+        <v-list-item-title>{{ language }}</v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-menu>
 </template>
 
 <script>
 export default {
+  data: () => ({
+    languages: ['en', 'de', 'pl', 'ru', 'es', 'fr', 'it'],
+  }),
+  computed: {
+    locale () {
+      return this.$store.state.locale
+    }
+  },
   methods: {
     setLocale (locale) {
       this.$cookies.set('locale', locale)
       this.$store.commit('SET_LOCALE', locale)
       this.$router.push(this.switchLocalePath(locale))
-    }
-  },
-  computed: {
-    locale () {
-      return this.$store.state.locale
     }
   }
 }

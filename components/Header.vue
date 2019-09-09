@@ -11,7 +11,7 @@
         <v-col cols="3">
           <v-toolbar-title class="d-flex">
             <v-icon>mdi-home</v-icon>
-            <a href="/" class="text-white hidden-sm-and-down mx-2">Inshop Ecommerce</a>
+            <a href="/" class="white--text hidden-sm-and-down mx-2">Inshop Ecommerce</a>
           </v-toolbar-title>
         </v-col>
 
@@ -21,15 +21,15 @@
           
         <v-col cols="4" class="d-flex align-center">
           <template v-if="isAuthenticated">
-            <nuxt-link class="nav-link" to="/profile">{{ username }}</nuxt-link>
-            <a href="#" class="nav-link" @click.prevent="signout">Sign out</a>
+            <nuxt-link class="white--text mx-1" to="/profile">{{ username }}</nuxt-link>
+            <a class="white--text mx-1" @click.prevent="signout">Sign out</a>
           </template>
           <template v-else>
-            <v-btn text class="mr-2 text-capitalize" to="/signin">
+            <v-btn text class="mx-1" to="/signin">
               <v-icon left>mdi-account</v-icon>
               Sign in
             </v-btn>
-            <v-btn text class="mr-2 text-capitalize" to="/signup">
+            <v-btn text class="mx-1" to="/signup">
               <v-icon left>mdi-account-plus</v-icon>
               Sign up
             </v-btn>
@@ -37,7 +37,7 @@
 
           <language-select></language-select>
 
-          <v-btn color="success" class="text-capitalize" to="/cart">
+          <v-btn color="success" class="mx-1" to="/cart">
             <v-icon left>mdi-cart</v-icon>
             Cart
             <span class="badge badge-light ml-2">3</span>
