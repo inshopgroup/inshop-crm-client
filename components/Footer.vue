@@ -84,7 +84,7 @@
       <v-row justify="center" justify-xl="start" justify-lg="start" justify-md="start">
         <v-col cols="auto">
           <p class="mb-0">
-            <span>Inshop ecommerce, v1.5.0, Powered by</span> 
+            <span>Inshop ecommerce, v0.2.0, Powered by</span>
             <a class="success--text" href="https://inshopgroup.com/" target="_blank">Inshop Group</a>
           </p>
         </v-col>
