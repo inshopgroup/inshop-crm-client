@@ -6,7 +6,7 @@
     dark
     :src="bg"
   >
-    <v-container>
+    <v-container class="header-container">
       <v-row justify="space-between" align="center">
         <v-col cols="3">
           <v-toolbar-title class="d-flex">
@@ -84,3 +84,12 @@
     }
   }
 </script>
+
+<style>
+  .header-container {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+  }
+</style>

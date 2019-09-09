@@ -4,7 +4,7 @@
       <div
         v-for="category in categories"
         :key="category.id"
-        class="p-3 mr-3"
+        class="mr-3"
         @mouseover="mouseover(category.id)"
         @mouseleave="mouseleave"
         @click="mouseleave"
@@ -18,32 +18,31 @@
       </div>
     </div>
 
-    <div
-      v-for="category in categories"
-      :key="category.id"
-      dark
-      color="success"
-      :class="['position-absolute', 'submenu-bg', {'d-none': hover !== category.id}, {'d-flex': hover === category.id}]"
-      @mouseover="mouseover(category.id)"
-      @mouseleave="mouseleave"
-      @click="mouseleave"
-    >
-      <v-col cols="auto" class="ml-2 mr-2">
-        <v-row justify="space-between">
-          <nuxt-link
-            :to="localePath({name: 'catalog-categorySlug', params: {categorySlug: subCategory.slug}})"
-            v-for="subCategory in category.subCategories"
-            v-if="category.subCategories"
-            :key="subCategory.id"
-            class="m-2 w-25 text-left white--text"
-          >
-            {{ translation(subCategory).name }}
-          </nuxt-link>
-        </v-row>
-      </v-col>
+    <div class="submenu">
+      <div
+        v-for="category in categories"
+        :key="category.id"
+        :class="['container', {'d-none': hover !== category.id}, {'d-flex': hover === category.id}]"
+        @mouseover="mouseover(category.id)"
+        @mouseleave="mouseleave"
+        @click="mouseleave"
+      >
+        <v-col cols="auto" class="ml-2 mr-2">
+          <v-row justify="space-between">
+            <nuxt-link
+              :to="localePath({name: 'catalog-categorySlug', params: {categorySlug: subCategory.slug}})"
+              v-for="subCategory in category.subCategories"
+              v-if="category.subCategories"
+              :key="subCategory.id"
+              class="white--text ma-3"
+            >
+              {{ translation(subCategory).name }}
+            </nuxt-link>
+          </v-row>
+        </v-col>
+      </div>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -78,7 +77,15 @@
 </script>
 
 <style>
-  .submenu-bg {
+  .submenu {
     background-color: #255769;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+  }
+
+  .v-toolbar__content, .v-toolbar__extension {
+    padding: 0 16px !important;
   }
 </style>
