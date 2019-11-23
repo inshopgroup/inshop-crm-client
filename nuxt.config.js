@@ -48,7 +48,11 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/pwa',
-    '@nuxtjs/vuetify',
+    ['@nuxtjs/vuetify', {
+      treeShake: true,
+      customVariables: ['./assets/scss/vuetify-variables.scss'],
+      optionsPath: './vuetify.options.js'
+    }],
     'cookie-universal-nuxt',
     ['nuxt-i18n', {
       defaultLocale: 'en',
