@@ -1,25 +1,23 @@
 <template>
   <v-app-bar 
     app
-    max-height="65px"
+    class="header"
+    height="64px"
     color="#003145" 
     dark
     :src="bg"
   >
-    <v-container class="header-container">
-      <v-row justify="space-between" align="center">
-        <v-col cols="3">
-          <v-toolbar-title class="d-flex">
+    <v-container class="header-container py-0">
+      <v-row justify="space-between" align="center" class="fill-height">
+        <v-col class="col-auto d-flex align-center">
+          <v-toolbar-title class="d-flex header-logo">
             <v-icon>mdi-home</v-icon>
-            <a href="/" class="white--text hidden-sm-and-down mx-2">Inshop Ecommerce</a>
+            <nuxt-link to="/" class="white--text hidden-sm-and-down mx-2">Inshop Ecommerce</nuxt-link>
           </v-toolbar-title>
-        </v-col>
-
-        <v-col cols="5" class="d-flex align-center">
           <category-nav></category-nav>
         </v-col>
 
-        <v-col cols="4" class="d-flex align-center">
+        <v-col class="col-auto d-flex align-center">
           <template v-if="isAuthenticated">
             <nuxt-link class="white--text mx-1" to="/profile">{{ username }}</nuxt-link>
             <a class="white--text mx-1" @click.prevent="signout">Sign out</a>
@@ -49,10 +47,10 @@
 </template>
 
 <script>
-  import Menu from '../components/Menu.vue'
-  import LanguageSelect from '../components/LanguageSelect.vue'
-  import Auth from '../mixins/Auth'
-  import CategoryNav from "./CategoryNav"
+  import Menu from '~/components/Menu'
+  import LanguageSelect from '~/components/LanguageSelect'
+  import Auth from '~/mixins/Auth'
+  import CategoryNav from '~/components/CategoryNav'
   import bg from '@/assets/bg.png'
 
   export default {
@@ -84,12 +82,3 @@
     }
   }
 </script>
-
-<style>
-  .header-container {
-    position: relative;
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 100%;
-  }
-</style>

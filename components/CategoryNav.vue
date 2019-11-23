@@ -10,8 +10,8 @@
         @click="mouseleave"
       >
         <nuxt-link
-          :to="localePath({ name: 'catalog-categorySlug', params: {categorySlug: category.slug} })"
-          class="white--text"
+          :to="localePath({ name: 'catalog-categorySlug', params: { categorySlug: category.slug } })"
+          class="white--text py-6"
         >
           {{ translation(category).name }}
         </nuxt-link>
@@ -22,7 +22,7 @@
       <div
         v-for="category in categories"
         :key="category.id"
-        :class="['container', {'d-none': hover !== category.id}, {'d-flex': hover === category.id}]"
+        :class="['container', { 'd-none': hover !== category.id }, { 'd-flex': hover === category.id }]"
         @mouseover="mouseover(category.id)"
         @mouseleave="mouseleave"
         @click="mouseleave"
@@ -30,7 +30,7 @@
         <v-col cols="auto" class="ml-2 mr-2">
           <v-row justify="space-between">
             <nuxt-link
-              :to="localePath({name: 'catalog-categorySlug', params: {categorySlug: subCategory.slug}})"
+              :to="localePath({ name: 'catalog-categorySlug', params: { categorySlug: subCategory.slug } })"
               v-for="subCategory in category.subCategories"
               v-if="category.subCategories"
               :key="subCategory.id"
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-  import Translate from '~/mixins/Translate.vue'
+  import Translate from '~/mixins/Translate'
 
   export default {
     mixins: [Translate],
