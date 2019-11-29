@@ -36,8 +36,6 @@ module.exports = {
   */
   plugins: [
     '~/plugins/axios',
-    { src: '~/plugins/inshop-form-components', ssr: false },
-    { src: '~/plugins/vue-select', ssr: false },
   ],
 
   /*
