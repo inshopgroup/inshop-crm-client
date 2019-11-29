@@ -3,17 +3,21 @@
     <Header/>
 
     <v-content>
-      <nuxt/>   
+      <nuxt/>
     </v-content>
-    
+
     <Footer />
+
+    <loader></loader>
   </v-app>
 </template>
 
 <script>
   import Header from '~/components/Header.vue'
   import Footer from '~/components/Footer.vue'
+  import Loader from '~/components/Loader'
+
   export default {
-    components: {Header, Footer}
+    components: {Loader, Header, Footer}
   }
 </script>
