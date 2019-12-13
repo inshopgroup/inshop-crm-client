@@ -1,7 +1,6 @@
 export const strict = true
 
 import pluralize from 'pluralize'
-import cookie from 'cookie'
 
 export const state = () => ({
   isLoading: 0,
@@ -47,37 +46,37 @@ export const actions = {
   loadingAllow({commit}, value) {
     commit('LOADING_ALLOW', value)
   },
-  async nuxtServerInit ({ commit, dispatch }, { query, route, req, $axios }) {
-    if (route.name === 'products') {
+  async nuxtServerInit ({ commit, dispatch }, context) {
+    if (context.route.name === 'products') {
       let filters = {};
 
-      Object.keys(query).map((key, index) => {
-        let val = query[key].split(',')
+      Object.keys(context.query).map((key, index) => {
+        let val = context.query[key].split(',')
 
         if (key === 'q' || key === 'sort') {
-          val = query[key]
+          val = context.query[key]
         }
 
         filters[key] = val
       })
 
-      commit(pluralize.singular(route.name)+ '/SET_FILTERS', filters)
+      commit(pluralize.singular(context.route.name)+ '/SET_FILTERS', filters)
     }
 
-    if (req.headers.cookie) {
-      let cookies = cookie.parse(req.headers.cookie)
+    const ft = context.app.$cookiz.get('ft')
+    const frt = context.app.$cookiz.get('frt')
+    const locale = context.app.$cookiz.get('locale')
 
-      if (cookies.token) {
-        commit('auth/AUTH_UPDATE_TOKEN', cookies.token)
-      }
+    if (ft) {
+      commit('auth/AUTH_UPDATE_TOKEN', ft)
+    }
 
-      if (cookies.refreshToken) {
-        commit('auth/AUTH_UPDATE_REFRESH_TOKEN', cookies.refreshToken)
-      }
+    if (frt) {
+      commit('auth/AUTH_UPDATE_REFRESH_TOKEN', frt)
+    }
 
-      if (cookies.locale) {
-        commit('SET_LOCALE', cookies.locale)
-      }
+    if (locale) {
+      commit('SET_LOCALE', locale)
     }
 
     await dispatch('category/getItems')

@@ -1,5 +1,4 @@
 import jwtDecode from 'jwt-decode'
-import Cookie from 'js-cookie'
 
 export const state = () => ({
   token: null,
@@ -10,19 +9,19 @@ export const state = () => ({
 
 export const mutations = {
   AUTH_UPDATE_TOKEN (state, data) {
-    Cookie.set('token', data)
+    this.$cookiz.set('ft', data)
     state.token = data
   },
   AUTH_UPDATE_REFRESH_TOKEN (state, data) {
-    Cookie.set('refreshToken', data)
+    this.$cookiz.set('frt', data)
     state.refreshToken = data
   },
   AUTH_ERROR_CHANGE (state, error) {
     state.error = error
   },
   AUTH_RESET (state) {
-    Cookie.remove('token')
-    Cookie.remove('refreshToken')
+    this.$cookiz.remove('ft')
+    this.$cookiz.remove('frt')
 
     state.token = null
     state.refreshToken = null

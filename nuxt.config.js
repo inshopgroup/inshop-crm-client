@@ -58,7 +58,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/pwa',
-    'cookie-universal-nuxt',
+    ['cookie-universal-nuxt', { alias: 'cookiz' }],
     ['nuxt-i18n', {
       defaultLocale: 'en',
       locales: [{
