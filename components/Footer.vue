@@ -68,7 +68,7 @@
             </li>
             <li class="mb-2">
               <v-icon left>mdi-email-edit</v-icon>
-              <a href="mailto:magaky71@gmail.com" class="white--text">email@example.com</a>
+              <a href="mailto:email@example.com" class="white--text">email@example.com</a>
             </li>
             <li class="mb-2">
               <v-icon left>mdi-phone</v-icon>
