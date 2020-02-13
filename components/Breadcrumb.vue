@@ -16,13 +16,13 @@
 </template>
 
 <script>
-  export default {
-    name: 'Breadcrumb',
-    props: {
-      breadcrumbs: {
-        type: Array,
-        required: true
-      },
+export default {
+  name: 'Breadcrumb',
+  props: {
+    breadcrumbs: {
+      type: Array,
+      required: true
     }
   }
+}
 </script>

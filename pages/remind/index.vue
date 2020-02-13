@@ -15,7 +15,9 @@
             @formUpdated="updateValue"
           />
 
-          <v-btn type="submit" class="mx-auto" color="#0c5c6f" dark>{{ $t('continue') }}</v-btn>
+          <v-btn type="submit" class="mx-auto" color="#0c5c6f" dark>{{
+            $t('continue')
+          }}</v-btn>
 
           <div class="mt-3">
             {{ $t('already_have_account') }}
@@ -28,43 +30,47 @@
 </template>
 
 <script>
-  export default {
-    layout: 'signin',
-    head() {
-      return {
-        title: this.$t('remind'),
-        meta: [{
+export default {
+  layout: 'signin',
+  computed: {
+    item() {
+      return this.$store.getters['user/item']
+    },
+    errors() {
+      return this.$store.getters['user/errors']
+    }
+  },
+  methods: {
+    remindPassword() {
+      this.$store
+        .dispatch('user/remindPassword')
+        .then(() => {
+          this.$router.push('/remind/complete')
+        })
+        .catch(() => {
+          this.$toast.error(this.$t('save_error'))
+        })
+    },
+    updateValue(property, value) {
+      this.$store.commit('user/UPDATE_ITEM', { [property]: value })
+    }
+  },
+  head() {
+    return {
+      title: this.$t('remind'),
+      meta: [
+        {
           hid: `description`,
           name: 'description',
           content: this.$t('remind')
-        }, {
+        },
+        {
           hid: `keywords`,
           name: 'keywords',
           keywords: this.$t('remind')
-        }]
-      }
-    },
-    computed: {
-      item() {
-        return this.$store.getters['user/item']
-      },
-      errors() {
-        return this.$store.getters['user/errors']
-      },
-    },
-    methods: {
-      remindPassword() {
-        this.$store.dispatch('user/remindPassword')
-          .then(() => {
-            this.$router.push('/remind/complete')
-          })
-          .catch(() => {
-            this.$toast.error(this.$t('save_error'))
-          })
-      },
-      updateValue(property, value) {
-        this.$store.commit('user/UPDATE_ITEM', {[property]: value})
-      }
+        }
+      ]
     }
   }
+}
 </script>

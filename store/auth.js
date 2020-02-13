@@ -4,22 +4,22 @@ export const state = () => ({
   token: null,
   refreshToken: null,
   type: null,
-  error: null,
+  error: null
 })
 
 export const mutations = {
-  AUTH_UPDATE_TOKEN (state, data) {
+  AUTH_UPDATE_TOKEN(state, data) {
     this.$cookiz.set('ft', data)
     state.token = data
   },
-  AUTH_UPDATE_REFRESH_TOKEN (state, data) {
+  AUTH_UPDATE_REFRESH_TOKEN(state, data) {
     this.$cookiz.set('frt', data)
     state.refreshToken = data
   },
-  AUTH_ERROR_CHANGE (state, error) {
+  AUTH_ERROR_CHANGE(state, error) {
     state.error = error
   },
-  AUTH_RESET (state) {
+  AUTH_RESET(state) {
     this.$cookiz.remove('ft')
     this.$cookiz.remove('frt')
 
@@ -46,13 +46,14 @@ export const getters = {
 }
 
 export const actions = {
-  login ({ commit }, data) {
+  login({ commit }, data) {
     commit('AUTH_ERROR_CHANGE', null)
 
     let link = process.env.NUXT_ENV_API_URL + '/frontend/login'
 
-    return this.$axios.post(link, data).
-      then(response => {
+    return this.$axios
+      .post(link, data)
+      .then(response => {
         commit('AUTH_UPDATE_TOKEN', response.data.token)
         commit('AUTH_UPDATE_REFRESH_TOKEN', response.data.refresh_token)
       })
@@ -61,30 +62,33 @@ export const actions = {
         throw error
       })
   },
-  refreshToken ({ commit, getters }) {
+  refreshToken({ commit, getters }) {
     let link = process.env.NUXT_ENV_API_URL + '/frontend/token/refresh'
 
-    return this.$axios.post(link, {refresh_token: getters.refreshToken}).
-      then(response => {
+    return this.$axios
+      .post(link, { refresh_token: getters.refreshToken })
+      .then(response => {
         commit('AUTH_UPDATE_TOKEN', response.data.token)
 
         return response
       })
   },
-  loginByToken ({ commit, getters }, token) {
+  loginByToken({ commit, getters }, token) {
     let link = process.env.NUXT_ENV_API_URL + '/frontend/login/' + token
 
-    return this.$axios.get(link).
-      then(response => {
+    return this.$axios
+      .get(link)
+      .then(response => {
         commit('AUTH_UPDATE_TOKEN', response.data.token)
         commit('AUTH_UPDATE_REFRESH_TOKEN', response.data.refresh_token)
 
         return response
-      }).catch(e => {
+      })
+      .catch(e => {
         throw e
-    })
+      })
   },
-  logout ({ commit }) {
+  logout({ commit }) {
     commit('AUTH_RESET')
   }
 }

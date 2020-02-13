@@ -53,10 +53,19 @@
             type="password"
             @input="updateValue($event, 'repeatPassword')"
           />
-          <v-btn type="submit" color="#0c5c6f" dark class="mx-auto mt-1">Continue</v-btn>
+          <v-btn type="submit" color="#0c5c6f" dark class="mx-auto mt-1"
+            >Continue</v-btn
+          >
           <div class="d-flex align-baseline justify-center mt-3">
             Already have profile?
-            <v-btn text height="27" to="/signin" class="text-capitalize p-2" color="primary">Sign in</v-btn>
+            <v-btn
+              text
+              height="27"
+              to="/signin"
+              class="text-capitalize p-2"
+              color="primary"
+              >Sign in</v-btn
+            >
           </div>
         </form>
       </v-col>
@@ -65,45 +74,51 @@
 </template>
 
 <script>
-  export default {
-    middleware: 'authenticatedSignin',
-    computed: {
-      item() {
-        return this.$store.getters['user/item']
-      },
-      errors() {
-        return this.$store.getters['user/errors']
-      },
+export default {
+  middleware: 'authenticatedSignin',
+  computed: {
+    item() {
+      return this.$store.getters['user/item']
     },
-    methods: {
-      signUp() {
-        if (this.errors && this.errors.repeatPassword) {
-          return
-        }
+    errors() {
+      return this.$store.getters['user/errors']
+    }
+  },
+  beforeDestroy() {
+    this.$store.commit('user/SET_ERRORS', {})
+  },
+  methods: {
+    signUp() {
+      if (this.errors && this.errors.repeatPassword) {
+        return
+      }
 
-        this.$store.dispatch('user/signup')
-          .then(() => {
-            this.$router.push('/signup/complete')
-          })
-          .catch(() => {
-            this.$toast.error('Some error! Please, check form')
-          })
-      },
-      updateValue(value, property) {
-        this.$store.commit('user/UPDATE_ITEM', {[property]: value})
-      },
-      updatePassword(property, value) {
-        this.updateValue(property, value)
+      this.$store
+        .dispatch('user/signup')
+        .then(() => {
+          this.$router.push('/signup/complete')
+        })
+        .catch(() => {
+          this.$toast.error('Some error! Please, check form')
+        })
+    },
+    updateValue(value, property) {
+      this.$store.commit('user/UPDATE_ITEM', { [property]: value })
+    },
+    updatePassword(property, value) {
+      this.updateValue(property, value)
 
-        if ((this.item.plainPassword || this.item.repeatPassword) && this.item.plainPassword !== this.item.repeatPassword) {
-          this.$store.commit('user/SET_ERRORS', {repeatPassword: 'Passwords are not the same'})
-        } else {
-          this.$store.commit('user/SET_ERRORS', {})
-        }
-      },
-    },
-    beforeDestroy() {
-      this.$store.commit('user/SET_ERRORS', {})
-    },
+      if (
+        (this.item.plainPassword || this.item.repeatPassword) &&
+        this.item.plainPassword !== this.item.repeatPassword
+      ) {
+        this.$store.commit('user/SET_ERRORS', {
+          repeatPassword: 'Passwords are not the same'
+        })
+      } else {
+        this.$store.commit('user/SET_ERRORS', {})
+      }
+    }
   }
+}
 </script>

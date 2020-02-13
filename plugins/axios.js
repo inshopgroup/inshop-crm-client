@@ -1,19 +1,19 @@
-export default function ({ $axios, store, redirect, error }) {
+export default function({ $axios, store, redirect, error }) {
   $axios.onRequest(config => {
     store.dispatch('loadingStart')
 
     let token = store.getters['auth/jwtDecoded'] || null
-    let authorized = (token && token.exp > Date.now() / 1000)
+    let authorized = token && token.exp > Date.now() / 1000
 
     if (authorized) {
-      config.headers.common['Authorization'] = 'Bearer ' + store.state.auth.token
+      config.headers.common.Authorization = 'Bearer ' + store.state.auth.token
     }
 
     if (process.env.NODE_ENV !== 'production') {
       if (config.url.indexOf('?') > -1) {
-        config.url = config.url + '&XDEBUG_SESSION_START=PHPSTORM'
+        config.url += '&XDEBUG_SESSION_START=PHPSTORM'
       } else {
-        config.url = config.url + '?XDEBUG_SESSION_START=PHPSTORM'
+        config.url += '?XDEBUG_SESSION_START=PHPSTORM'
       }
     }
 

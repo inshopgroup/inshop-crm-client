@@ -1,17 +1,13 @@
 <template>
-  <v-app-bar 
-    app
-    max-height="65px"
-    color="#003145" 
-    dark
-    :src="bg"
-  >
+  <v-app-bar app max-height="65px" color="#003145" dark :src="bg">
     <v-container class="header-container">
       <v-row justify="space-between" align="center">
         <v-col cols="3">
           <v-toolbar-title class="d-flex">
             <v-icon>mdi-home</v-icon>
-            <a href="/" class="white--text hidden-sm-and-down mx-2">Inshop Ecommerce</a>
+            <a href="/" class="white--text hidden-sm-and-down mx-2"
+              >Inshop Ecommerce</a
+            >
           </v-toolbar-title>
         </v-col>
 
@@ -21,7 +17,9 @@
 
         <v-col cols="4" class="d-flex align-center">
           <template v-if="isAuthenticated">
-            <nuxt-link class="white--text mx-1" to="/profile">{{ username }}</nuxt-link>
+            <nuxt-link class="white--text mx-1" to="/profile">{{
+              username
+            }}</nuxt-link>
             <a class="white--text mx-1" @click.prevent="signout">Sign out</a>
           </template>
           <template v-else>
@@ -49,47 +47,47 @@
 </template>
 
 <script>
-  import Menu from '../components/Menu.vue'
-  import LanguageSelect from '../components/LanguageSelect.vue'
-  import Auth from '../mixins/Auth'
-  import CategoryNav from "./CategoryNav"
-  import bg from '@/assets/bg.png'
+import bg from '@/assets/bg.png'
+import Menu from './Menu.vue'
+import LanguageSelect from './LanguageSelect.vue'
+import Auth from '../mixins/Auth'
+import CategoryNav from './CategoryNav'
 
-  export default {
-    data() {
-      return {
-        bg,
-        drawer: null
+export default {
+  components: {
+    CategoryNav,
+    Menu,
+    LanguageSelect
+  },
+  mixins: [Auth],
+  data() {
+    return {
+      bg,
+      drawer: null
+    }
+  },
+  computed: {
+    username() {
+      if (this.isAuthenticated) {
+        return this.jwtDecoded.name
       }
-    },
-    components: {
-      CategoryNav,
-      Menu,
-      LanguageSelect
-    },
-    mixins: [Auth],
-    computed: {
-      username () {
-        if (this.isAuthenticated) {
-          return this.jwtDecoded.name
-        }
-      },
-    },
-    methods: {
-      signout() {
-        this.$store.dispatch('auth/logout').then(() => {
-          this.$router.push('/')
-        })
-      },
+    }
+  },
+  methods: {
+    signout() {
+      this.$store.dispatch('auth/logout').then(() => {
+        this.$router.push('/')
+      })
     }
   }
+}
 </script>
 
 <style>
-  .header-container {
-    position: relative;
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 100%;
-  }
+.header-container {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 100%;
+}
 </style>

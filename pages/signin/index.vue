@@ -28,14 +28,25 @@
             @input="updateValue($event, 'password')"
           />
           <div class="text-center mt-1">
-            <v-btn class="mx-auto" type="submit" color="#0c5c6f" dark>Sign In</v-btn>
+            <v-btn class="mx-auto" type="submit" color="#0c5c6f" dark
+              >Sign In</v-btn
+            >
           </div>
           <div class="text-center mt-1">
-            <v-btn text to="/remind" class="text-capitalize p-2" color="primary">Forgot password?</v-btn>
+            <v-btn text to="/remind" class="text-capitalize p-2" color="primary"
+              >Forgot password?</v-btn
+            >
           </div>
           <div class="d-flex align-baseline justify-center mt-3">
             Don't have profile yet?
-            <v-btn text height="27" to="/signup" class="text-capitalize p-2" color="primary">Sign up</v-btn>
+            <v-btn
+              text
+              height="27"
+              to="/signup"
+              class="text-capitalize p-2"
+              color="primary"
+              >Sign up</v-btn
+            >
           </div>
         </form>
       </v-col>
@@ -44,35 +55,36 @@
 </template>
 
 <script>
-  export default {
-    middleware: 'authenticatedSignin',
-    data() {
-      return {
-        credentials: {
-          username: '',
-          password: ''
-        }
-      }
-    },
-    computed: {
-      errors() {
-        return {
-          username: this.$store.getters['auth/error'],
-          password: this.$store.getters['auth/error']
-        }
-      }
-    },
-    methods: {
-      signIn() {
-        this.$store.dispatch('auth/login', this.credentials)
-          .then(() => {
-            this.$router.push('/')
-          })
-          .catch(() => {})
-      },
-      updateValue(value, property) {
-        this.credentials[property] = value
+export default {
+  middleware: 'authenticatedSignin',
+  data() {
+    return {
+      credentials: {
+        username: '',
+        password: ''
       }
     }
+  },
+  computed: {
+    errors() {
+      return {
+        username: this.$store.getters['auth/error'],
+        password: this.$store.getters['auth/error']
+      }
+    }
+  },
+  methods: {
+    signIn() {
+      this.$store
+        .dispatch('auth/login', this.credentials)
+        .then(() => {
+          this.$router.push('/')
+        })
+        .catch(() => {})
+    },
+    updateValue(value, property) {
+      this.credentials[property] = value
+    }
   }
+}
 </script>

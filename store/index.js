@@ -1,12 +1,12 @@
-export const strict = true
-
 import pluralize from 'pluralize'
+
+export const strict = true
 
 export const state = () => ({
   isLoading: 0,
   loadingAllow: true,
   locales: ['en', 'de', 'pl', 'ru', 'es', 'fr', 'it'],
-  locale: 'en',
+  locale: 'en'
 })
 
 export const mutations = {
@@ -29,26 +29,26 @@ export const mutations = {
     if (state.locales.includes(locale)) {
       state.locale = locale
     }
-  },
+  }
 }
 
 export const getters = {
-  isLoading: state => state.isLoading !== 0,
+  isLoading: state => state.isLoading !== 0
 }
 
 export const actions = {
-  loadingStart({commit}) {
+  loadingStart({ commit }) {
     commit('LOADING_START')
   },
-  loadingStop({commit}) {
+  loadingStop({ commit }) {
     commit('LOADING_STOP')
   },
-  loadingAllow({commit}, value) {
+  loadingAllow({ commit }, value) {
     commit('LOADING_ALLOW', value)
   },
-  async nuxtServerInit ({ commit, dispatch }, context) {
+  async nuxtServerInit({ commit, dispatch }, context) {
     if (context.route.name === 'products') {
-      let filters = {};
+      let filters = {}
 
       Object.keys(context.query).map((key, index) => {
         let val = context.query[key].split(',')
@@ -60,7 +60,7 @@ export const actions = {
         filters[key] = val
       })
 
-      commit(pluralize.singular(context.route.name)+ '/SET_FILTERS', filters)
+      commit(pluralize.singular(context.route.name) + '/SET_FILTERS', filters)
     }
 
     const ft = context.app.$cookiz.get('ft')

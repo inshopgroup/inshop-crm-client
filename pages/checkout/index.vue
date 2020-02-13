@@ -86,16 +86,8 @@
         </v-col>
 
         <v-col cols="5" offset="2">
-          <v-card 
-            width="100%"
-            raised
-            color="grey lighten-3"
-          >
-            <v-card 
-              width="100%"
-              color="transparent"
-              outlined
-            >
+          <v-card width="100%" raised color="grey lighten-3">
+            <v-card width="100%" color="transparent" outlined>
               <v-row justify="space-between">
                 <v-col cols="3">
                   <v-img
@@ -144,51 +136,51 @@
             <v-icon left>mdi-progress-upload</v-icon>
             Submit
           </v-btn>
-          </v-col>
+        </v-col>
       </v-row>
     </form>
   </v-container>
 </template>
 
 <script>
-  import Breadcrumb from "../../components/Breadcrumb"
+import Breadcrumb from '../../components/Breadcrumb'
 
-  export default {
-    data() {
-      return {
-        countries: ['Ukrain', 'Poland', 'Usa'],
-        cities: ['Poltava', 'Warsaw', 'Berlin']
-      }
+export default {
+  components: {
+    Breadcrumb
+  },
+  data() {
+    return {
+      countries: ['Ukrain', 'Poland', 'Usa'],
+      cities: ['Poltava', 'Warsaw', 'Berlin']
+    }
+  },
+  computed: {
+    breadcrumbs() {
+      return [
+        {
+          name: 'Home',
+          link: '/'
+        },
+        {
+          name: 'Checkout'
+        }
+      ]
     },
-    components: {
-      Breadcrumb,
+    item() {
+      return this.$store.getters['user/item']
     },
-    computed: {
-      breadcrumbs() {
-        return [
-          {
-            name: 'Home',
-            link: '/'
-          },
-          {
-            name: 'Checkout',
-          }
-        ]
-      },
-      item() {
-        return this.$store.getters['user/item']
-      },
-      errors() {
-        return this.$store.getters['user/errors']
-      },
-    },
-    methods: {
-      updateValue(value, property) {
-        this.$store.commit('user/UPDATE_ITEM', {[property]: value})
-      },
-    },
-    beforeDestroy() {
-      this.$store.commit('user/SET_ERRORS', {})
-    },
+    errors() {
+      return this.$store.getters['user/errors']
+    }
+  },
+  beforeDestroy() {
+    this.$store.commit('user/SET_ERRORS', {})
+  },
+  methods: {
+    updateValue(value, property) {
+      this.$store.commit('user/UPDATE_ITEM', { [property]: value })
+    }
   }
+}
 </script>

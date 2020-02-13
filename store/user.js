@@ -1,6 +1,6 @@
 export const state = () => ({
   item: {},
-  errors: {},
+  errors: {}
 })
 
 export const mutations = {
@@ -17,16 +17,16 @@ export const mutations = {
 
 export const getters = {
   item: state => state.item,
-  errors: state => state.errors,
+  errors: state => state.errors
 }
 
 export const actions = {
-  processErrors ({commit}, data) {
+  processErrors({ commit }, data) {
     if (data.violations) {
       let errors = {}
 
       data.violations.map(violation => {
-        Object.assign(errors, {[violation.propertyPath]: violation.message})
+        Object.assign(errors, { [violation.propertyPath]: violation.message })
       })
 
       commit('SET_ERRORS', errors)
@@ -34,42 +34,44 @@ export const actions = {
 
     throw data
   },
-  get ({commit}, id) {
+  get({ commit }, id) {
     let url = process.env.NUXT_ENV_API_URL + '/frontend/profile/me'
 
-    return this.$axios.get(url)
-      .then(response => {
-        commit('SET_ITEM', response.data)
-      })
+    return this.$axios.get(url).then(response => {
+      commit('SET_ITEM', response.data)
+    })
   },
-  update ({ state, commit, dispatch }) {
+  update({ state, commit, dispatch }) {
     commit('SET_ERRORS', {})
 
     let url = process.env.NUXT_ENV_API_URL + '/frontend/profile/me'
 
-    return this.$axios.put(url, state.item)
+    return this.$axios
+      .put(url, state.item)
       .then(response => response.data)
       .catch(e => {
         dispatch('processErrors', e.response.data)
       })
   },
-  signup ({ state, commit, dispatch }) {
+  signup({ state, commit, dispatch }) {
     commit('SET_ERRORS', {})
 
     let url = process.env.NUXT_ENV_API_URL + '/frontend/signup'
 
-    return this.$axios.post(url, state.item)
+    return this.$axios
+      .post(url, state.item)
       .then(response => response.data)
       .catch(e => {
         dispatch('processErrors', e.response.data)
       })
   },
-  remindPassword ({ state, commit, dispatch }) {
+  remindPassword({ state, commit, dispatch }) {
     commit('SET_ERRORS', {})
 
     let url = process.env.NUXT_ENV_API_URL + '/frontend/remind/password'
 
-    return this.$axios.post(url, state.item)
+    return this.$axios
+      .post(url, state.item)
       .then(response => response.data)
       .catch(e => {
         dispatch('processErrors', e.response.data)

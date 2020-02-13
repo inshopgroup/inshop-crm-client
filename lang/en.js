@@ -1,6 +1,6 @@
 export default {
-  homepage_title: "Homepage ecommerce",
-  already_have_account: "Already have an account?",
+  homepage_title: 'Homepage ecommerce',
+  already_have_account: 'Already have an account?',
   menu: {
     price: 'Prices',
     about: 'About company',

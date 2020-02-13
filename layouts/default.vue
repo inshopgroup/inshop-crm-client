@@ -1,9 +1,9 @@
 <template>
   <v-app>
-    <Header/>
+    <Header />
 
     <v-content>
-      <nuxt/>
+      <nuxt />
     </v-content>
 
     <Footer />
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-  import Header from '~/components/Header.vue'
-  import Footer from '~/components/Footer.vue'
-  import Loader from '~/components/Loader'
+import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
+import Loader from '~/components/Loader'
 
-  export default {
-    components: {Loader, Header, Footer}
-  }
+export default {
+  components: { Loader, Header, Footer }
+}
 </script>

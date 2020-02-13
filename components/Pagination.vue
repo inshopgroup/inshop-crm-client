@@ -25,41 +25,41 @@
 </template>
 
 <script>
-  const PAGER_OFFSET = 5
+const PAGER_OFFSET = 5
 
-  export default {
-    name: 'Pagination',
-    props: {
-      linkGen: null,
-      total: 0,
-      value: 0,
+export default {
+  name: 'Pagination',
+  props: {
+    linkGen: null,
+    total: 0,
+    value: 0
+  },
+  computed: {
+    perPage() {
+      return ~~process.env.NUXT_ENV_PER_PAGE
     },
-    computed: {
-      perPage() {
-        return ~~process.env.NUXT_ENV_PER_PAGE
-      },
-      pagesTotal() {
-        return Math.ceil(this.total / this.perPage)
-      },
-      pagerStart () {
-        let start = this.value - PAGER_OFFSET
+    pagesTotal() {
+      return Math.ceil(this.total / this.perPage)
+    },
+    pagerStart() {
+      let start = this.value - PAGER_OFFSET
 
-        return (start < 1) ? 1 : start
-      },
-      pagerEnd () {
-        let end = this.value + PAGER_OFFSET
+      return start < 1 ? 1 : start
+    },
+    pagerEnd() {
+      let end = this.value + PAGER_OFFSET
 
-        return (end > this.pagesTotal) ? this.pagesTotal : end
-      },
-      pages () {
-        let pages = []
+      return end > this.pagesTotal ? this.pagesTotal : end
+    },
+    pages() {
+      let pages = []
 
-        for (let i = this.pagerStart; i <= this.pagerEnd; i++) {
-          pages.push(i)
-        }
-
-        return pages
+      for (let i = this.pagerStart; i <= this.pagerEnd; i++) {
+        pages.push(i)
       }
+
+      return pages
     }
   }
+}
 </script>

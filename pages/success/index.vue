@@ -1,14 +1,19 @@
 <template>
   <v-container>
-    
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
 
     <v-row justify="center">
       <v-col cols="12">
-        <h1 class="success--text text-center">Your order<br> has been successfully placed!</h1>
+        <h1 class="success--text text-center">
+          Your order<br />
+          has been successfully placed!
+        </h1>
       </v-col>
       <v-col cols="12" class="text-center">
-        <p>Thank! Your order has been received by us. Our managers will contact you shortly to confirm the order.</p>
+        <p>
+          Thank! Your order has been received by us. Our managers will contact
+          you shortly to confirm the order.
+        </p>
       </v-col>
     </v-row>
 
@@ -24,32 +29,31 @@
         </v-btn>
       </v-col>
     </v-row>
-
   </v-container>
 </template>
 
 <script>
-  import Breadcrumb from '../../components/Breadcrumb'
+import Breadcrumb from '../../components/Breadcrumb'
 
-  export default {
-    data() {
-      return {}
-    },
-    components: {
-      Breadcrumb
-    },
-    computed: {
-      breadcrumbs() {
-        return [
-          {
-            name: 'Home',
-            link: '/'
-          },
-          {
-            name: 'Order success',
-          }
-        ]
-      }
+export default {
+  components: {
+    Breadcrumb
+  },
+  data() {
+    return {}
+  },
+  computed: {
+    breadcrumbs() {
+      return [
+        {
+          name: 'Home',
+          link: '/'
+        },
+        {
+          name: 'Order success'
+        }
+      ]
     }
   }
+}
 </script>

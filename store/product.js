@@ -5,7 +5,7 @@ export const state = () => ({
   items: {},
   itemsTotal: 0,
   filters: {},
-  aggregations: {},
+  aggregations: {}
 })
 
 export const mutations = {
@@ -23,7 +23,7 @@ export const mutations = {
   },
   SET_FILTERS(state, filters) {
     Object.keys(filters).map((key, index) => {
-      Vue.set(state.filters, key, filters[key]);
+      Vue.set(state.filters, key, filters[key])
     })
   }
 }
@@ -35,7 +35,7 @@ export const getters = {
   aggregations: state => state.aggregations,
   filters: state => state.filters,
   query: (state, getters) => {
-    let values = {};
+    let values = {}
 
     Object.keys(getters.filters).map((key, index) => {
       if ((key === 'q' || key === 'sort') && getters.filters[key]) {
@@ -47,27 +47,25 @@ export const getters = {
       }
     })
 
-    return values;
+    return values
   }
 }
 
 export const actions = {
-  getItems({commit}, params) {
+  getItems({ commit }, params) {
     let url = process.env.NUXT_ENV_API_URL + '/frontend/products'
 
-    return this.$axios.get(url, {params: params})
-      .then(response => {
-        commit('SET_ITEMS', response.data['hydra:member'])
-        commit('SET_ITEMS_TOTAL', response.data['hydra:totalItems'])
-        commit('SET_AGGREGATIONS', response.data['hydra:aggregations'])
-      })
+    return this.$axios.get(url, { params: params }).then(response => {
+      commit('SET_ITEMS', response.data['hydra:member'])
+      commit('SET_ITEMS_TOTAL', response.data['hydra:totalItems'])
+      commit('SET_AGGREGATIONS', response.data['hydra:aggregations'])
+    })
   },
-  getItem({commit}, id) {
+  getItem({ commit }, id) {
     let url = process.env.NUXT_ENV_API_URL + '/frontend/products/' + id
 
-    return this.$axios.get(url)
-      .then(response => {
-        commit('SET_ITEM', response.data)
-      })
+    return this.$axios.get(url).then(response => {
+      commit('SET_ITEM', response.data)
+    })
   }
 }

@@ -1,6 +1,5 @@
 <template>
   <v-container>
-
     <breadcrumb :breadcrumbs="breadcrumbs"></breadcrumb>
 
     <v-row>
@@ -10,11 +9,11 @@
     </v-row>
 
     <template v-if="products.length">
-      <v-card 
-        width="100%"
-        class="mb-5"
+      <v-card
         v-for="product in products"
         :key="product.id"
+        width="100%"
+        class="mb-5"
       >
         <v-row no-gutters justify="space-between" align="center">
           <v-col cols="12" xl="2" lg="2" md="2" sm="2">
@@ -56,12 +55,17 @@
             <h6 class="grey--text">Total</h6>
             <p>${{ product.total }}</p>
           </v-col>
-          <v-btn style="position: absolute; top: -15px; right: -15px;" icon color="error" @click="remove(product.id)">
+          <v-btn
+            style="position: absolute; top: -15px; right: -15px;"
+            icon
+            color="error"
+            @click="remove(product.id)"
+          >
             <v-icon large>mdi-close-circle</v-icon>
           </v-btn>
         </v-row>
       </v-card>
- 
+
       <v-divider class="mt-9"></v-divider>
 
       <v-row>
@@ -88,42 +92,41 @@
         </v-col>
       </v-row>
     </template>
-
   </v-container>
 </template>
 
 <script>
-  import Breadcrumb from "../../components/Breadcrumb"
+import Breadcrumb from '../../components/Breadcrumb'
 
-  export default {
-    data() {
-      return {}
+export default {
+  components: {
+    Breadcrumb
+  },
+  data() {
+    return {}
+  },
+  computed: {
+    breadcrumbs() {
+      return [
+        {
+          name: 'Home',
+          link: '/'
+        },
+        {
+          name: 'Cart'
+        }
+      ]
     },
-    components: {
-      Breadcrumb,
-    },
-    computed: {
-      breadcrumbs() {
-        return [
-          {
-            name: 'Home',
-            link: '/'
-          },
-          {
-            name: 'Cart',
-          }
-        ]
-      },
-      products() {
-        return this.$store.getters['cart/items']
-      },
-    },
-    methods: {
-      remove(id) {
-        let products = this.products.filter(item => item.id !== id)
-    
-        this.$store.commit('cart/SET_ITEMS', products)
-      }
+    products() {
+      return this.$store.getters['cart/items']
+    }
+  },
+  methods: {
+    remove(id) {
+      let products = this.products.filter(item => item.id !== id)
+
+      this.$store.commit('cart/SET_ITEMS', products)
     }
   }
+}
 </script>

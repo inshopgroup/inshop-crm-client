@@ -6,7 +6,7 @@ const items = [
     ean: 123451,
     price: 200,
     total: 200,
-    quantity: 1,
+    quantity: 1
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const items = [
     ean: 789123,
     price: 400,
     total: 400,
-    quantity: 1,
+    quantity: 1
   },
   {
     id: 3,
@@ -24,20 +24,20 @@ const items = [
     ean: 111111,
     price: 5000,
     total: 5000,
-    quantity: 1,
+    quantity: 1
   }
 ]
 
 export const state = () => ({
-  items,
+  items
 })
 
 export const mutations = {
   SET_ITEMS(state, items) {
     state.items = items
-  },
+  }
 }
 
 export const getters = {
-  items: state => state.items,
+  items: state => state.items
 }
