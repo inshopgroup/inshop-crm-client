@@ -13,7 +13,7 @@ https://ecommerce.inshopcrm.com/
 ![alt text](https://inshopcrm.com/static/ecommerce/product.png "Inshop CRM login dashboard with charts")
 
 
-## Main Features 
+## Main Features Available
 
  * Multi language support
  * Clients management
