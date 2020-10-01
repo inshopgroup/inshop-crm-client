@@ -13,7 +13,7 @@ https://ecommerce.inshopcrm.com/
 ![alt text](https://inshopcrm.com/static/ecommerce/product.png "Inshop CRM login dashboard with charts")
 
 
-## Main Features
+## Main Features 
 
  * Multi language support
  * Clients management
@@ -23,7 +23,7 @@ https://ecommerce.inshopcrm.com/
  * Possibilities for fulfillment
  * Invoice management
 
-## Technologies
+## Technologies Available
 
 ### Backend
  - PHP 7.2
@@ -38,7 +38,7 @@ https://ecommerce.inshopcrm.com/
  - GIT
 
 
-# Installation
+# Installation Process
 
 ## Using docker-compose for local testing
 
