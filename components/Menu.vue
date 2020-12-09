@@ -14,19 +14,13 @@
       <nav>
         <ul id="menu-main-menu" class="nav nav-inline yamm">
           <li class="menu-item">
-            <nuxt-link :to="localePath('index')">{{
-              $t('menu.price')
-            }}</nuxt-link>
+            <nuxt-link :to="localePath('index')">Price</nuxt-link>
           </li>
           <li class="menu-item">
-            <nuxt-link :to="localePath('about')">{{
-              $t('menu.about')
-            }}</nuxt-link>
+            <nuxt-link :to="localePath('about')">About</nuxt-link>
           </li>
           <li class="menu-item">
-            <nuxt-link :to="localePath('contact')">{{
-              $t('menu.contacts')
-            }}</nuxt-link>
+            <nuxt-link :to="localePath('contact')">Contacts</nuxt-link>
           </li>
         </ul>
       </nav>

@@ -15,13 +15,13 @@
             @formUpdated="updateValue"
           />
 
-          <v-btn type="submit" class="mx-auto" color="#0c5c6f" dark>{{
-            $t('continue')
-          }}</v-btn>
+          <v-btn type="submit" class="mx-auto" color="#0c5c6f" dark
+            >Continue</v-btn
+          >
 
           <div class="mt-3">
-            {{ $t('already_have_account') }}
-            <v-btn text to="/signin" color="#0c5c6f">{{ $t('signin') }}</v-btn>
+            Already have account?
+            <v-btn text to="/signin" color="#0c5c6f">Signin</v-btn>
           </div>
         </form>
       </v-col>
@@ -48,7 +48,7 @@ export default {
           this.$router.push('/remind/complete')
         })
         .catch(() => {
-          this.$toast.error(this.$t('save_error'))
+          this.$toast.error('Save error')
         })
     },
     updateValue(property, value) {
@@ -57,17 +57,17 @@ export default {
   },
   head() {
     return {
-      title: this.$t('remind'),
+      title: 'Remind',
       meta: [
         {
           hid: `description`,
           name: 'description',
-          content: this.$t('remind'),
+          content: 'Remind',
         },
         {
           hid: `keywords`,
           name: 'keywords',
-          keywords: this.$t('remind'),
+          keywords: 'Remind',
         },
       ],
     }

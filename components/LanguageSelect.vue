@@ -20,7 +20,7 @@
 <script>
 export default {
   data: () => ({
-    languages: ['en', 'de', 'pl', 'ru', 'es', 'fr', 'it'],
+    languages: ['en', 'pl'],
   }),
   computed: {
     locale() {

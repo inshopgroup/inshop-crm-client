@@ -76,17 +76,17 @@ export default {
   },
   head() {
     return {
-      title: this.$t('homepage_title'),
+      title: 'Homepage title',
       meta: [
         {
           hid: `description`,
           name: 'description',
-          content: this.$t('homepage_title'),
+          content: 'Homepage title',
         },
         {
           hid: `keywords`,
           name: 'keywords',
-          keywords: this.$t('homepage_title'),
+          keywords: 'Homepage title',
         },
       ],
       bodyAttrs: {

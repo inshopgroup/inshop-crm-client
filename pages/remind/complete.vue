@@ -5,13 +5,13 @@
         <b-row>
           <b-col cols="12">
             <div class="page-header">
-              <h1>{{ $t('remind_password_complete') }}</h1>
+              <h1>Remind password complete</h1>
             </div>
           </b-col>
         </b-row>
         <b-row>
           <b-col cols="12">
-            <p>{{ $t('check_your_email_to_reset_your_password') }}</p>
+            <p>Please check your email to reset your password</p>
           </b-col>
         </b-row>
       </b-col>
@@ -23,17 +23,17 @@
 export default {
   head() {
     return {
-      title: this.$t('remind_password_complete'),
+      title: 'Remind password complete',
       meta: [
         {
           hid: `description`,
           name: 'description',
-          content: this.$t('remind_password_complete'),
+          content: 'Remind password complete',
         },
         {
           hid: `keywords`,
           name: 'keywords',
-          keywords: this.$t('remind_password_complete'),
+          keywords: 'Remind password complete',
         },
       ],
     }

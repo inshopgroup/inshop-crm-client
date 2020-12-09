@@ -36,7 +36,7 @@ export default {
     breadcrumbs() {
       return [
         {
-          name: this.$t('home'),
+          name: 'Home',
           link: '/',
         },
         {
