@@ -57,7 +57,7 @@ export default {
     Breadcrumb,
     Header,
     ProductItem,
-    Footer
+    Footer,
   },
   mixins: [Translate],
   watchQuery: ['page'],
@@ -68,12 +68,12 @@ export default {
     await params.store.dispatch('product/getItems', {
       categorySlug: params.params.categorySlug,
       page: currentPage,
-      perPage: ~~process.env.NUXT_ENV_PER_PAGE
+      perPage: ~~process.env.NUXT_ENV_PER_PAGE,
     })
 
     return {
       categorySlug: params.params.categorySlug,
-      currentPage: currentPage
+      currentPage: currentPage,
     }
   },
   computed: {
@@ -81,11 +81,11 @@ export default {
       return [
         {
           name: 'Home',
-          link: '/'
+          link: '/',
         },
         {
-          name: this.translation(this.category).name
-        }
+          name: this.translation(this.category).name,
+        },
       ]
     },
     category() {
@@ -99,23 +99,23 @@ export default {
     },
     aggregations() {
       return this.$store.getters['product/aggregations']
-    }
+    },
   },
   methods: {
     linkGen(page) {
       if (page === 1) {
         return this.localePath({
           name: 'catalog-categorySlug',
-          params: { categorySlug: this.categorySlug }
+          params: { categorySlug: this.categorySlug },
         })
       }
 
       return this.localePath({
         name: 'catalog-categorySlug',
         params: { categorySlug: this.categorySlug },
-        query: { page: page }
+        query: { page: page },
       })
-    }
-  }
+    },
+  },
 }
 </script>

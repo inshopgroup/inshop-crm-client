@@ -72,7 +72,7 @@ export default {
   computed: {
     text() {
       return this.$store.getters['text/item']
-    }
+    },
   },
   head() {
     return {
@@ -81,18 +81,18 @@ export default {
         {
           hid: `description`,
           name: 'description',
-          content: this.$t('homepage_title')
+          content: this.$t('homepage_title'),
         },
         {
           hid: `keywords`,
           name: 'keywords',
-          keywords: this.$t('homepage_title')
-        }
+          keywords: this.$t('homepage_title'),
+        },
       ],
       bodyAttrs: {
-        class: 'home-page'
-      }
+        class: 'home-page',
+      },
     }
-  }
+  },
 }
 </script>

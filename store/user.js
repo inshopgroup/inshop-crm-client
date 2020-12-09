@@ -1,6 +1,6 @@
 export const state = () => ({
   item: {},
-  errors: {}
+  errors: {},
 })
 
 export const mutations = {
@@ -12,12 +12,12 @@ export const mutations = {
   },
   SET_ERRORS(state, errors) {
     state.errors = errors
-  }
+  },
 }
 
 export const getters = {
-  item: state => state.item,
-  errors: state => state.errors
+  item: (state) => state.item,
+  errors: (state) => state.errors,
 }
 
 export const actions = {
@@ -25,7 +25,7 @@ export const actions = {
     if (data.violations) {
       let errors = {}
 
-      data.violations.map(violation => {
+      data.violations.map((violation) => {
         Object.assign(errors, { [violation.propertyPath]: violation.message })
       })
 
@@ -37,7 +37,7 @@ export const actions = {
   get({ commit }, id) {
     let url = process.env.NUXT_ENV_API_URL + '/frontend/profile/me'
 
-    return this.$axios.get(url).then(response => {
+    return this.$axios.get(url).then((response) => {
       commit('SET_ITEM', response.data)
     })
   },
@@ -48,8 +48,8 @@ export const actions = {
 
     return this.$axios
       .put(url, state.item)
-      .then(response => response.data)
-      .catch(e => {
+      .then((response) => response.data)
+      .catch((e) => {
         dispatch('processErrors', e.response.data)
       })
   },
@@ -60,8 +60,8 @@ export const actions = {
 
     return this.$axios
       .post(url, state.item)
-      .then(response => response.data)
-      .catch(e => {
+      .then((response) => response.data)
+      .catch((e) => {
         dispatch('processErrors', e.response.data)
       })
   },
@@ -72,9 +72,9 @@ export const actions = {
 
     return this.$axios
       .post(url, state.item)
-      .then(response => response.data)
-      .catch(e => {
+      .then((response) => response.data)
+      .catch((e) => {
         dispatch('processErrors', e.response.data)
       })
-  }
+  },
 }

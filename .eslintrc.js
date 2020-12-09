@@ -18,8 +18,6 @@ module.exports = {
     'import/no-dynamic-require': 'off',
     'import/no-unresolved': 'off',
     'no-var': 2,
-    // 'prefer-const': 2,
-    // 'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 
     // TODO: check disabled rules
     'import/no-extraneous-dependencies': 0,
@@ -62,9 +60,9 @@ module.exports = {
     'vue/require-prop-type-constructor': 0,
     'vue/require-v-for-key': 0,
     'vue/valid-v-for': 0,
-    'no-lonely-if': 0
+    'no-lonely-if': 0,
   },
   parserOptions: {
-    parser: 'babel-eslint'
-  }
+    parser: 'babel-eslint',
+  },
 }

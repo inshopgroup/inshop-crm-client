@@ -28,15 +28,15 @@ export default {
         {
           hid: `description`,
           name: 'description',
-          content: this.$t('remind_password_complete')
+          content: this.$t('remind_password_complete'),
         },
         {
           hid: `keywords`,
           name: 'keywords',
-          keywords: this.$t('remind_password_complete')
-        }
-      ]
+          keywords: this.$t('remind_password_complete'),
+        },
+      ],
     }
-  }
+  },
 }
 </script>

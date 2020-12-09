@@ -4,18 +4,18 @@
 export default {
   async asyncData(params) {
     return {
-      token: params.params.token
+      token: params.params.token,
     }
   },
   mounted() {
     this.$store
       .dispatch('auth/loginByToken', this.token)
-      .then(data => {
+      .then((data) => {
         window.location = '/profile'
       })
-      .catch(e => {
+      .catch((e) => {
         window.location = '/'
       })
-  }
+  },
 }
 </script>

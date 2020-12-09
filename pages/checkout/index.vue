@@ -147,12 +147,12 @@ import Breadcrumb from '../../components/Breadcrumb'
 
 export default {
   components: {
-    Breadcrumb
+    Breadcrumb,
   },
   data() {
     return {
       countries: ['Ukrain', 'Poland', 'Usa'],
-      cities: ['Poltava', 'Warsaw', 'Berlin']
+      cities: ['Poltava', 'Warsaw', 'Berlin'],
     }
   },
   computed: {
@@ -160,11 +160,11 @@ export default {
       return [
         {
           name: 'Home',
-          link: '/'
+          link: '/',
         },
         {
-          name: 'Checkout'
-        }
+          name: 'Checkout',
+        },
       ]
     },
     item() {
@@ -172,7 +172,7 @@ export default {
     },
     errors() {
       return this.$store.getters['user/errors']
-    }
+    },
   },
   beforeDestroy() {
     this.$store.commit('user/SET_ERRORS', {})
@@ -180,7 +180,7 @@ export default {
   methods: {
     updateValue(value, property) {
       this.$store.commit('user/UPDATE_ITEM', { [property]: value })
-    }
-  }
+    },
+  },
 }
 </script>

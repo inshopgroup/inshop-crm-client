@@ -6,7 +6,7 @@ export const state = () => ({
   isLoading: 0,
   loadingAllow: true,
   locales: ['en', 'de', 'pl', 'ru', 'es', 'fr', 'it'],
-  locale: 'en'
+  locale: 'en',
 })
 
 export const mutations = {
@@ -29,11 +29,11 @@ export const mutations = {
     if (state.locales.includes(locale)) {
       state.locale = locale
     }
-  }
+  },
 }
 
 export const getters = {
-  isLoading: state => state.isLoading !== 0
+  isLoading: (state) => state.isLoading !== 0,
 }
 
 export const actions = {
@@ -80,5 +80,5 @@ export const actions = {
     }
 
     await dispatch('category/getItems')
-  }
+  },
 }

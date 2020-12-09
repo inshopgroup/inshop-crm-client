@@ -23,24 +23,24 @@ export default {
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     route: {
       type: String,
-      required: true
+      required: true,
     },
     label: {
       type: String,
-      required: true
+      required: true,
     },
     aggregations: {
       type: Array,
-      required: true
+      required: true,
     },
     tagsStyle: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>

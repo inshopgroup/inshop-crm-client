@@ -20,19 +20,19 @@
 <script>
 export default {
   data: () => ({
-    languages: ['en', 'de', 'pl', 'ru', 'es', 'fr', 'it']
+    languages: ['en', 'de', 'pl', 'ru', 'es', 'fr', 'it'],
   }),
   computed: {
     locale() {
       return this.$store.state.locale
-    }
+    },
   },
   methods: {
     setLocale(locale) {
       this.$cookies.set('locale', locale)
       this.$store.commit('SET_LOCALE', locale)
       this.$router.push(this.switchLocalePath(locale))
-    }
-  }
+    },
+  },
 }
 </script>

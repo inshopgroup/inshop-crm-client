@@ -6,7 +6,7 @@ export default {
     },
     isAuthenticated() {
       return this.jwtDecoded && this.jwtDecoded.exp > Date.now() / 1000
-    }
-  }
+    },
+  },
 }
 </script>

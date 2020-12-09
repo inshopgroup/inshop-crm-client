@@ -1,5 +1,5 @@
-export default function({ $axios, store, redirect, error }) {
-  $axios.onRequest(config => {
+export default function ({ $axios, store, redirect, error }) {
+  $axios.onRequest((config) => {
     store.dispatch('loadingStart')
 
     let token = store.getters['auth/jwtDecoded'] || null
@@ -20,11 +20,11 @@ export default function({ $axios, store, redirect, error }) {
     return config
   })
 
-  $axios.onResponse(data => {
+  $axios.onResponse((data) => {
     store.dispatch('loadingStop')
   })
 
-  $axios.onError(e => {
+  $axios.onError((e) => {
     store.dispatch('loadingStop')
 
     const code = parseInt(e.response && e.response.status)

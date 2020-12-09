@@ -5,7 +5,7 @@ export default {
       let translationLocale = null
       let translationAny = null
 
-      item.translations.forEach(translation => {
+      item.translations.forEach((translation) => {
         if (translationAny === null) {
           translationAny = translation
         }
@@ -20,7 +20,7 @@ export default {
       })
 
       return translationLocale || translationAny || {}
-    }
-  }
+    },
+  },
 }
 </script>

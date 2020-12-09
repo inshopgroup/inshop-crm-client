@@ -13,7 +13,7 @@
           :to="
             localePath({
               name: 'catalog-categorySlug',
-              params: { categorySlug: category.slug }
+              params: { categorySlug: category.slug },
             })
           "
           class="white--text"
@@ -30,7 +30,7 @@
         :class="[
           'container',
           { 'd-none': hover !== category.id },
-          { 'd-flex': hover === category.id }
+          { 'd-flex': hover === category.id },
         ]"
         @mouseover="mouseover(category.id)"
         @mouseleave="mouseleave"
@@ -45,7 +45,7 @@
               :to="
                 localePath({
                   name: 'catalog-categorySlug',
-                  params: { categorySlug: subCategory.slug }
+                  params: { categorySlug: subCategory.slug },
                 })
               "
               class="white--text ma-3"
@@ -68,13 +68,13 @@ export default {
   data() {
     return {
       hover: null,
-      timeout: null
+      timeout: null,
     }
   },
   computed: {
     categories() {
       return this.$store.getters['category/items']
-    }
+    },
   },
   methods: {
     mouseover(id) {
@@ -85,8 +85,8 @@ export default {
       this.timeout = setTimeout(() => {
         this.hover = null
       }, 50)
-    }
-  }
+    },
+  },
 }
 </script>
 

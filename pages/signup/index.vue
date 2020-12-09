@@ -82,7 +82,7 @@ export default {
     },
     errors() {
       return this.$store.getters['user/errors']
-    }
+    },
   },
   beforeDestroy() {
     this.$store.commit('user/SET_ERRORS', {})
@@ -113,12 +113,12 @@ export default {
         this.item.plainPassword !== this.item.repeatPassword
       ) {
         this.$store.commit('user/SET_ERRORS', {
-          repeatPassword: 'Passwords are not the same'
+          repeatPassword: 'Passwords are not the same',
         })
       } else {
         this.$store.commit('user/SET_ERRORS', {})
       }
-    }
-  }
+    },
+  },
 }
 </script>

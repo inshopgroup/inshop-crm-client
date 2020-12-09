@@ -11,16 +11,16 @@ export default {
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     route: {
       type: String,
-      required: true
+      required: true,
     },
     aggregation: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     filters() {
@@ -34,7 +34,7 @@ export default {
     },
     filterSelected() {
       return this.filter && this.filter.includes(this.id)
-    }
+    },
   },
   methods: {
     click() {
@@ -53,7 +53,7 @@ export default {
 
       this.$store.commit(this.route + '/SET_FILTERS', filters)
       this.$router.push({ name: pluralize(this.route), query: this.query })
-    }
-  }
+    },
+  },
 }
 </script>

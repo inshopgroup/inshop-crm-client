@@ -32,7 +32,7 @@ export default {
   props: {
     linkGen: null,
     total: 0,
-    value: 0
+    value: 0,
   },
   computed: {
     perPage() {
@@ -59,7 +59,7 @@ export default {
       }
 
       return pages
-    }
-  }
+    },
+  },
 }
 </script>

@@ -57,13 +57,13 @@ export default {
   components: {
     CategoryNav,
     Menu,
-    LanguageSelect
+    LanguageSelect,
   },
   mixins: [Auth],
   data() {
     return {
       bg,
-      drawer: null
+      drawer: null,
     }
   },
   computed: {
@@ -71,15 +71,15 @@ export default {
       if (this.isAuthenticated) {
         return this.jwtDecoded.name
       }
-    }
+    },
   },
   methods: {
     signout() {
       this.$store.dispatch('auth/logout').then(() => {
         this.$router.push('/')
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

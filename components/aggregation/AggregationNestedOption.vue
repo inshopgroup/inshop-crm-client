@@ -10,7 +10,7 @@ export default {
     },
     value() {
       return this.aggregation.key.split('|')[1]
-    }
-  }
+    },
+  },
 }
 </script>

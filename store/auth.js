@@ -4,7 +4,7 @@ export const state = () => ({
   token: null,
   refreshToken: null,
   type: null,
-  error: null
+  error: null,
 })
 
 export const mutations = {
@@ -26,23 +26,23 @@ export const mutations = {
     state.token = null
     state.refreshToken = null
     state.error = null
-  }
+  },
 }
 
 export const getters = {
-  jwtDecoded: state => {
+  jwtDecoded: (state) => {
     let token = state.token || null
     if (token !== null) {
       return jwtDecode(state.token)
     }
   },
-  refreshToken: state => state.refreshToken,
-  error: state => state.error,
+  refreshToken: (state) => state.refreshToken,
+  error: (state) => state.error,
   id: (state, getters) => {
     if (getters.jwtDecoded) {
       return getters.jwtDecoded.id
     }
-  }
+  },
 }
 
 export const actions = {
@@ -53,11 +53,11 @@ export const actions = {
 
     return this.$axios
       .post(link, data)
-      .then(response => {
+      .then((response) => {
         commit('AUTH_UPDATE_TOKEN', response.data.token)
         commit('AUTH_UPDATE_REFRESH_TOKEN', response.data.refresh_token)
       })
-      .catch(error => {
+      .catch((error) => {
         commit('AUTH_ERROR_CHANGE', 'Username or password is incorrect')
         throw error
       })
@@ -67,7 +67,7 @@ export const actions = {
 
     return this.$axios
       .post(link, { refresh_token: getters.refreshToken })
-      .then(response => {
+      .then((response) => {
         commit('AUTH_UPDATE_TOKEN', response.data.token)
 
         return response
@@ -78,17 +78,17 @@ export const actions = {
 
     return this.$axios
       .get(link)
-      .then(response => {
+      .then((response) => {
         commit('AUTH_UPDATE_TOKEN', response.data.token)
         commit('AUTH_UPDATE_REFRESH_TOKEN', response.data.refresh_token)
 
         return response
       })
-      .catch(e => {
+      .catch((e) => {
         throw e
       })
   },
   logout({ commit }) {
     commit('AUTH_RESET')
-  }
+  },
 }

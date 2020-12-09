@@ -37,7 +37,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 
 export default {
   components: {
-    Breadcrumb
+    Breadcrumb,
   },
   data() {
     return {}
@@ -47,13 +47,13 @@ export default {
       return [
         {
           name: 'Home',
-          link: '/'
+          link: '/',
         },
         {
-          name: 'Order success'
-        }
+          name: 'Order success',
+        },
       ]
-    }
-  }
+    },
+  },
 }
 </script>

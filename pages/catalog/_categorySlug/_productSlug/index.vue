@@ -8,7 +8,7 @@
           <img
             :src="imageSelected.contentUrl"
             class="mb-2"
-            style="width: 100%; cursor: zoom-in;"
+            style="width: 100%; cursor: zoom-in"
             alt=""
             @click="overlay = !overlay"
           />
@@ -17,7 +17,7 @@
             <v-btn
               icon
               class="d-flex"
-              style="position: absolute; top: -35px; right: 0;"
+              style="position: absolute; top: -35px; right: 0"
               @click="overlay = false"
             >
               <v-icon>mdi-close</v-icon>
@@ -29,7 +29,7 @@
             <v-col v-for="image in images" :key="image.id" cols="3">
               <img
                 :src="image.contentUrl"
-                style="width: 100%; cursor: pointer;"
+                style="width: 100%; cursor: pointer"
                 alt=""
                 @click="selectImage(image.id)"
               />
@@ -81,7 +81,7 @@ import Translate from '~/mixins/Translate.vue'
 export default {
   components: {
     Header,
-    Breadcrumb
+    Breadcrumb,
   },
   mixins: [Translate],
   async asyncData(params) {
@@ -93,31 +93,31 @@ export default {
       images: [
         {
           id: 1,
-          contentUrl: 'https://via.placeholder.com/350x350/ffcf5b'
+          contentUrl: 'https://via.placeholder.com/350x350/ffcf5b',
         },
         {
           id: 2,
-          contentUrl: 'https://via.placeholder.com/350x350/f16a22'
+          contentUrl: 'https://via.placeholder.com/350x350/f16a22',
         },
         {
           id: 3,
-          contentUrl: 'https://via.placeholder.com/350x350/d3ffce'
+          contentUrl: 'https://via.placeholder.com/350x350/d3ffce',
         },
         {
           id: 4,
-          contentUrl: 'https://via.placeholder.com/350x350/7937fc'
+          contentUrl: 'https://via.placeholder.com/350x350/7937fc',
         },
         {
           id: 5,
-          contentUrl: 'https://via.placeholder.com/350x350/930000'
+          contentUrl: 'https://via.placeholder.com/350x350/930000',
         },
         {
           id: 6,
-          contentUrl: 'https://via.placeholder.com/350x350/f16a22'
-        }
+          contentUrl: 'https://via.placeholder.com/350x350/f16a22',
+        },
       ],
       imageSelected: null,
-      overlay: false
+      overlay: false,
     }
   },
   computed: {
@@ -125,15 +125,15 @@ export default {
       return [
         {
           name: 'Home',
-          link: '/'
+          link: '/',
         },
         {
           name: this.translation(this.category).name,
-          link: '/catalog/' + this.category.slug
+          link: '/catalog/' + this.category.slug,
         },
         {
-          name: this.translation(this.product).name
-        }
+          name: this.translation(this.product).name,
+        },
       ]
     },
     category() {
@@ -141,15 +141,15 @@ export default {
     },
     product() {
       return this.$store.getters['product/item']
-    }
+    },
   },
   mounted() {
     this.imageSelected = this.images[0]
   },
   methods: {
     selectImage(id) {
-      ;[this.imageSelected] = this.images.filter(item => item.id === id)
-    }
-  }
+      ;[this.imageSelected] = this.images.filter((item) => item.id === id)
+    },
+  },
 }
 </script>

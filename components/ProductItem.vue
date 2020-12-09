@@ -3,7 +3,7 @@
     :to="
       localePath({
         name: 'catalog-categorySlug-productSlug',
-        params: { categorySlug: categorySlug, productSlug: product.slug }
+        params: { categorySlug: categorySlug, productSlug: product.slug },
       })
     "
   >
@@ -31,7 +31,7 @@
           </p>
           <p class="mb-2">{{ product.price }} $</p>
         </v-card-text>
-        <v-card-actions style="position: absolute; bottom: 0; width: 100%;">
+        <v-card-actions style="position: absolute; bottom: 0; width: 100%">
           <v-btn block color="#0c5c6f" dark>
             <v-icon left>mdi-cart-arrow-down</v-icon>
             Add to cart
@@ -50,25 +50,25 @@ export default {
   filters: {
     subString(value, q = 150) {
       return value.length > q ? value.slice(0, q) + '...' : value
-    }
+    },
   },
   mixins: [Translate],
   props: {
     product: {
       type: Object,
-      required: true
+      required: true,
     },
     categorySlug: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       isActive: true,
-      cardBg
+      cardBg,
     }
-  }
+  },
 }
 </script>
 

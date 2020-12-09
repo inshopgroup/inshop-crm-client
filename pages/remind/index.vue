@@ -38,7 +38,7 @@ export default {
     },
     errors() {
       return this.$store.getters['user/errors']
-    }
+    },
   },
   methods: {
     remindPassword() {
@@ -53,7 +53,7 @@ export default {
     },
     updateValue(property, value) {
       this.$store.commit('user/UPDATE_ITEM', { [property]: value })
-    }
+    },
   },
   head() {
     return {
@@ -62,15 +62,15 @@ export default {
         {
           hid: `description`,
           name: 'description',
-          content: this.$t('remind')
+          content: this.$t('remind'),
         },
         {
           hid: `keywords`,
           name: 'keywords',
-          keywords: this.$t('remind')
-        }
-      ]
+          keywords: this.$t('remind'),
+        },
+      ],
     }
-  }
+  },
 }
 </script>

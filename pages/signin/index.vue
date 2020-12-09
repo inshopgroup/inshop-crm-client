@@ -61,17 +61,17 @@ export default {
     return {
       credentials: {
         username: '',
-        password: ''
-      }
+        password: '',
+      },
     }
   },
   computed: {
     errors() {
       return {
         username: this.$store.getters['auth/error'],
-        password: this.$store.getters['auth/error']
+        password: this.$store.getters['auth/error'],
       }
-    }
+    },
   },
   methods: {
     signIn() {
@@ -84,7 +84,7 @@ export default {
     },
     updateValue(value, property) {
       this.credentials[property] = value
-    }
-  }
+    },
+  },
 }
 </script>

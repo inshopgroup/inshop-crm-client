@@ -12,7 +12,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -21,7 +21,7 @@ module.exports = {
         href:
           'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap',
       },
-    ]
+    ],
   },
 
   /*
@@ -69,49 +69,49 @@ module.exports = {
             code: 'en',
             iso: 'en_US',
             name: 'English',
-            file: 'en.js'
+            file: 'en.js',
           },
           {
             code: 'ru',
             iso: 'ru_RU',
             name: 'Russian',
-            file: 'ru.js'
+            file: 'ru.js',
           },
           {
             code: 'de',
             iso: 'de',
             name: 'German',
-            file: 'de.js'
+            file: 'de.js',
           },
           {
             code: 'it',
             iso: 'it',
             name: 'Italian',
-            file: 'it.js'
+            file: 'it.js',
           },
           {
             code: 'es',
             iso: 'es',
             name: 'Spanish',
-            file: 'es.js'
+            file: 'es.js',
           },
           {
             code: 'fr',
             iso: 'fr',
             name: 'French',
-            file: 'fr.js'
+            file: 'fr.js',
           },
           {
             code: 'pl',
             iso: 'pl',
             name: 'Polish',
-            file: 'pl.js'
-          }
+            file: 'pl.js',
+          },
         ],
         lazy: true,
-        langDir: 'lang/'
-      }
-    ]
+        langDir: 'lang/',
+      },
+    ],
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -191,6 +191,6 @@ module.exports = {
   },
   router: {
     linkActiveClass: 'active',
-    middleware: 'locale'
-  }
+    middleware: 'locale',
+  },
 }

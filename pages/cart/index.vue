@@ -56,7 +56,7 @@
             <p>${{ product.total }}</p>
           </v-col>
           <v-btn
-            style="position: absolute; top: -15px; right: -15px;"
+            style="position: absolute; top: -15px; right: -15px"
             icon
             color="error"
             @click="remove(product.id)"
@@ -100,7 +100,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 
 export default {
   components: {
-    Breadcrumb
+    Breadcrumb,
   },
   data() {
     return {}
@@ -110,23 +110,23 @@ export default {
       return [
         {
           name: 'Home',
-          link: '/'
+          link: '/',
         },
         {
-          name: 'Cart'
-        }
+          name: 'Cart',
+        },
       ]
     },
     products() {
       return this.$store.getters['cart/items']
-    }
+    },
   },
   methods: {
     remove(id) {
-      let products = this.products.filter(item => item.id !== id)
+      let products = this.products.filter((item) => item.id !== id)
 
       this.$store.commit('cart/SET_ITEMS', products)
-    }
-  }
+    },
+  },
 }
 </script>

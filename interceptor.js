@@ -2,7 +2,7 @@ import axios from 'axios'
 
 axios.defaults.timeout = 30000
 
-axios.interceptors.request.use(config => {
+axios.interceptors.request.use((config) => {
   if (process.env.NODE_ENV !== 'production') {
     if (config.url.indexOf('?') > -1) {
       config.url += '&XDEBUG_SESSION_START=PHPSTORM'

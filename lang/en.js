@@ -4,13 +4,13 @@ export default {
   menu: {
     price: 'Prices',
     about: 'About company',
-    contacts: 'Contacts'
+    contacts: 'Contacts',
   },
   search: {
-    placeholder: 'Keyword ...'
+    placeholder: 'Keyword ...',
   },
   footer: {
     address_title: 'Our address',
-    copyright: 'graphic advertising magazine "Graphic machines"'
-  }
+    copyright: 'graphic advertising magazine "Graphic machines"',
+  },
 }

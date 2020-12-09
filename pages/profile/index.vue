@@ -6,7 +6,7 @@
       </v-col>
     </v-row>
 
-    <v-row justify="center" style="justify-content: center;">
+    <v-row justify="center" style="justify-content: center">
       <v-col cols="4" class="text-center">
         <h1 class="display-5 mb-5">Personal info</h1>
 
@@ -66,18 +66,18 @@ import Breadcrumb from '../../components/Breadcrumb'
 export default {
   middleware: 'authenticated',
   components: {
-    Breadcrumb
+    Breadcrumb,
   },
   computed: {
     breadcrumbs() {
       return [
         {
           name: 'Home',
-          link: '/'
+          link: '/',
         },
         {
-          name: 'Personal info'
-        }
+          name: 'Personal info',
+        },
       ]
     },
     item() {
@@ -85,7 +85,7 @@ export default {
     },
     errors() {
       return this.$store.getters['user/errors']
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('user/get')
@@ -119,12 +119,12 @@ export default {
         this.item.plainPassword !== this.item.repeatPassword
       ) {
         this.$store.commit('user/SET_ERRORS', {
-          repeatPassword: 'Passwords are not the same'
+          repeatPassword: 'Passwords are not the same',
         })
       } else {
         this.$store.commit('user/SET_ERRORS', {})
       }
-    }
-  }
+    },
+  },
 }
 </script>

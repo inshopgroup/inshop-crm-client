@@ -14,7 +14,7 @@ export default {
     },
     value() {
       return this.aggregation.key
-    }
-  }
+    },
+  },
 }
 </script>
