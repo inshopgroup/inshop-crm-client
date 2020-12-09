@@ -2,13 +2,13 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    jest: true
+    jest: true,
   },
   extends: [
     'airbnb-base',
     'eslint:recommended',
     'plugin:vue/recommended',
-    '@vue/prettier'
+    '@vue/prettier',
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',

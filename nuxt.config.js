@@ -14,7 +14,14 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap',
+      },
+    ]
   },
 
   /*
@@ -32,15 +39,16 @@ module.exports = {
    */
   plugins: ['~/plugins/axios'],
 
-  /*
-   ** Nuxt.js buildModules
-   */
-  buildModules: ['@nuxtjs/vuetify'],
-  vuetify: {
-    treeShake: true,
-    customVariables: ['./assets/scss/vuetify-variables.scss'],
-    optionsPath: './vuetify.options.js'
-  },
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/vuetify
+    '@nuxtjs/vuetify',
+  ],
 
   /*
    ** Nuxt.js modules
@@ -50,6 +58,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/pwa',
+    '@nuxtjs/proxy',
     ['cookie-universal-nuxt', { alias: 'cookiz' }],
     [
       'nuxt-i18n',
@@ -105,23 +114,80 @@ module.exports = {
     ]
   ],
 
-  /*
-   ** Axios module configuration
-   */
+  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+    debug: false,
+    proxy: true,
+  },
+
+  proxy: {
+    '/api/proxy': {
+      target: process.env.NUXT_ENV_API_PROXY_URL,
+      pathRewrite: { '/api/proxy': '' },
+      changeOrigin: true,
+      headers: {
+        Connection: 'keep-alive',
+      },
+      onProxyReq: function log(proxyReq, req, res) {
+        //  console.log(req.body)
+        // console.log(proxyReq.getHeader('Content-Type'))
+
+        if (!req.body || !Object.keys(req.body).length) {
+          return
+        }
+
+        const contentType = proxyReq.getHeader('Content-Type')
+        const writeBody = (bodyData) => {
+          proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData))
+          proxyReq.write(bodyData)
+        }
+        if (
+          contentType.includes('application/json') ||
+          contentType.includes('application/x-www-form-urlencoded')
+        ) {
+          writeBody(JSON.stringify(req.body))
+        }
+      },
+    },
+  },
+
+  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
+  vuetify: {
+    treeShake: true,
+    customVariables: ['~/assets/scss/variables.scss'],
+    optionsPath: './vuetify.options.js',
+    defaultAssets: {
+      font: {
+        family: 'Source Sans Pro',
+      },
+    },
   },
 
   /*
    ** Build configuration
    */
   build: {
-    vendor: [],
+    analyze: false,
 
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+        })
+      }
+
+      config.node = {
+        fs: 'empty',
+        net: 'empty',
+      }
+    },
   },
   router: {
     linkActiveClass: 'active',
