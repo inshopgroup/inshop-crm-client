@@ -29,7 +29,9 @@ export default function ({ $axios, store, redirect, error }) {
 
     const code = parseInt(e.response && e.response.status)
     if (code === 401) {
-      redirect('/signin')
+      store.dispatch('auth/logout').then(() => {
+        redirect('/signin')
+      })
     }
 
     if (code === 404) {
