@@ -22,6 +22,7 @@ https://ecommerce.inshopcrm.com/
  * Prices and availability management
  * Possibilities for fulfillment
  * Invoice management
+ * An Happier Support HelpDesk
 
 ## Technologies Available
 
