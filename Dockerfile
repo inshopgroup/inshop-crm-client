@@ -8,3 +8,5 @@ RUN npm install
 RUN npm run build
 
 RUN chown -R node:node /var/www
+
+CMD npm run start
