@@ -5,7 +5,7 @@ export const strict = true
 export const state = () => ({
   isLoading: 0,
   loadingAllow: true,
-  locales: ['en', 'de', 'pl', 'ru', 'es', 'fr', 'it'],
+  locales: ['en', 'de', 'pl', 'es', 'fr', 'it'],
   locale: 'en',
 })
 
